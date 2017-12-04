@@ -12,6 +12,7 @@ get_header(); ?>
                     <h1>Hangar 49</h1>
                     <h2>Warbrid Maintenance, Restorations, and Sales</h2>
                     <p>Our full site is under construction for a January 2018 takeoff.<br>Want to know when we launch? Signup for our newsletter.</p>
+                   <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
                     <p class="disclaimer">We promise not to spam you!</p>
                 </div><!-- .intro -->
                 <div class="home_navigation">
@@ -37,27 +38,48 @@ get_header(); ?>
                     <h2>Inventory</h2>
                 </div>
                 <div class="inventory_tiles">
-                <?php 
+                    <?php 
 
-                     $args = array( 
-                     'post_type' => 'inventory',
-                     );
-                     $the_query = new WP_Query( $args );
+                    $posts = get_posts(array(
+                        'posts_per_page'	=> -1,
+                        'post_type'			=> 'inventory'
+                    ));
 
-                ?>
+                    if( $posts ): ?>
 
-                <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                     <div class="each_plane">
-                     <h1 class="aircraft_name"><?php the_title() ;?></h1>
-                         <?php 
-                            $post = the_post();
-                            setup_postdata($post);
-                         ?>
-                         <p><?php the_field('manufacture_year'); ?></p>
-                     </div>
+                    
 
-                     <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
-                    <?php wp_reset_query(); ?>
+                        <?php foreach( $posts as $post ): 
+
+                            setup_postdata( $post );
+
+                            $planes = get_field('inventory_aircraft');
+                            if( $planes ) {
+                                echo '<ul class="inventory_list">';
+                                foreach ( $planes as $post ):
+                                    setup_postdata($post);
+                                    $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+                                    echo '<div class="banner-image"'; 
+                                    if( $feat_image ) : ?>
+                                    style="background-image: url(<?php echo $feat_image; ?>);"
+                                    <?php
+                                    endif;
+                                    echo '><li><a href="' . get_the_permalink() . '">';
+                                    echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
+                                    echo '</a></li></div>';
+                                endforeach;
+                                echo '</ul>';
+                                wp_reset_postdata();
+                            }
+
+                            ?>
+
+                        <?php endforeach; ?>
+
+                        
+                        <?php wp_reset_postdata(); ?>
+
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="projects">
@@ -65,7 +87,47 @@ get_header(); ?>
                     <h2>Projects</h2>
                 </div>
                 <div class="project_tiles">
-                
+                    <?php 
+
+                    $projects = get_posts(array(
+                        'posts_per_page'	=> -1,
+                        'post_type'			=> 'projects'
+                    ));
+
+                    if( $projects ): ?>
+
+                        <ul>
+
+                        <?php foreach( $projects as $post ): 
+
+                            setup_postdata( $post );
+
+                            echo '<li><a href="' . get_the_permalink() . '"';
+                            
+                            $planes = get_field('aircraft');
+                            if( $planes ) {
+                               foreach ( $planes as $post ):
+                                    setup_postdata($post);
+                                    $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+                                    if( $feat_image ) : ?>
+                                    style="background-image: url(<?php echo $feat_image ?>)"
+                                    <?php
+                                    endif;
+                                    echo '><h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model');
+                                    echo '</h3>';
+                                endforeach;
+                                wp_reset_postdata();
+                            }
+                            echo '</a></li>';
+                            ?>
+
+                        <?php endforeach; ?>
+
+                        </ul>
+
+                        <?php wp_reset_postdata(); ?>
+
+                    <?php endif; ?>
                 </div>     
             </div>
 		</main><!-- #main -->
