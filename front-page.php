@@ -10,7 +10,7 @@ get_header(); ?>
             <div class="home_screen">
                 <div class="intro">
                     <h1>Hangar 49</h1>
-                    <h2>Warbrid Maintenance, Restorations, and Sales</h2>
+                    <h2>We authentically restore, maintain, and sell classic warbirds.</h2>
                     <p>Our full site is under construction for a January 2018 takeoff.<br>Want to know when we launch? Signup for our newsletter.</p>
                    <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
                     <p class="disclaimer">We promise not to spam you!</p>
