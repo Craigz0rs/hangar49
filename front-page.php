@@ -16,21 +16,9 @@ get_header(); ?>
                     <p class="disclaimer">We promise not to spam you!</p>
                 </div><!-- .intro -->
                 <div class="home_navigation">
-                    <a href="#inventory">
-                        <div class="home_nav_link" id="home_nav_inventory">
-                            <p>Inventory</p>
-                        </div>
-                    </a>
-                    <a href="#projects">
-                        <div class="home_nav_link" id="home_nav_projects">
-                            <p>Projects</p>
-                        </div>
-                    </a>
-                    <a href="http://localhost/hangar49/contact/">
-                        <div class="home_nav_link" id="home_nav_contact">
-                            <p>Contact</p>
-                        </div>
-                    </a>
+                    <a href="#inventory">Inventory</a>
+                    <a href="#projects">Projects</a>
+                    <a href="http://localhost/hangar49/contact/">Contact</a>
                 </div><!-- .home_navigation -->
             </div><!-- .home_screen -->
             <div class="inventory">

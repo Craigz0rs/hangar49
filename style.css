@@ -699,7 +699,24 @@ object {
 # Layout
 --------------------------------------------------------------*/
 .home_screen {
-  display: grid; }
+  height: 100vh;
+  width: 100vw;
+  background-color: aqua; }
+
+.intro {
+  text-align: center; }
+
+.home_navigation {
+  display: flex;
+  text-align: center; }
+
+.home_navigation a {
+  display: inline-block;
+  width: 33%;
+  min-height: 250px;
+  margin: 0;
+  padding: 0;
+  background-color: red; }
 
 .content-area {
   float: left;
@@ -717,5 +734,9 @@ object {
 .site-footer {
   clear: both;
   width: 100%; }
+
+.site-header {
+  position: fixed;
+  top: 0; }
 
 /*# sourceMappingURL=style.css.map */
