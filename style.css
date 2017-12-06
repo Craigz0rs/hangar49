@@ -748,6 +748,15 @@ object {
   padding: 0;
   background-color: red; }
 
+.tnp-subscription th {
+  display: none; }
+
+.tnp-subscription td {
+  background-color: transparent; }
+
+.tnp-email {
+  background-color: transparent; }
+
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
