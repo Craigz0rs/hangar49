@@ -35,7 +35,7 @@ get_header(); ?>
                     ));
 
                     if( $posts ): ?>
-
+                        <ul class="inventory_list">
                     
 
                         <?php foreach( $posts as $post ): 
@@ -44,20 +44,20 @@ get_header(); ?>
 
                             $planes = get_field('inventory_aircraft');
                             if( $planes ) {
-                                echo '<ul class="inventory_list">';
+                                
                                 foreach ( $planes as $post ):
                                     setup_postdata($post);
                                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-                                    echo '<div class="banner-image"'; 
+                                    echo '<li><div class="banner-image"'; 
                                     if( $feat_image ) : ?>
                                     style="background-image: url(<?php echo $feat_image; ?>);"
                                     <?php
                                     endif;
-                                    echo '><li><a href="' . get_the_permalink() . '">';
+                                    echo '><a href="' . get_the_permalink() . '">';
                                     echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '</a></li></div>';
+                                    echo '</a></div></li>';
                                 endforeach;
-                                echo '</ul>';
+                                
                                 wp_reset_postdata();
                             }
 
@@ -67,7 +67,7 @@ get_header(); ?>
 
                         
                         <?php wp_reset_postdata(); ?>
-
+                        </ul>
                     <?php endif; ?>
                 </div>
             </div>

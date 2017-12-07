@@ -55,7 +55,6 @@
     width: 33%;
     min-height: 18vh;
     margin: 0;
-    padding-top: 3vh;
     background-color: rgba(153, 153, 153, 0.35);
     transition: 0.2s;
     overflow: hidden;
@@ -63,7 +62,10 @@
 
 .home_navigation a {
     display: block;
+    width: 100%;
+    height: 100%;
     margin: 0;
+    padding-top: 3vh;
     font-family: $font_nav;
     text-decoration: none;
     color: white;
@@ -82,17 +84,18 @@
 //    background-color: rgba(153, 153, 153, 0.6);
     background-color: rgba(18,28,0,0.6);
     transition: 0.2s;
-    padding-top: 3vh;
+//    padding-top: 3vh;
+//    font-size: 1.1em;
 }
 
 .home_nav_block:hover a {
-    font-size: 1.1em;
-    padding-top: 0px;
+//    font-size: 1.1em;
+//    padding-top: 0px;
     transition: 0.2s;
 }
 
 .home_nav_block:hover i,
-.home_nav_block:active {
+.home_nav_block:active i {
     color: rgba(255, 255, 255, 0.8);
     padding-top: 0px;
     transition: 0.2s;
@@ -144,6 +147,7 @@
 
 .inventory {
     min-height: 100vh;
+    background-color: black;
 }
 
 .projects {
@@ -172,6 +176,36 @@
 .section_title h2 {
     margin: 0;
     line-height: 100px;
+}
+
+.inventory_list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.banner-image {
+    width: 100%;
+    height: 60vw;
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+}
+
+.banner-image a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.banner-image h3 {
+    margin: 0;
+    padding: 0;
 }
 
 
