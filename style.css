@@ -833,11 +833,13 @@ object {
   height: 60vw;
   background-position: center;
   background-repeat: none;
-  background-size: cover; }
+  background-size: cover;
+  filter: grayscale(50%); }
 
 .banner-image a {
   display: block;
   color: white;
+  font-family: "Jura", sans-serif;
   text-align: center;
   text-decoration: none;
   margin: 0;
@@ -846,6 +848,38 @@ object {
   width: 100%; }
 
 .banner-image h3 {
+  margin: 0;
+  padding: 0; }
+
+.projects {
+  background-color: black;
+  min-height: 100vh; }
+
+.project_tiles ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.project_tiles li {
+  width: 100%;
+  height: 60vw; }
+
+.project_tiles a {
+  display: block;
+  font-family: "Jura", sans-serif;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(50%); }
+
+.project_tiles h3 {
   margin: 0;
   padding: 0; }
 
