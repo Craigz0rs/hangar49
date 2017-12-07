@@ -12,18 +12,18 @@ get_header(); ?>
                     <h1>Hangar 49</h1>
                     <h1>warbirds</h1>
                     <h2>maintenance • restorations • sales</h2>
-                    <p>Our full site is under construction for a January 2018 takeoff.<br>Want to know when we launch? Signup for our newsletter.</p>
+                    <p>Our full site is under construction but we're adding more content each week! Check back often for updates.</p>
                    <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
-                    <p class="disclaimer">We promise not to spam you!</p>
+<!--                    <p class="subscribe_disclaimer">We promise not to spam you!</p>-->
                 </div><!-- .intro -->
                 <div class="home_navigation">
-                    <a href="#inventory">Inventory</a>
-                    <a href="#projects">Projects</a>
-                    <a href="http://localhost/hangar49/contact/">Contact</a>
+                    <div class="home_nav_block"><a href="#inventory"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
+                    <div class="home_nav_block"><a href="#projects"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>
+                    <div class="home_nav_block"><a href="http://localhost/hangar49/contact/"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></div>
                 </div><!-- .home_navigation -->
             </div><!-- .home_screen -->
             <div class="inventory">
-                <div class="inventory_title" id="inventory">
+                <div class="inventory_title section_title" id="inventory">
                     <h2>Inventory</h2>
                 </div>
                 <div class="inventory_tiles">
@@ -72,7 +72,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="projects">
-                <div class="projects_title" id="projects">
+                <div class="projects_title section_title" id="projects">
                     <h2>Projects</h2>
                 </div>
                 <div class="project_tiles">
