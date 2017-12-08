@@ -7,7 +7,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <div class="home_screen">
+            <div class="home_screen" id="home">
                 <div class="intro">
                     <h1>Hangar 49</h1>
                     <h1>warbirds</h1>

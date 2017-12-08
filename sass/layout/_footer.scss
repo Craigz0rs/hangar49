@@ -1,0 +1,26 @@
+.site-footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.footer_branding {
+    font-family: $font_logo;
+    font-size: 1.5em;
+}
+
+.footer_branding p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.footer_branding p:first-of-type {
+    font-size: 1.7em;
+}
+
+.footer_branding p:nth-of-type(2) {
+    font-size: 1.4em;
+    margin-top: -21px;
+}
