@@ -1,7 +1,9 @@
 .site-footer {
     text-align: center;
-    background-color: black;
+    background-color: rgb(68, 68, 68);
+
     color: white;
+//    padding: 0 10px;
 }
 
 .footer_branding {
@@ -17,10 +19,37 @@
 }
 
 .footer_branding p:first-of-type {
-    font-size: 1.7em;
+    font-size: 1em;
 }
 
 .footer_branding p:nth-of-type(2) {
-    font-size: 1.4em;
-    margin-top: -21px;
+    font-size: 0.8em;
+    margin-top: -12px;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer_contact h2 {
+    font-family: $font_heading;
+}
+
+.footer_contact p {
+    font-family: $font_text;
+}
+
+.footer_copyright p {
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+}
+
+.footer_copyright {
+    font-family: $font_text;
+    font-size: 0.8em;
+    background-color: rgb(28, 38, 28);
+    height: 40px;
 }

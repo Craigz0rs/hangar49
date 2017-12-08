@@ -906,7 +906,7 @@ object {
 
 .site-footer {
   text-align: center;
-  background-color: black;
+  background-color: #444444;
   color: white; }
 
 .footer_branding {
@@ -920,10 +920,32 @@ object {
   line-height: 1.5; }
 
 .footer_branding p:first-of-type {
-  font-size: 1.7em; }
+  font-size: 1em; }
 
 .footer_branding p:nth-of-type(2) {
-  font-size: 1.4em;
-  margin-top: -21px; }
+  font-size: 0.8em;
+  margin-top: -12px; }
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.footer_contact h2 {
+  font-family: "Jura", sans-serif; }
+
+.footer_contact p {
+  font-family: "Metrophobic", sans-serif; }
+
+.footer_copyright p {
+  margin: 0;
+  padding: 0;
+  line-height: 40px; }
+
+.footer_copyright {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.8em;
+  background-color: #1c261c;
+  height: 40px; }
 
 /*# sourceMappingURL=style.css.map */
