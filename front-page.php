@@ -17,9 +17,9 @@ get_header(); ?>
 <!--                    <p class="subscribe_disclaimer">We promise not to spam you!</p>-->
                 </div><!-- .intro -->
                 <div class="home_navigation">
-                    <div class="home_nav_block"><a href="#inventory"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
-                    <div class="home_nav_block"><a href="#projects"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>
-                    <div class="home_nav_block"><a href="http://localhost/hangar49/contact/"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></div>
+                    <div class="home_nav_block"><a href="#inventory" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
+                    <div class="home_nav_block"><a href="#projects" class="smoothScroll"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>
+                    <div class="home_nav_block"><a href="#contact" class="smoothScroll"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></div>
                 </div><!-- .home_navigation -->
             </div><!-- .home_screen -->
             <div class="inventory">
@@ -37,7 +37,6 @@ get_header(); ?>
                     if( $posts ): ?>
                         <ul class="inventory_list">
                     
-
                         <?php foreach( $posts as $post ): 
 
                             setup_postdata( $post );
@@ -48,14 +47,16 @@ get_header(); ?>
                                 foreach ( $planes as $post ):
                                     setup_postdata($post);
                                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-                                    echo '<li><div class="banner-image"'; 
+                                    echo '<li><div class="aircraft_tile inventory_tile"'; 
+                                    echo '><a href="' . get_the_permalink() . '">';
                                     if( $feat_image ) : ?>
-                                    style="background-image: url(<?php echo $feat_image; ?>);"
+                                    <img src="<?php echo $feat_image; ?>">
                                     <?php
                                     endif;
-                                    echo '><a href="' . get_the_permalink() . '">';
+                                    echo '<span class="tile_overlay"></span>';
                                     echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '</a></div></li>';
+                                    echo '<span class="read_more">learn more</class>';
+                                    echo '</a></li>';
                                 endforeach;
                                 
                                 wp_reset_postdata();
@@ -85,13 +86,13 @@ get_header(); ?>
 
                     if( $projects ): ?>
 
-                        <ul>
+                        <ul class="project_list">
 
                         <?php foreach( $projects as $post ): 
-
+                            
                             setup_postdata( $post );
 
-                            echo '<li><a href="' . get_the_permalink() . '"';
+                            echo '<li><div class="aircraft_tile project_tile"><a href="' . get_the_permalink() . '">';
                             
                             $planes = get_field('aircraft');
                             if( $planes ) {
@@ -99,15 +100,16 @@ get_header(); ?>
                                     setup_postdata($post);
                                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
                                     if( $feat_image ) : ?>
-                                    style="background-image: url(<?php echo $feat_image ?>)"
+                                    <img src="<?php echo $feat_image; ?>">
                                     <?php
                                     endif;
-                                    echo '><h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model');
-                                    echo '</h3>';
+                                    echo '<span class="tile_overlay"></span>';
+                                    echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
+                                    echo '<span class="read_more">see project</class>';
                                 endforeach;
                                 wp_reset_postdata();
                             }
-                            echo '</a></li>';
+                            echo '</a></div></li>';
                             ?>
 
                         <?php endforeach; ?>

@@ -36,9 +36,9 @@
             <p>Navigate</p>
         <?php if (is_front_page()) { ?>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#inventory">Inventory</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#home" class="smoothScroll">Home</a></li>
+                <li><a href="#inventory" class="smoothScroll">Inventory</a></li>
+                <li><a href="#projects" class="smoothScroll">Projects</a></li>
             </ul>
         <?php } else { ?>
             <ul>
@@ -65,7 +65,9 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
 
+<?php wp_footer(); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
 </body>
 </html>

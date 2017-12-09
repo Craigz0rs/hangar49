@@ -828,16 +828,34 @@ object {
   padding: 0;
   list-style-type: none; }
 
-.banner-image {
-  width: 100%;
-  height: 60vw;
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-  filter: grayscale(50%); }
+.inventory_list li {
+  overflow: hidden;
+  position: relative; }
 
-.banner-image a {
+.aircraft_tile {
+  width: 100%;
+  height: 60vw; }
+
+.aircraft_tile img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
   display: block;
+  filter: grayscale(0);
+  transition: 0.3s ease-in-out; }
+
+.aircraft_tile:hover img,
+.aircraft_tile:focus img,
+.aircraft_tile:active img {
+  filter: grayscale(60%);
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out; }
+
+.aircraft_tile a {
+  display: block;
+  position: absolute;
+  top: 0;
   color: white;
   font-family: "Jura", sans-serif;
   text-align: center;
@@ -847,41 +865,69 @@ object {
   height: 100%;
   width: 100%; }
 
-.banner-image h3 {
+.aircraft_tile h3 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0; }
+
+.read_more {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border: 2px solid white;
+  width: 120px;
+  margin: 0 auto;
+  line-height: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  transition: 0.3s; }
+
+.read_more:hover,
+.read_more:focus,
+.read_more:active {
+  color: black;
+  background-color: white;
+  transition: 0.3s; }
+
+.tile_overlay {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s; }
+
+.aircraft_tile:hover span,
+.aircraft_tile:focus span,
+.aircraft_tile:active span {
+  visibility: visible;
+  opacity: 1; }
 
 .projects {
   background-color: black;
   min-height: 100vh; }
 
-.project_tiles ul {
+.project_list {
   margin: 0;
   padding: 0;
   list-style-type: none; }
 
-.project_tiles li {
-  width: 100%;
-  height: 60vw; }
-
-.project_tiles a {
-  display: block;
-  font-family: "Jura", sans-serif;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: grayscale(50%); }
-
-.project_tiles h3 {
-  margin: 0;
-  padding: 0; }
+.project_list li {
+  overflow: hidden;
+  position: relative; }
 
 .content-area {
   float: left;
