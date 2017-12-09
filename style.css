@@ -930,6 +930,14 @@ object {
   overflow: hidden;
   position: relative; }
 
+@supports (grid-area: auto) {
+  @media screen and (min-width: 801px) {
+    .inventory_list {
+      display: grid;
+      grid-template-columns: auto auto; }
+
+    .aircraft_tile {
+      height: 30vw; } } }
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
