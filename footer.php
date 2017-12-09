@@ -24,6 +24,14 @@
             <p>Based on Vancouver Island on the west coast of Canada, we authentically restore classic warbirds, provide aircraft maintenance services and broker aircraft locally and internationally.</p>
         </div>
 -->
+        <div class="footer_contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have any questions or want to inquire about one of our warbirds? Give us a shout!</p>
+            <ul>
+                <li><a href="tel:15878885001"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> 587-888-5001</a></li>
+                <li><a href="email:contact@hangar49warbirds.com"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> contact@hangar49warbirds.com</a></li>
+            </ul>
+        </div>
         <div class="footer_nav">
             <p>Navigate</p>
         <?php if (is_front_page()) { ?>
@@ -39,14 +47,6 @@
                 <li><a href="<?php echo get_home_url() ?>/#projects">Projects</a></li>
             </ul>
         <?php } ?>
-        </div>
-        <div class="footer_contact" id="contact">
-            <h2>Contact Us</h2>
-            <p>Have any questions or want to know more about our birds or business? Give us a shout!</p>
-            <ul>
-                <li><a href="tel:15551234567">Phone: 111-111-1111</a></li>
-                <li><a href="email:contact@hangar49warbirds.com">Email: contact@hangar49warbirds.com</a></li>
-            </ul>
         </div>
 <!--
         <div class="footer_social">

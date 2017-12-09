@@ -1,9 +1,30 @@
 .site-footer {
     text-align: center;
-    background-color: rgb(68, 68, 68);
-
+    padding-top: 22px;
     color: white;
-//    padding: 0 10px;
+    background-color: $color_footer-background;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 1;
+}
+
+.site-footer a {
+    color: $color_footer-text;
+    text-decoration: none;
+    font-family: $font_text;
+    font-size: 0.8em;
+    font-weight: lighter;
+    transition: 0.2s;
+}
+
+.site-footer a:active,
+.site-footer a:hover {
+    color: $color_footer-link-active;
+    transition: 0.2s;
 }
 
 .footer_branding {
@@ -27,29 +48,68 @@
     margin-top: -12px;
 }
 
-.site-footer ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.footer_contact {
+    margin: 20px 0 30px 0;
+    padding: 0 20px;
+    text-align: left;
 }
 
 .footer_contact h2 {
     font-family: $font_heading;
+    font-size: 1.1em;
+    color: $color_footer-headings;
+    margin: 0.6em 0;
 }
 
 .footer_contact p {
     font-family: $font_text;
+    font-size: 0.7em;
+    font-weight: lighter;
+    color: $color_footer-text;
+    margin: 0.6em 0;
+    padding-right: 25px;
+}
+
+.footer_contact ul {
+    margin-top: 10px;
+}
+
+.footer_contact i {
+    font-size: 1.2em;
+    margin-right: 3px;
+}
+
+.footer_contact li:first-of-type i {
+    margin-right: 7px;
+}
+
+.footer_contact a {
+    line-height: 1.5em;
 }
 
 .footer_copyright p {
     margin: 0;
     padding: 0;
     line-height: 40px;
+    color: $color_footer-text;
 }
 
 .footer_copyright {
     font-family: $font_text;
     font-size: 0.8em;
-    background-color: rgb(28, 38, 28);
+    background-color: $color_footer-copyright-background;
     height: 40px;
+}
+
+.footer_nav {
+    text-align: left;
+    padding: 0 20px;
+    padding-bottom: 30px;
+}
+
+.footer_nav p {
+    font-family: $font_heading;
+    font-size: 1.1em;
+    color: $color_footer-headings;
+    margin: 0.6em 0;
 }
