@@ -1,4 +1,12 @@
 .site-header {
     position: fixed;
     top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.main-navigation {
+    height: 30px;
+    background-color: $color_header-main-nav-background-hov;
+    border-bottom: 3px solid $color_header-main-nav-background-hov;
 }

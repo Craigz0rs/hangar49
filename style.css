@@ -462,7 +462,7 @@ a {
 .main-navigation.toggled ul {
   display: block; }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 1em) {
   .menu-toggle {
     display: none; }
 
@@ -932,12 +932,30 @@ object {
 
 @supports (grid-area: auto) {
   @media screen and (min-width: 801px) {
-    .inventory_list {
+    .inventory {
+      min-height: auto; }
+
+    .projects {
+      min-height: auto; }
+
+    .inventory_list,
+    .project_list {
       display: grid;
       grid-template-columns: auto auto; }
 
     .aircraft_tile {
-      height: 30vw; } } }
+      height: 30vw; } }
+  @media screen and (min-width: 1024px) {
+    .intro h1:first-of-type {
+      font-size: 6em;
+      margin-bottom: 0px; }
+
+    .intro h1:nth-of-type(2) {
+      font-size: 5em;
+      margin-top: -52px; }
+
+    .intro h2 {
+      font-size: 2em; } } }
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
@@ -957,7 +975,14 @@ object {
 
 .site-header {
   position: fixed;
-  top: 0; }
+  top: 0;
+  width: 100%;
+  z-index: 99; }
+
+.main-navigation {
+  height: 30px;
+  background-color: rgba(153, 153, 153, 0.5);
+  border-bottom: 3px solid rgba(153, 153, 153, 0.5); }
 
 .site-footer {
   text-align: center;

@@ -312,7 +312,16 @@
     
     @media screen and (min-width: 801px) {
         
-        .inventory_list {
+        .inventory {
+            min-height: auto;
+        }
+
+        .projects {
+            min-height: auto;
+        }
+        
+        .inventory_list,
+        .project_list {
             display: grid;
             grid-template-columns: auto auto;
         }
@@ -320,6 +329,32 @@
         .aircraft_tile {
             height: 30vw;
         }
+    }
+    
+    @media screen and (min-width: 1024px) {
+
+        .intro h1:first-of-type {
+            font-size: 6em;
+            margin-bottom: 0px;
+        }
+
+        .intro h1:nth-of-type(2) {
+            font-size: 5em;
+            margin-top: -52px;
+        }
+        
+        .intro h2 {
+            font-size: 2em;
+        }
+//        .inventory_list,
+//        .project_list {
+//            grid-template-columns: auto auto auto;
+//        }
+//        
+//        .aircraft_tile {
+//            height: 10vw;
+//        }
+        
     }
 }
 
