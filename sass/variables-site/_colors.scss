@@ -19,9 +19,20 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
+////Typography Colours////
+$color_font-nav: white;
+$color_font-nav-hover: white;
+$color_font-logo: white;
+$color_font-text: white;
+$color_font-headings: white;
+
+
+
 ////Header////
 $color_header-main-nav-background: rgba(255,255,255,0);
-$color_header-main-nav-background-hov: rgba(153, 153, 153, 0.5);
+$color_header-main-nav-background-hov: rgba(153, 153, 153, 0.8);
+$color_header-main-nav-link-background-hover: rgba(18,28,0,0.6);
+$color_header-main-nav-border: rgba(255,255,255,0.5);
 
 
 ////Footer////

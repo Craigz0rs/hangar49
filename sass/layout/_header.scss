@@ -3,10 +3,81 @@
     top: 0;
     width: 100%;
     z-index: 99;
+    background-color: $color_header-main-nav-background-hov;
+    border-bottom: 2px solid $color_header-main-nav-border;
+}
+
+.nav_wrap {
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .main-navigation {
-    height: 30px;
-    background-color: $color_header-main-nav-background-hov;
-    border-bottom: 3px solid $color_header-main-nav-background-hov;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 5px;
+    line-height: 1em;
+}
+
+.nav_branding {
+    text-align: center;
+    font-family: $font_logo;
+    line-height: 0.8em;
+    padding-top: 5px;
+    
+}
+
+.nav_branding span {
+    color: $color_font-logo;
+}
+
+.nav_branding span:nth-of-type(2) {
+    font-size: 0.85em;
+}
+
+.main-navigation li {
+    text-align: center;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.main-navigation li a {
+    color: $color_font-nav;
+    font-family: $font_heading;
+    height: 100%;
+    padding: 3px 2px;
+    font-size: 0.9em;
+    
+}
+
+.main-navigation li:hover {
+//    background-color: rgba(153, 153, 153, 0.6);
+    background-color: $color_header-main-nav-link-background-hover;
+    transition: 0.2s;
+//    padding-top: 3vh;
+//    font-size: 1.1em;
+}
+
+.main-navigation i {
+    transition: 0.2s;
+}
+
+.main-navigation li:hover i,
+.main-navigation li:active i {
+    color: $color_font-nav-hover;
+    padding-top: 0px;
+    transition: 0.2s;
+    transform: rotate(270deg);
+}
+
+.main-navigation li:hover #envelope,
+.main-navigation li:active #envelope {
+    transform: rotate(360deg);
+}
+
+.main-navigation li:hover #wrench,
+.main-navigation li:active #wrench {
+    transform: rotate(270deg) scaleX(-1);
+    
 }

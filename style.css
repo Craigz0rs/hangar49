@@ -701,7 +701,7 @@ object {
 .home_screen {
   height: 100vh;
   width: 100%;
-  background-image: url(images/clouds.jpeg);
+  background-image: url(images/sky4-2.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -977,12 +977,66 @@ object {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99; }
+  z-index: 99;
+  background-color: rgba(153, 153, 153, 0.8);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5); }
+
+.nav_wrap {
+  max-width: 1024px;
+  margin: 0 auto; }
 
 .main-navigation {
-  height: 30px;
-  background-color: rgba(153, 153, 153, 0.5);
-  border-bottom: 3px solid rgba(153, 153, 153, 0.5); }
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 5px;
+  line-height: 1em; }
+
+.nav_branding {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  line-height: 0.8em;
+  padding-top: 5px; }
+
+.nav_branding span {
+  color: white; }
+
+.nav_branding span:nth-of-type(2) {
+  font-size: 0.85em; }
+
+.main-navigation li {
+  text-align: center;
+  height: 100%;
+  transition: 0.2s; }
+
+.main-navigation li a {
+  color: white;
+  font-family: "Jura", sans-serif;
+  height: 100%;
+  padding: 3px 2px;
+  font-size: 0.9em; }
+
+.main-navigation li:hover {
+  background-color: rgba(18, 28, 0, 0.6);
+  transition: 0.2s; }
+
+.main-navigation i {
+  transition: 0.2s; }
+
+.main-navigation li:hover i,
+.main-navigation li:active i {
+  color: white;
+  padding-top: 0px;
+  transition: 0.2s;
+  transform: rotate(270deg); }
+
+.main-navigation li:hover #envelope,
+.main-navigation li:active #envelope {
+  transform: rotate(360deg); }
+
+.main-navigation li:hover #wrench,
+.main-navigation li:active #wrench {
+  transform: rotate(270deg) scaleX(-1); }
 
 .site-footer {
   text-align: center;
