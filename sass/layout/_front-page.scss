@@ -81,22 +81,18 @@
 }
 
 .home_nav_block:hover {
-//    background-color: rgba(153, 153, 153, 0.6);
-    background-color: rgba(18,28,0,0.6);
+    background-color: $color_header-main-nav-link-background-hover;
     transition: 0.2s;
-//    padding-top: 3vh;
-//    font-size: 1.1em;
 }
 
 .home_nav_block:hover a {
-//    font-size: 1.1em;
-//    padding-top: 0px;
+    color: $color_font-nav-hover;
     transition: 0.2s;
 }
 
 .home_nav_block:hover i,
 .home_nav_block:active i {
-    color: rgba(255, 255, 255, 0.8);
+    color: $color_font-nav-hover;
     padding-top: 0px;
     transition: 0.2s;
     transform: rotate(270deg);

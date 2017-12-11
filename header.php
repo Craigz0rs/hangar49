@@ -33,17 +33,17 @@
 	<header id="masthead" class="site-header">
         <div class="nav_wrap">
 		<nav id="site-navigation" class="main-navigation">
-            <a href="#home" class="nav_branding smoothScroll"><span>Hangar 49</span><br><span>Warbrids</span></a>
+            <a href="<?php echo get_home_url() ?>" class="nav_branding smoothScroll"><span>Hangar 49</span><br><span>Warbrids</span></a>
         <?php if (is_front_page()) { ?>
             <ul>
-                <li><a href="#inventory" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></li>
+                <li><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></li>
                 <li><a href="#projects" class="smoothScroll"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></li>
                 <li><a href="#contact" class="smoothScroll"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></li>
             </ul>
         <?php } else { ?>
             <ul>
 <!--                <li><a href="<?php echo get_home_url() ?>/#home"><span>Hangar 49</span><br><span>Warbrids</span></a></li>-->
-                <li><a href="<?php echo get_home_url() ?>/#inventory"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></li>
+                <li><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></li>
                 <li><a href="<?php echo get_home_url() ?>/#projects"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></li>
                 <li><a href="#contact" class="smoothScroll"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></li>
             </ul>

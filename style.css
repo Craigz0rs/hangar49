@@ -698,6 +698,42 @@ object {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.site {
+  min-height: 100vh; }
+
+.site-main {
+  background-color: black; }
+
+.page_header {
+  height: 15em;
+  position: relative;
+  margin-bottom: 20px;
+  top: 0; }
+
+.page_header_overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: -moz-linear-gradient(top, transparent 0%, transparent 58%, black 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, transparent 58%, black 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, transparent 58%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */ }
+
+.page_header h1 {
+  position: absolute;
+  color: white;
+  bottom: -19px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3.3em;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+
 .home_screen {
   height: 100vh;
   width: 100%;
@@ -770,15 +806,16 @@ object {
   transition: 0.2s; }
 
 .home_nav_block:hover {
-  background-color: rgba(18, 28, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: 0.2s; }
 
 .home_nav_block:hover a {
+  color: darkgreen;
   transition: 0.2s; }
 
 .home_nav_block:hover i,
 .home_nav_block:active i {
-  color: rgba(255, 255, 255, 0.8);
+  color: darkgreen;
   padding-top: 0px;
   transition: 0.2s;
   transform: rotate(270deg); }
@@ -956,6 +993,12 @@ object {
 
     .intro h2 {
       font-size: 2em; } } }
+#inventory_page_header {
+  background-image: url(images/inventory_background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
@@ -978,7 +1021,7 @@ object {
   top: 0;
   width: 100%;
   z-index: 99;
-  background-color: rgba(153, 153, 153, 0.8);
+  background-color: rgba(153, 153, 153, 0.6);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5); }
 
 .nav_wrap {
@@ -1016,8 +1059,12 @@ object {
   padding: 3px 2px;
   font-size: 0.9em; }
 
+.main-navigation li:hover a {
+  color: darkgreen;
+  transition: 0.2s; }
+
 .main-navigation li:hover {
-  background-color: rgba(18, 28, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: 0.2s; }
 
 .main-navigation i {
@@ -1025,7 +1072,7 @@ object {
 
 .main-navigation li:hover i,
 .main-navigation li:active i {
-  color: white;
+  color: darkgreen;
   padding-top: 0px;
   transition: 0.2s;
   transform: rotate(270deg); }

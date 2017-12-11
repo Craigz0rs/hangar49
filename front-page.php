@@ -17,11 +17,12 @@ get_header(); ?>
 <!--                    <p class="subscribe_disclaimer">We promise not to spam you!</p>-->
                 </div><!-- .intro -->
                 <div class="home_navigation">
-                    <div class="home_nav_block"><a href="#inventory" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
+                    <div class="home_nav_block"><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
                     <div class="home_nav_block"><a href="#projects" class="smoothScroll"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>
                     <div class="home_nav_block"><a href="#contact" class="smoothScroll"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></div>
                 </div><!-- .home_navigation -->
             </div><!-- .home_screen -->
+<!--
             <div class="inventory">
                 <div class="inventory_title section_title" id="inventory">
                     <h2>Inventory</h2>
@@ -72,6 +73,7 @@ get_header(); ?>
                     <?php endif; ?>
                 </div>
             </div>
+-->
             <div class="projects">
                 <div class="projects_title section_title" id="projects">
                     <h2>Projects</h2>

@@ -108,8 +108,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+@import "layout/pages-general";
 @import "layout/front-page";
 @import "layout/page-contact";
+@import "layout/archive-inventory";
 @import "layout/content-sidebar";
 @import "layout/header";
 @import "layout/footer";
