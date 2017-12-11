@@ -38,13 +38,13 @@
             <ul>
                 <li><a href="#home" class="smoothScroll">Home</a></li>
                 <li><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>" class="smoothScroll">Inventory</a></li>
-                <li><a href="#projects" class="smoothScroll">Projects</a></li>
+                <li><a href="<?php echo get_post_type_archive_link( 'projects' ); ?>" class="smoothScroll">Projects</a></li>
             </ul>
         <?php } else { ?>
             <ul>
                 <li><a href="<?php echo get_home_url() ?>/#home">Home</a></li>
                 <li><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>">Inventory</a></li>
-                <li><a href="<?php echo get_home_url() ?>/#projects">Projects</a></li>
+                <li><a href="<?php echo get_post_type_archive_link( 'projects' ); ?>">Projects</a></li>
             </ul>
         <?php } ?>
         </div>
