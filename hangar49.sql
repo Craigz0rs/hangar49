@@ -2,10 +2,10 @@
 -- version 4.4.15.5
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 12, 2017 at 08:27 AM
--- Server version: 5.6.34-log
--- PHP Version: 7.0.13
+-- Host: localhost:3306
+-- Generation Time: Dec 12, 2017 at 10:02 PM
+-- Server version: 5.5.49-log
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -65,6 +65,75 @@ CREATE TABLE IF NOT EXISTS `h49_comments` (
 
 INSERT INTO `h49_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
 (1, 1, 'A WordPress Commenter', 'wapuu@wordpress.example', 'https://wordpress.org/', '', '2017-11-16 04:24:24', '2017-11-16 04:24:24', 'Hi, this is a comment.\nTo get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.\nCommenter avatars come from <a href="https://gravatar.com">Gravatar</a>.', 0, 'post-trashed', '', '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h49_easymail_recipients`
+--
+
+DROP TABLE IF EXISTS `h49_easymail_recipients`;
+CREATE TABLE IF NOT EXISTS `h49_easymail_recipients` (
+  `ID` int(11) unsigned NOT NULL,
+  `newsletter` int(11) unsigned NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `result` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `user_id` int(11) unsigned DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h49_easymail_stats`
+--
+
+DROP TABLE IF EXISTS `h49_easymail_stats`;
+CREATE TABLE IF NOT EXISTS `h49_easymail_stats` (
+  `ID` int(11) unsigned NOT NULL,
+  `recipient` int(11) unsigned NOT NULL,
+  `newsletter` int(11) unsigned NOT NULL,
+  `added_on` datetime NOT NULL,
+  `request` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h49_easymail_subscribers`
+--
+
+DROP TABLE IF EXISTS `h49_easymail_subscribers`;
+CREATE TABLE IF NOT EXISTS `h49_easymail_subscribers` (
+  `ID` int(11) unsigned NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `join_date` datetime NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0',
+  `unikey` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lists` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '|',
+  `lang` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_act` datetime DEFAULT NULL,
+  `ip_address` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `h49_easymail_subscribers`
+--
+
+INSERT INTO `h49_easymail_subscribers` (`ID`, `email`, `name`, `join_date`, `active`, `unikey`, `lists`, `lang`, `last_act`, `ip_address`) VALUES
+(1, 'cdarcy@live.ca', 'ccdarcy', '2017-12-07 00:46:40', 1, '9fa7e5c727a2d2c2ae613dbb', '|', 'en', '2017-12-07 00:46:40', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `h49_easymail_unsubscribed`
+--
+
+DROP TABLE IF EXISTS `h49_easymail_unsubscribed`;
+CREATE TABLE IF NOT EXISTS `h49_easymail_unsubscribed` (
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `added_on` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -260,7 +329,7 @@ CREATE TABLE IF NOT EXISTS `h49_options` (
   `option_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `option_value` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `autoload` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB AUTO_INCREMENT=643 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=650 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `h49_options`
@@ -374,7 +443,7 @@ INSERT INTO `h49_options` (`option_id`, `option_name`, `option_value`, `autoload
 (105, 'widget_tag_cloud', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (106, 'widget_nav_menu', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (107, 'widget_custom_html', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(108, 'cron', 'a:5:{i:1513095866;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1513129804;a:1:{s:29:"newsletter_extension_versions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1513139094;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1513146970;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(108, 'cron', 'a:5:{i:1513129804;a:1:{s:29:"newsletter_extension_versions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1513139066;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1513139094;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1513146970;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (109, 'theme_mods_twentyseventeen', 'a:2:{s:18:"custom_css_post_id";i:-1;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1510806428;s:4:"data";a:4:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:6:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:17:"recent-comments-2";i:3;s:10:"archives-2";i:4;s:12:"categories-2";i:5;s:6:"meta-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}}}}', 'yes'),
 (121, '_site_transient_timeout_browser_a9db4d03969fdd98d377b682b063efe6', '1511411094', 'no'),
 (122, '_site_transient_browser_a9db4d03969fdd98d377b682b063efe6', 'a:10:{s:4:"name";s:6:"Chrome";s:7:"version";s:13:"61.0.3163.100";s:8:"platform";s:7:"Windows";s:10:"update_url";s:29:"https://www.google.com/chrome";s:7:"img_src";s:43:"http://s.w.org/images/browsers/chrome.png?1";s:11:"img_src_ssl";s:44:"https://s.w.org/images/browsers/chrome.png?1";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;s:6:"mobile";b:0;}', 'no'),
@@ -386,7 +455,7 @@ INSERT INTO `h49_options` (`option_id`, `option_name`, `option_value`, `autoload
 (146, 'current_theme', 'Hangar 49', 'yes'),
 (147, 'theme_mods_hangar49', 'a:3:{i:0;b:0;s:18:"custom_css_post_id";i:-1;s:18:"nav_menu_locations";a:1:{s:6:"menu-1";i:2;}}', 'yes'),
 (148, 'theme_switched', '', 'yes'),
-(149, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1513053120;s:7:"checked";a:1:{s:8:"hangar49";s:5:"1.0.0";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'no'),
+(149, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1513113796;s:7:"checked";a:1:{s:8:"hangar49";s:5:"1.0.0";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'no'),
 (157, 'nav_menu_options', 'a:1:{s:8:"auto_add";a:0:{}}', 'yes'),
 (169, 'acf_version', '4.4.12', 'yes'),
 (175, 'category_children', 'a:0:{}', 'yes'),
@@ -396,7 +465,7 @@ INSERT INTO `h49_options` (`option_id`, `option_name`, `option_value`, `autoload
 (189, '_site_transient_wpmdb_help_message', '<style type="text/css" media="screen">body .support .support-content{overflow:hidden;width:727px}body .support .support-content .intro{margin-bottom:20px}body .support .support-content .submission-success p,body .support .support-content .submission-error p{padding:2px;margin:0.5em 0;font-size:13px;line-height:1.5}body .support .support-content .dbrains-support-form{width:475px;float:left}body .support .support-content .dbrains-support-form p{width:auto}body .support .support-content .dbrains-support-form .field{margin-bottom:5px}body .support .support-content .dbrains-support-form input[type=text],body .support .support-content .dbrains-support-form textarea{width:100%}body .support .support-content .dbrains-support-form .field.from label{float:left;line-height:28px;display:block;font-weight:bold}body .support .support-content .dbrains-support-form .field.from select{float:right;width:400px}body .support .support-content .dbrains-support-form .field.from .note{clear:both;padding-top:5px}body .support .support-content .dbrains-support-form .field.email-message textarea{height:170px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content{padding-left:20px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content ol{margin:0 0 5px 20px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content li{font-size:12px;color:#666;margin-bottom:0;line-height:1.4em}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content textarea{height:80px}body .support .support-content .dbrains-support-form .note{font-size:12px;color:#666}body .support .support-content .dbrains-support-form .submit-form{overflow:hidden;padding:10px 0}body .support .support-content .dbrains-support-form .button{float:left}body .support .support-content .dbrains-support-form .button:active,body .support .support-content .dbrains-support-form .button:focus{outline:none}body .support .support-content .dbrains-support-form .ajax-spinner{float:left;margin-left:5px;margin-top:3px}body .support .support-content .additional-help{float:right;width:220px}body .support .support-content .additional-help a{text-decoration:none}body .support .support-content .additional-help h1{margin:0 0 12px 0;padding:0;font-size:18px;font-weight:normal;line-height:1}body .support .support-content .additional-help h1 a{color:#333}body .support .support-content .additional-help .docs{background-color:#e6e6e6;padding:15px 15px 10px 15px}body .support .support-content .additional-help .docs ul{margin:0}body .support .support-content .additional-help .docs li{font-size:14px}\n</style><section class="dbrains-support-form">\n\n<p class="intro">\n	You have an active <strong>Developer</strong> license. You will get front-of-the-line email support service when submitting the form below.</p>\n\n<div class="updated submission-success" style="display: none;">\n	<p><strong>Success!</strong> &mdash; Thanks for submitting your support request. We''ll be in touch soon.</p>\n</div>\n\n<div class="error submission-error api-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; </p>\n</div>\n\n<div class="error submission-error xhr-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; There was a problem submitting your request:</p>\n</div>\n\n<div class="error submission-error email-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; Please select your email address.</p>\n</div>\n\n<div class="error submission-error subject-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; Please enter a subject.</p>\n</div>\n\n<div class="error submission-error message-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; Please enter a message.</p>\n</div>\n\n<div class="error submission-error remote-diagnostic-content-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; Please paste in the Diagnostic Info &amp; Error Log from your <strong>remote site</strong>.</p>\n</div>\n\n<div class="error submission-error both-diagnostic-same-error" style="display: none;">\n	<p><strong>Error!</strong> &mdash; Looks like you pasted the local Diagnostic Info &amp; Error Log into the textbox for the remote info. Please get the info for your <strong>remote site</strong> and paste it in, or just uncheck the second checkbox if you&#8217;d rather not include your remote site info.</p>\n</div>\n\n<form target="_blank" method="post" action="https://api.deliciousbrains.com/?wc-api=delicious-brains&request=submit_support_request&licence_key=9f1bdaf1-c456-40d2-b450-2f738ddbc221&product=wp-migrate-db-pro">\n\n	<div class="field from">\n		<label>From:</label>\n		<select name="email">\n		<option value="">&mdash; Select your email address &mdash;</option>\n		<option value="beata_kozma@bcit.ca">beata_kozma@bcit.ca</option>		</select>\n\n		<p class="note">\n			Replies will be sent to this email address. Update your name &amp; email in <a href="https://deliciousbrains.com/my-account/">My Account</a>.		</p>\n	</div>\n\n	<div class="field subject">\n		<input type="text" name="subject" placeholder="Subject">\n	</div>\n\n	<div class="field email-message">\n		<textarea name="message" placeholder="Message"></textarea>\n	</div>\n\n	<div class="field checkbox local-diagnostic">\n		<label>\n			<input type="checkbox" name="local-diagnostic" value="1" checked>\n			Attach <strong>this site&#8217;s</strong> Diagnostic Info &amp; Error Log (below)		</label>\n	</div>\n		<div class="field checkbox remote-diagnostic">\n		<label>\n			<input type="checkbox" name="remote-diagnostic" value="1" checked>\n			Attach the <strong>remote site&#8217;s</strong> Diagnostic Info &amp; Error Log		</label>\n	</div>\n\n	<div class="field remote-diagnostic-content">\n		<ol>\n			<li>Go to the Help tab of the remote site</li>\n			<li>Copy the Diagnostic Info &amp; Error Log</li>\n			<li>Paste it below</li>\n		</ol>\n		<textarea name="remote-diagnostic-content" placeholder="Remote site&#8217;s Diagnostic Info &amp; Error Log"></textarea>\n	</div>\n		<div class="submit-form">\n		<button type="submit" class="button">Send Email</button>\n	</div>\n\n	<p class="note trouble">\n		Having trouble submitting the form? Email your support request to <a href="mailto:priority-wpmdb@deliciousbrains.com">priority-wpmdb@deliciousbrains.com</a> instead.	</p>\n\n</form>\n\n</section>\n\n	<aside class="additional-help">\n		<section class="docs">\n			<h1><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/">Documentation</a></h1>\n			<ul class="categories">\n				<li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/getting-started/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Getting Started</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/debugging/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Debugging</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/cli/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">CLI</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/common-errors/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Common Errors</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/howto/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">How To</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/addons/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Addons</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/multisite/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Multisite</a></li><li><a href="https://deliciousbrains.com/wp-migrate-db-pro/docs/changelogs/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin">Changelogs</a></li>			</ul>\n		</section>\n	</aside>\n<script>!function(a){var b=a(".dbrains-support-form form"),c=a(".submit-form",b);is_submitting=!1;var d=a(".remote-diagnostic input",b),e=a(".remote-diagnostic-content",b);d.on("click",function(){d.prop("checked")?e.show():e.hide()});var f=ajaxurl.replace("/admin-ajax.php","/images/wpspin_light");window.devicePixelRatio>=2&&(f+="-2x"),f+=".gif",b.submit(function(d){if(d.preventDefault(),!is_submitting){is_submitting=!0,a(".button",b).blur();var e=a(".ajax-spinner",c);e[0]?e.show():(e=a(''<img src="''+f+''" alt="" class="ajax-spinner general-spinner" />''),c.append(e)),a(".submission-error").hide();var g=["email","subject","message"],h={},i=!1;a.each(b.serializeArray(),function(b,c){h[c.name]=c.value,a.inArray(c.name,g)>-1&&""===c.value&&(a("."+c.name+"-error").fadeIn(),i=!0)});var j=a("input[name=remote-diagnostic]",b).is(":checked");if(j)if(""===h["remote-diagnostic-content"])a(".remote-diagnostic-content-error").fadeIn(),i=!0;else{var k=h["remote-diagnostic-content"].substr(0,h["remote-diagnostic-content"].indexOf("\\n")),l=a(".debug-log-textarea")[0],m=l.value.substr(0,l.value.indexOf("\\n"));console.log(''"''+k+''"''),console.log(''"''+m+''"''),k.trim()==m.trim()&&(a(".both-diagnostic-same-error").fadeIn(),i=!0)}if(i)return e.hide(),void(is_submitting=!1);j||(h["remote-diagnostic-content"]=""),a("input[name=local-diagnostic]",b).is(":checked")&&(h["local-diagnostic-content"]=a(".debug-log-textarea").val()),a.ajax({url:b.prop("action"),type:"POST",dataType:"JSON",cache:!1,data:h,error:function(b,c,d){var f=a(".xhr-error");a("p",f).append(" "+d+" ("+c+")"),f.show(),e.hide(),is_submitting=!1},success:function(c){if("undefined"!=typeof c.errors){var d=a(".api-error");return a.each(c.errors,function(b,c){return a("p",d).append(c),!1}),d.show(),e.hide(),void(is_submitting=!1)}a(".submission-success").show(),b.hide(),e.hide(),is_submitting=!1}})}})}(jQuery);</script>', 'no'),
 (190, '_site_transient_timeout_wpmdb_addons', '1516862083', 'no'),
 (191, '_site_transient_wpmdb_addons', 'a:3:{s:29:"wp-migrate-db-pro-media-files";a:6:{s:4:"type";s:7:"feature";s:4:"name";s:11:"Media Files";s:4:"desc";s:412:"Allows you to push and pull your files in the Media Library between two WordPress installs. It can compare both libraries and only migrate those missing or updated, or it can do a complete copy of one site’s library to another. <a href="https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin">More Details &rarr;</a>";s:7:"version";s:5:"1.4.9";s:12:"beta_version";s:0:"";s:6:"tested";s:3:"4.9";}s:21:"wp-migrate-db-pro-cli";a:7:{s:4:"type";s:7:"feature";s:4:"name";s:3:"CLI";s:4:"desc";s:414:"Integrates WP Migrate DB Pro with WP-CLI allowing you to run migrations from the command line: <code>wp migratedb &lt;push|pull&gt; &lt;url&gt; &lt;secret-key&gt;</code> <code>[--find=&lt;strings&gt;] [--replace=&lt;strings&gt;] ...</code> <a href="https://deliciousbrains.com/wp-migrate-db-pro/doc/cli-addon/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin">More Details &rarr;</a>";s:7:"version";s:5:"1.3.2";s:12:"beta_version";s:0:"";s:8:"required";s:5:"1.4b1";s:6:"tested";s:3:"4.9";}s:33:"wp-migrate-db-pro-multisite-tools";a:7:{s:4:"type";s:7:"feature";s:4:"name";s:15:"Multisite Tools";s:4:"desc";s:270:"Export a subsite as an SQL file that can then be imported as a single site install. <a href="https://deliciousbrains.com/wp-migrate-db-pro/doc/multisite-tools-addon/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin">More Details &rarr;</a>";s:7:"version";s:3:"1.2";s:12:"beta_version";s:0:"";s:8:"required";s:7:"1.5-dev";s:6:"tested";s:3:"4.9";}}', 'no'),
-(270, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:2:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.9.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.9.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";s:9:"new_files";s:1:"1";}}s:12:"last_checked";i:1513053119;s:15:"version_checked";s:5:"4.8.4";s:12:"translations";a:0:{}}', 'no'),
+(270, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:2:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.9.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}i:1;O:8:"stdClass":11:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.9.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.9.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";s:9:"new_files";s:1:"1";}}s:12:"last_checked";i:1513113793;s:15:"version_checked";s:5:"4.8.4";s:12:"translations";a:0:{}}', 'no'),
 (271, 'auto_core_update_notified', 'a:4:{s:4:"type";s:7:"success";s:5:"email";s:14:"cdarcy@live.ca";s:7:"version";s:5:"4.8.4";s:9:"timestamp";i:1511998880;}', 'no'),
 (280, 'sale-status_children', 'a:0:{}', 'yes'),
 (288, 'inventory-categories_children', 'a:1:{i:6;a:4:{i:0;i:7;i:1;i:9;i:2;i:10;i:3;i:11;}}', 'yes'),
@@ -455,11 +524,11 @@ INSERT INTO `h49_options` (`option_id`, `option_name`, `option_value`, `autoload
 (615, '_transient_dash_v2_88ae138922fe95674369b1cb3d215a2b', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wordpress.org/news/2017/12/the-month-in-wordpress-november-2017/''>The Month in WordPress: November 2017</a></li></ul></div><div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://ma.tt/2017/12/iphone-charging/''>Matt: iPhone Fast Charging</a></li><li><a class=''rsswidget'' href=''https://ma.tt/2017/12/state-of-the-word-2017/''>Matt: State of the Word, 2017</a></li><li><a class=''rsswidget'' href=''https://heropress.com/essays/remote-work-brings-freedom/#utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=remote-work-brings-freedom''>HeroPress: Remote Work Brings Freedom</a></li></ul></div>', 'no'),
 (616, '_site_transient_timeout_wpmdb_licence_response', '1512726984', 'no'),
 (617, '_site_transient_wpmdb_licence_response', '{"message":"<style type=\\"text\\/css\\" media=\\"screen\\">body .support .support-content{overflow:hidden;width:727px}body .support .support-content .intro{margin-bottom:20px}body .support .support-content .submission-success p,body .support .support-content .submission-error p{padding:2px;margin:0.5em 0;font-size:13px;line-height:1.5}body .support .support-content .dbrains-support-form{width:475px;float:left}body .support .support-content .dbrains-support-form p{width:auto}body .support .support-content .dbrains-support-form .field{margin-bottom:5px}body .support .support-content .dbrains-support-form input[type=text],body .support .support-content .dbrains-support-form textarea{width:100%}body .support .support-content .dbrains-support-form .field.from label{float:left;line-height:28px;display:block;font-weight:bold}body .support .support-content .dbrains-support-form .field.from select{float:right;width:400px}body .support .support-content .dbrains-support-form .field.from .note{clear:both;padding-top:5px}body .support .support-content .dbrains-support-form .field.email-message textarea{height:170px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content{padding-left:20px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content ol{margin:0 0 5px 20px}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content li{font-size:12px;color:#666;margin-bottom:0;line-height:1.4em}body .support .support-content .dbrains-support-form .field.remote-diagnostic-content textarea{height:80px}body .support .support-content .dbrains-support-form .note{font-size:12px;color:#666}body .support .support-content .dbrains-support-form .submit-form{overflow:hidden;padding:10px 0}body .support .support-content .dbrains-support-form .button{float:left}body .support .support-content .dbrains-support-form .button:active,body .support .support-content .dbrains-support-form .button:focus{outline:none}body .support .support-content .dbrains-support-form .ajax-spinner{float:left;margin-left:5px;margin-top:3px}body .support .support-content .additional-help{float:right;width:220px}body .support .support-content .additional-help a{text-decoration:none}body .support .support-content .additional-help h1{margin:0 0 12px 0;padding:0;font-size:18px;font-weight:normal;line-height:1}body .support .support-content .additional-help h1 a{color:#333}body .support .support-content .additional-help .docs{background-color:#e6e6e6;padding:15px 15px 10px 15px}body .support .support-content .additional-help .docs ul{margin:0}body .support .support-content .additional-help .docs li{font-size:14px}\\n<\\/style><section class=\\"dbrains-support-form\\">\\n\\n<p class=\\"intro\\">\\n\\tYou have an active <strong>Developer<\\/strong> license. You will get front-of-the-line email support service when submitting the form below.<\\/p>\\n\\n<div class=\\"updated submission-success\\" style=\\"display: none;\\">\\n\\t<p><strong>Success!<\\/strong> &mdash; Thanks for submitting your support request. We''ll be in touch soon.<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error api-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; <\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error xhr-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; There was a problem submitting your request:<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error email-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; Please select your email address.<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error subject-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; Please enter a subject.<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error message-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; Please enter a message.<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error remote-diagnostic-content-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; Please paste in the Diagnostic Info &amp; Error Log from your <strong>remote site<\\/strong>.<\\/p>\\n<\\/div>\\n\\n<div class=\\"error submission-error both-diagnostic-same-error\\" style=\\"display: none;\\">\\n\\t<p><strong>Error!<\\/strong> &mdash; Looks like you pasted the local Diagnostic Info &amp; Error Log into the textbox for the remote info. Please get the info for your <strong>remote site<\\/strong> and paste it in, or just uncheck the second checkbox if you&#8217;d rather not include your remote site info.<\\/p>\\n<\\/div>\\n\\n<form target=\\"_blank\\" method=\\"post\\" action=\\"https:\\/\\/api.deliciousbrains.com\\/?wc-api=delicious-brains&request=submit_support_request&licence_key=9f1bdaf1-c456-40d2-b450-2f738ddbc221&product=wp-migrate-db-pro\\">\\n\\n\\t<div class=\\"field from\\">\\n\\t\\t<label>From:<\\/label>\\n\\t\\t<select name=\\"email\\">\\n\\t\\t<option value=\\"\\">&mdash; Select your email address &mdash;<\\/option>\\n\\t\\t<option value=\\"beata_kozma@bcit.ca\\">beata_kozma@bcit.ca<\\/option>\\t\\t<\\/select>\\n\\n\\t\\t<p class=\\"note\\">\\n\\t\\t\\tReplies will be sent to this email address. Update your name &amp; email in <a href=\\"https:\\/\\/deliciousbrains.com\\/my-account\\/\\">My Account<\\/a>.\\t\\t<\\/p>\\n\\t<\\/div>\\n\\n\\t<div class=\\"field subject\\">\\n\\t\\t<input type=\\"text\\" name=\\"subject\\" placeholder=\\"Subject\\">\\n\\t<\\/div>\\n\\n\\t<div class=\\"field email-message\\">\\n\\t\\t<textarea name=\\"message\\" placeholder=\\"Message\\"><\\/textarea>\\n\\t<\\/div>\\n\\n\\t<div class=\\"field checkbox local-diagnostic\\">\\n\\t\\t<label>\\n\\t\\t\\t<input type=\\"checkbox\\" name=\\"local-diagnostic\\" value=\\"1\\" checked>\\n\\t\\t\\tAttach <strong>this site&#8217;s<\\/strong> Diagnostic Info &amp; Error Log (below)\\t\\t<\\/label>\\n\\t<\\/div>\\n\\t\\t<div class=\\"field checkbox remote-diagnostic\\">\\n\\t\\t<label>\\n\\t\\t\\t<input type=\\"checkbox\\" name=\\"remote-diagnostic\\" value=\\"1\\" checked>\\n\\t\\t\\tAttach the <strong>remote site&#8217;s<\\/strong> Diagnostic Info &amp; Error Log\\t\\t<\\/label>\\n\\t<\\/div>\\n\\n\\t<div class=\\"field remote-diagnostic-content\\">\\n\\t\\t<ol>\\n\\t\\t\\t<li>Go to the Help tab of the remote site<\\/li>\\n\\t\\t\\t<li>Copy the Diagnostic Info &amp; Error Log<\\/li>\\n\\t\\t\\t<li>Paste it below<\\/li>\\n\\t\\t<\\/ol>\\n\\t\\t<textarea name=\\"remote-diagnostic-content\\" placeholder=\\"Remote site&#8217;s Diagnostic Info &amp; Error Log\\"><\\/textarea>\\n\\t<\\/div>\\n\\t\\t<div class=\\"submit-form\\">\\n\\t\\t<button type=\\"submit\\" class=\\"button\\">Send Email<\\/button>\\n\\t<\\/div>\\n\\n\\t<p class=\\"note trouble\\">\\n\\t\\tHaving trouble submitting the form? Email your support request to <a href=\\"mailto:priority-wpmdb@deliciousbrains.com\\">priority-wpmdb@deliciousbrains.com<\\/a> instead.\\t<\\/p>\\n\\n<\\/form>\\n\\n<\\/section>\\n\\n\\t<aside class=\\"additional-help\\">\\n\\t\\t<section class=\\"docs\\">\\n\\t\\t\\t<h1><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/\\">Documentation<\\/a><\\/h1>\\n\\t\\t\\t<ul class=\\"categories\\">\\n\\t\\t\\t\\t<li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/getting-started\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Getting Started<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/debugging\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Debugging<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/cli\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">CLI<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/common-errors\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Common Errors<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/howto\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">How To<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/addons\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Addons<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/multisite\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Multisite<\\/a><\\/li><li><a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/docs\\/changelogs\\/?utm_source=MDB%2BPaid&#038;utm_campaign=support%2Bdocs&#038;utm_medium=insideplugin\\">Changelogs<\\/a><\\/li>\\t\\t\\t<\\/ul>\\n\\t\\t<\\/section>\\n\\t<\\/aside>\\n<script>!function(a){var b=a(\\".dbrains-support-form form\\"),c=a(\\".submit-form\\",b);is_submitting=!1;var d=a(\\".remote-diagnostic input\\",b),e=a(\\".remote-diagnostic-content\\",b);d.on(\\"click\\",function(){d.prop(\\"checked\\")?e.show():e.hide()});var f=ajaxurl.replace(\\"\\/admin-ajax.php\\",\\"\\/images\\/wpspin_light\\");window.devicePixelRatio>=2&&(f+=\\"-2x\\"),f+=\\".gif\\",b.submit(function(d){if(d.preventDefault(),!is_submitting){is_submitting=!0,a(\\".button\\",b).blur();var e=a(\\".ajax-spinner\\",c);e[0]?e.show():(e=a(''<img src=\\"''+f+''\\" alt=\\"\\" class=\\"ajax-spinner general-spinner\\" \\/>''),c.append(e)),a(\\".submission-error\\").hide();var g=[\\"email\\",\\"subject\\",\\"message\\"],h={},i=!1;a.each(b.serializeArray(),function(b,c){h[c.name]=c.value,a.inArray(c.name,g)>-1&&\\"\\"===c.value&&(a(\\".\\"+c.name+\\"-error\\").fadeIn(),i=!0)});var j=a(\\"input[name=remote-diagnostic]\\",b).is(\\":checked\\");if(j)if(\\"\\"===h[\\"remote-diagnostic-content\\"])a(\\".remote-diagnostic-content-error\\").fadeIn(),i=!0;else{var k=h[\\"remote-diagnostic-content\\"].substr(0,h[\\"remote-diagnostic-content\\"].indexOf(\\"\\\\n\\")),l=a(\\".debug-log-textarea\\")[0],m=l.value.substr(0,l.value.indexOf(\\"\\\\n\\"));console.log(''\\"''+k+''\\"''),console.log(''\\"''+m+''\\"''),k.trim()==m.trim()&&(a(\\".both-diagnostic-same-error\\").fadeIn(),i=!0)}if(i)return e.hide(),void(is_submitting=!1);j||(h[\\"remote-diagnostic-content\\"]=\\"\\"),a(\\"input[name=local-diagnostic]\\",b).is(\\":checked\\")&&(h[\\"local-diagnostic-content\\"]=a(\\".debug-log-textarea\\").val()),a.ajax({url:b.prop(\\"action\\"),type:\\"POST\\",dataType:\\"JSON\\",cache:!1,data:h,error:function(b,c,d){var f=a(\\".xhr-error\\");a(\\"p\\",f).append(\\" \\"+d+\\" (\\"+c+\\")\\"),f.show(),e.hide(),is_submitting=!1},success:function(c){if(\\"undefined\\"!=typeof c.errors){var d=a(\\".api-error\\");return a.each(c.errors,function(b,c){return a(\\"p\\",d).append(c),!1}),d.show(),e.hide(),void(is_submitting=!1)}a(\\".submission-success\\").show(),b.hide(),e.hide(),is_submitting=!1}})}})}(jQuery);<\\/script>","addons_available":"1","addons_available_list":{"wp-migrate-db-pro-media-files":2351,"wp-migrate-db-pro-cli":3948,"wp-migrate-db-pro-multisite-tools":7999},"addon_list":{"wp-migrate-db-pro-media-files":{"type":"feature","name":"Media Files","desc":"Allows you to push and pull your files in the Media Library between two WordPress installs. It can compare both libraries and only migrate those missing or updated, or it can do a complete copy of one site\\u2019s library to another. <a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/doc\\/media-files-addon\\/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin\\">More Details &rarr;<\\/a>","version":"1.4.9","beta_version":"","tested":"4.9.1"},"wp-migrate-db-pro-cli":{"type":"feature","name":"CLI","desc":"Integrates WP Migrate DB Pro with WP-CLI allowing you to run migrations from the command line: <code>wp migratedb &lt;push|pull&gt; &lt;url&gt; &lt;secret-key&gt;<\\/code> <code>[--find=&lt;strings&gt;] [--replace=&lt;strings&gt;] ...<\\/code> <a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/doc\\/cli-addon\\/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin\\">More Details &rarr;<\\/a>","version":"1.3.2","beta_version":"","required":"1.4b1","tested":"4.9.1"},"wp-migrate-db-pro-multisite-tools":{"type":"feature","name":"Multisite Tools","desc":"Export a subsite as an SQL file that can then be imported as a single site install. <a href=\\"https:\\/\\/deliciousbrains.com\\/wp-migrate-db-pro\\/doc\\/multisite-tools-addon\\/?utm_campaign=addons%252Binstall&utm_source=MDB%252BPaid&utm_medium=insideplugin\\">More Details &rarr;<\\/a>","version":"1.2","beta_version":"","required":"1.5-dev","tested":"4.9.1"}}}', 'no'),
-(633, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1513053120;s:8:"response";a:1:{s:36:"contact-form-7/wp-contact-form-7.php";O:8:"stdClass":11:{s:2:"id";s:28:"w.org/plugins/contact-form-7";s:4:"slug";s:14:"contact-form-7";s:6:"plugin";s:36:"contact-form-7/wp-contact-form-7.php";s:11:"new_version";s:5:"4.9.2";s:3:"url";s:45:"https://wordpress.org/plugins/contact-form-7/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip";s:5:"icons";a:3:{s:2:"1x";s:66:"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007";s:2:"2x";s:66:"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007";s:7:"default";s:66:"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007";}s:7:"banners";a:3:{s:2:"2x";s:69:"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901";s:2:"1x";s:68:"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427";s:7:"default";s:69:"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901";}s:11:"banners_rtl";a:0:{}s:6:"tested";s:5:"4.9.1";s:13:"compatibility";O:8:"stdClass":0:{}}}s:12:"translations";a:0:{}s:9:"no_update";a:3:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":9:{s:2:"id";s:36:"w.org/plugins/advanced-custom-fields";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.12";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip";s:5:"icons";a:3:{s:2:"1x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746";s:2:"2x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";s:7:"default";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";}s:7:"banners";a:3:{s:2:"2x";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";s:2:"1x";s:77:"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102";s:7:"default";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";}s:11:"banners_rtl";a:0:{}}s:21:"newsletter/plugin.php";O:8:"stdClass":9:{s:2:"id";s:24:"w.org/plugins/newsletter";s:4:"slug";s:10:"newsletter";s:6:"plugin";s:21:"newsletter/plugin.php";s:11:"new_version";s:5:"5.1.6";s:3:"url";s:41:"https://wordpress.org/plugins/newsletter/";s:7:"package";s:59:"https://downloads.wordpress.org/plugin/newsletter.5.1.6.zip";s:5:"icons";a:3:{s:2:"1x";s:63:"https://ps.w.org/newsletter/assets/icon-128x128.png?rev=1160467";s:2:"2x";s:63:"https://ps.w.org/newsletter/assets/icon-256x256.png?rev=1052028";s:7:"default";s:63:"https://ps.w.org/newsletter/assets/icon-256x256.png?rev=1052028";}s:7:"banners";a:3:{s:2:"2x";s:66:"https://ps.w.org/newsletter/assets/banner-1544x500.png?rev=1052027";s:2:"1x";s:65:"https://ps.w.org/newsletter/assets/banner-772x250.png?rev=1052027";s:7:"default";s:66:"https://ps.w.org/newsletter/assets/banner-1544x500.png?rev=1052027";}s:11:"banners_rtl";a:0:{}}s:47:"show-current-template/show-current-template.php";O:8:"stdClass":9:{s:2:"id";s:35:"w.org/plugins/show-current-template";s:4:"slug";s:21:"show-current-template";s:6:"plugin";s:47:"show-current-template/show-current-template.php";s:11:"new_version";s:5:"0.3.0";s:3:"url";s:52:"https://wordpress.org/plugins/show-current-template/";s:7:"package";s:70:"https://downloads.wordpress.org/plugin/show-current-template.0.3.0.zip";s:5:"icons";a:3:{s:2:"2x";s:73:"https://ps.w.org/show-current-template/assets/icon-256x256.png?rev=976031";s:3:"svg";s:65:"https://ps.w.org/show-current-template/assets/icon.svg?rev=976031";s:7:"default";s:65:"https://ps.w.org/show-current-template/assets/icon.svg?rev=976031";}s:7:"banners";a:0:{}s:11:"banners_rtl";a:0:{}}}}', 'no'),
-(634, '_site_transient_timeout_wpmdb_upgrade_data', '1513082563', 'no'),
-(635, '_site_transient_wpmdb_upgrade_data', 'a:4:{s:17:"wp-migrate-db-pro";a:2:{s:7:"version";s:5:"1.8.1";s:6:"tested";s:5:"4.9.1";}s:29:"wp-migrate-db-pro-media-files";a:2:{s:7:"version";s:5:"1.4.9";s:6:"tested";s:5:"4.9.1";}s:21:"wp-migrate-db-pro-cli";a:2:{s:7:"version";s:5:"1.3.2";s:6:"tested";s:5:"4.9.1";}s:33:"wp-migrate-db-pro-multisite-tools";a:2:{s:7:"version";s:3:"1.2";s:6:"tested";s:5:"4.9.1";}}', 'no'),
-(640, '_site_transient_timeout_theme_roots', '1513054920', 'no'),
-(641, '_site_transient_theme_roots', 'a:1:{s:8:"hangar49";s:7:"/themes";}', 'no');
+(645, '_site_transient_timeout_theme_roots', '1513115594', 'no'),
+(646, '_site_transient_theme_roots', 'a:1:{s:8:"hangar49";s:7:"/themes";}', 'no'),
+(647, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1513113795;s:8:"response";a:1:{s:36:"contact-form-7/wp-contact-form-7.php";O:8:"stdClass":11:{s:2:"id";s:28:"w.org/plugins/contact-form-7";s:4:"slug";s:14:"contact-form-7";s:6:"plugin";s:36:"contact-form-7/wp-contact-form-7.php";s:11:"new_version";s:5:"4.9.2";s:3:"url";s:45:"https://wordpress.org/plugins/contact-form-7/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip";s:5:"icons";a:3:{s:2:"1x";s:66:"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007";s:2:"2x";s:66:"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007";s:7:"default";s:66:"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007";}s:7:"banners";a:3:{s:2:"2x";s:69:"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901";s:2:"1x";s:68:"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427";s:7:"default";s:69:"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901";}s:11:"banners_rtl";a:0:{}s:6:"tested";s:5:"4.9.1";s:13:"compatibility";O:8:"stdClass":0:{}}}s:12:"translations";a:0:{}s:9:"no_update";a:3:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":9:{s:2:"id";s:36:"w.org/plugins/advanced-custom-fields";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.12";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip";s:5:"icons";a:3:{s:2:"1x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746";s:2:"2x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";s:7:"default";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";}s:7:"banners";a:3:{s:2:"2x";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";s:2:"1x";s:77:"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102";s:7:"default";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";}s:11:"banners_rtl";a:0:{}}s:21:"newsletter/plugin.php";O:8:"stdClass":9:{s:2:"id";s:24:"w.org/plugins/newsletter";s:4:"slug";s:10:"newsletter";s:6:"plugin";s:21:"newsletter/plugin.php";s:11:"new_version";s:5:"5.1.6";s:3:"url";s:41:"https://wordpress.org/plugins/newsletter/";s:7:"package";s:59:"https://downloads.wordpress.org/plugin/newsletter.5.1.6.zip";s:5:"icons";a:3:{s:2:"1x";s:63:"https://ps.w.org/newsletter/assets/icon-128x128.png?rev=1160467";s:2:"2x";s:63:"https://ps.w.org/newsletter/assets/icon-256x256.png?rev=1052028";s:7:"default";s:63:"https://ps.w.org/newsletter/assets/icon-256x256.png?rev=1052028";}s:7:"banners";a:3:{s:2:"2x";s:66:"https://ps.w.org/newsletter/assets/banner-1544x500.png?rev=1052027";s:2:"1x";s:65:"https://ps.w.org/newsletter/assets/banner-772x250.png?rev=1052027";s:7:"default";s:66:"https://ps.w.org/newsletter/assets/banner-1544x500.png?rev=1052027";}s:11:"banners_rtl";a:0:{}}s:47:"show-current-template/show-current-template.php";O:8:"stdClass":9:{s:2:"id";s:35:"w.org/plugins/show-current-template";s:4:"slug";s:21:"show-current-template";s:6:"plugin";s:47:"show-current-template/show-current-template.php";s:11:"new_version";s:5:"0.3.0";s:3:"url";s:52:"https://wordpress.org/plugins/show-current-template/";s:7:"package";s:70:"https://downloads.wordpress.org/plugin/show-current-template.0.3.0.zip";s:5:"icons";a:3:{s:2:"2x";s:73:"https://ps.w.org/show-current-template/assets/icon-256x256.png?rev=976031";s:3:"svg";s:65:"https://ps.w.org/show-current-template/assets/icon.svg?rev=976031";s:7:"default";s:65:"https://ps.w.org/show-current-template/assets/icon.svg?rev=976031";}s:7:"banners";a:0:{}s:11:"banners_rtl";a:0:{}}}}', 'no'),
+(648, '_site_transient_timeout_wpmdb_upgrade_data', '1513158523', 'no'),
+(649, '_site_transient_wpmdb_upgrade_data', 'a:4:{s:17:"wp-migrate-db-pro";a:2:{s:7:"version";s:5:"1.8.1";s:6:"tested";s:5:"4.9.1";}s:29:"wp-migrate-db-pro-media-files";a:2:{s:7:"version";s:5:"1.4.9";s:6:"tested";s:5:"4.9.1";}s:21:"wp-migrate-db-pro-cli";a:2:{s:7:"version";s:5:"1.3.2";s:6:"tested";s:5:"4.9.1";}s:33:"wp-migrate-db-pro-multisite-tools";a:2:{s:7:"version";s:3:"1.2";s:6:"tested";s:5:"4.9.1";}}', 'no');
 
 -- --------------------------------------------------------
 
@@ -473,7 +542,7 @@ CREATE TABLE IF NOT EXISTS `h49_postmeta` (
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_value` longtext COLLATE utf8mb4_unicode_ci
-) ENGINE=InnoDB AUTO_INCREMENT=539 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=562 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `h49_postmeta`
@@ -501,7 +570,7 @@ INSERT INTO `h49_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALU
 (36, 22, '_edit_last', '1'),
 (37, 22, '_edit_lock', '1510814481:1'),
 (38, 24, '_edit_last', '1'),
-(39, 24, '_edit_lock', '1513054959:1'),
+(39, 24, '_edit_lock', '1513115180:1'),
 (40, 26, '_edit_last', '1'),
 (41, 26, '_edit_lock', '1512365963:1'),
 (42, 28, '_edit_last', '1'),
@@ -875,12 +944,10 @@ INSERT INTO `h49_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALU
 (509, 88, '_wp_desired_post_slug', 'newsletter'),
 (510, 91, '_edit_last', '1'),
 (511, 91, 'field_5a2f51c3bd7de', 'a:11:{s:3:"key";s:19:"field_5a2f51c3bd7de";s:5:"label";s:8:"Location";s:4:"name";s:8:"location";s:4:"type";s:7:"wysiwyg";s:12:"instructions";s:107:"This is the location section of the contact page, in here you can enter information on the business address";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:7:"toolbar";s:5:"basic";s:12:"media_upload";s:2:"no";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}'),
-(512, 91, 'field_5a2f5211bd7df', 'a:13:{s:3:"key";s:19:"field_5a2f5211bd7df";s:5:"label";s:19:"Contact Information";s:4:"name";s:19:"contact_information";s:4:"type";s:8:"repeater";s:12:"instructions";s:29:"Contact information goes here";s:8:"required";s:1:"0";s:10:"sub_fields";a:3:{i:0;a:15:{s:3:"key";s:19:"field_5a2f5241bd7e0";s:5:"label";s:12:"Phone Number";s:4:"name";s:12:"phone_number";s:4:"type";s:4:"text";s:12:"instructions";s:27:"Enter business phone number";s:8:"required";s:1:"0";s:12:"column_width";s:2:"50";s:13:"default_value";s:0:"";s:11:"placeholder";s:14:"1-555-555-5555";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:2:"20";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}i:1;a:13:{s:3:"key";s:19:"field_5a2f527fbd7e1";s:5:"label";s:13:"Email Address";s:4:"name";s:13:"email_address";s:4:"type";s:5:"email";s:12:"instructions";s:28:"Enter business contact email";s:8:"required";s:1:"0";s:12:"column_width";s:2:"50";s:13:"default_value";s:0:"";s:11:"placeholder";s:16:"email@domain.com";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}i:2;a:14:{s:3:"key";s:19:"field_5a2f52bfbd7e2";s:5:"label";s:15:"Mailing Address";s:4:"name";s:15:"mailing_address";s:4:"type";s:8:"textarea";s:12:"instructions";s:24:"Business mailing address";s:8:"required";s:1:"0";s:12:"column_width";s:2:"75";s:13:"default_value";s:30:"Enter business mailing address";s:11:"placeholder";s:0:"";s:9:"maxlength";s:0:"";s:4:"rows";s:0:"";s:10:"formatting";s:2:"br";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:2;}}s:7:"row_min";s:0:"";s:9:"row_limit";s:0:"";s:6:"layout";s:3:"row";s:12:"button_label";s:7:"Add Row";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}'),
 (514, 91, 'position', 'normal'),
 (515, 91, 'layout', 'no_box'),
 (516, 91, 'hide_on_screen', 'a:2:{i:0;s:11:"the_content";i:1;s:10:"categories";}'),
-(517, 91, '_edit_lock', '1513054812:1'),
-(518, 91, 'rule', 'a:5:{s:5:"param";s:4:"page";s:8:"operator";s:2:"==";s:5:"value";s:2:"24";s:8:"order_no";i:0;s:8:"group_no";i:0;}'),
+(517, 91, '_edit_lock', '1513115328:1'),
 (519, 92, 'location', 'Our hangar operates out of Nanaimo, BC on the west coast of Canada.\r\n\r\nLooking to bring your plane to us? Contact us to find out where to go!'),
 (520, 92, '_location', 'field_5a2f51c3bd7de'),
 (521, 92, 'contact_information_0_phone_number', '1-587-888-5001'),
@@ -900,7 +967,30 @@ INSERT INTO `h49_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALU
 (535, 24, 'contact_information_0_mailing_address', 'Enter business mailing address'),
 (536, 24, '_contact_information_0_mailing_address', 'field_5a2f52bfbd7e2'),
 (537, 24, 'contact_information', '1'),
-(538, 24, '_contact_information', 'field_5a2f5211bd7df');
+(538, 24, '_contact_information', 'field_5a2f5211bd7df'),
+(539, 91, 'field_5a2f95c2f27a3', 'a:14:{s:3:"key";s:19:"field_5a2f95c2f27a3";s:5:"label";s:12:"Phone Number";s:4:"name";s:12:"phone_number";s:4:"type";s:4:"text";s:12:"instructions";s:34:"Enter company contact phone number";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:14:"1-555-555-5555";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:2:"20";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}'),
+(540, 91, 'field_5a2f95e8f27a4', 'a:14:{s:3:"key";s:19:"field_5a2f95e8f27a4";s:5:"label";s:3:"Fax";s:4:"name";s:3:"fax";s:4:"type";s:4:"text";s:12:"instructions";s:24:"Enter company fax number";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:14:"1-555-555-5555";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:2:"20";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:2;}'),
+(541, 91, 'field_5a2f9616f27a5', 'a:12:{s:3:"key";s:19:"field_5a2f9616f27a5";s:5:"label";s:5:"Email";s:4:"name";s:5:"email";s:4:"type";s:5:"email";s:12:"instructions";s:21:"Company email address";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:20:"something@domain.com";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:3;}'),
+(542, 91, 'field_5a2f9641f27a6', 'a:13:{s:3:"key";s:19:"field_5a2f9641f27a6";s:5:"label";s:7:"Address";s:4:"name";s:7:"address";s:4:"type";s:8:"textarea";s:12:"instructions";s:23:"Company mailing address";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:9:"maxlength";s:0:"";s:4:"rows";s:0:"";s:10:"formatting";s:2:"br";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:4;}'),
+(543, 91, 'rule', 'a:5:{s:5:"param";s:4:"page";s:8:"operator";s:2:"==";s:5:"value";s:2:"24";s:8:"order_no";i:0;s:8:"group_no";i:0;}'),
+(544, 93, 'location', 'Our hangar operates out of Nanaimo, BC on the west coast of Canada.\r\n\r\nLooking to bring your plane to us? Contact us to find out where to go!'),
+(545, 93, '_location', 'field_5a2f51c3bd7de'),
+(546, 93, 'phone_number', '1-555-555-5555'),
+(547, 93, '_phone_number', 'field_5a2f95c2f27a3'),
+(548, 93, 'fax', ''),
+(549, 93, '_fax', 'field_5a2f95e8f27a4'),
+(550, 93, 'email', 'contact@hangar49warbirds.com'),
+(551, 93, '_email', 'field_5a2f9616f27a5'),
+(552, 93, 'address', '123 456 St\r\nNanaimo BC\r\nV3L 1E2\r\n'),
+(553, 93, '_address', 'field_5a2f9641f27a6'),
+(554, 24, 'phone_number', '1-555-555-5555'),
+(555, 24, '_phone_number', 'field_5a2f95c2f27a3'),
+(556, 24, 'fax', ''),
+(557, 24, '_fax', 'field_5a2f95e8f27a4'),
+(558, 24, 'email', 'contact@hangar49warbirds.com'),
+(559, 24, '_email', 'field_5a2f9616f27a5'),
+(560, 24, 'address', '123 456 St\r\nNanaimo BC\r\nV3L 1E2\r\n'),
+(561, 24, '_address', 'field_5a2f9641f27a6');
 
 -- --------------------------------------------------------
 
@@ -933,7 +1023,7 @@ CREATE TABLE IF NOT EXISTS `h49_posts` (
   `post_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `h49_posts`
@@ -958,7 +1048,7 @@ INSERT INTO `h49_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `pos
 (21, 1, '2017-11-16 06:43:30', '2017-11-16 06:43:30', '', 'Sales', '', 'inherit', 'closed', 'closed', '', '20-revision-v1', '', '', '2017-11-16 06:43:30', '2017-11-16 06:43:30', '', 20, 'http://localhost/hangar49/2017/11/16/20-revision-v1/', 0, 'revision', '', 0),
 (22, 1, '2017-11-16 06:43:40', '2017-11-16 06:43:40', '', 'About', '', 'publish', 'closed', 'closed', '', 'about', '', '', '2017-11-16 06:43:40', '2017-11-16 06:43:40', '', 0, 'http://localhost/hangar49/?page_id=22', 0, 'page', '', 0),
 (23, 1, '2017-11-16 06:43:40', '2017-11-16 06:43:40', '', 'About', '', 'inherit', 'closed', 'closed', '', '22-revision-v1', '', '', '2017-11-16 06:43:40', '2017-11-16 06:43:40', '', 22, 'http://localhost/hangar49/2017/11/16/22-revision-v1/', 0, 'revision', '', 0),
-(24, 1, '2017-11-16 06:43:49', '2017-11-16 06:43:49', '', 'Contact', '', 'publish', 'closed', 'closed', '', 'contact', '', '', '2017-12-12 03:58:57', '2017-12-12 03:58:57', '', 0, 'http://localhost/hangar49/?page_id=24', 0, 'page', '', 0),
+(24, 1, '2017-11-16 06:43:49', '2017-11-16 06:43:49', '', 'Contact', '', 'publish', 'closed', 'closed', '', 'contact', '', '', '2017-12-12 12:22:13', '2017-12-12 12:22:13', '', 0, 'http://localhost/hangar49/?page_id=24', 0, 'page', '', 0),
 (25, 1, '2017-11-16 06:43:49', '2017-11-16 06:43:49', '', 'Contact', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2017-11-16 06:43:49', '2017-11-16 06:43:49', '', 24, 'http://localhost/hangar49/2017/11/16/24-revision-v1/', 0, 'revision', '', 0),
 (26, 1, '2017-11-16 06:44:05', '2017-11-16 06:44:05', '', 'News', '', 'publish', 'closed', 'closed', '', 'news', '', '', '2017-11-16 06:44:05', '2017-11-16 06:44:05', '', 0, 'http://localhost/hangar49/?page_id=26', 0, 'page', '', 0),
 (27, 1, '2017-11-16 06:44:05', '2017-11-16 06:44:05', '', 'News', '', 'inherit', 'closed', 'closed', '', '26-revision-v1', '', '', '2017-11-16 06:44:05', '2017-11-16 06:44:05', '', 26, 'http://localhost/hangar49/2017/11/16/26-revision-v1/', 0, 'revision', '', 0),
@@ -998,8 +1088,9 @@ INSERT INTO `h49_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `pos
 (88, 1, '2017-12-04 05:40:23', '2017-12-04 05:40:23', '[newsletter]', 'Newsletter', '', 'trash', 'closed', 'closed', '', 'newsletter__trashed', '', '', '2017-12-04 05:41:34', '2017-12-04 05:41:34', '', 0, 'http://localhost/hangar49/newsletter/', 0, 'page', '', 0),
 (89, 1, '2017-12-04 05:41:34', '2017-12-04 05:41:34', '[newsletter]', 'Newsletter', '', 'inherit', 'closed', 'closed', '', '88-revision-v1', '', '', '2017-12-04 05:41:34', '2017-12-04 05:41:34', '', 88, 'http://localhost/hangar49/2017/12/04/88-revision-v1/', 0, 'revision', '', 0),
 (90, 1, '2017-12-07 21:56:15', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2017-12-07 21:56:15', '0000-00-00 00:00:00', '', 0, 'http://localhost/hangar49/?p=90', 0, 'post', '', 0),
-(91, 1, '2017-12-12 03:54:40', '2017-12-12 03:54:40', '', 'Contact', '', 'publish', 'closed', 'closed', '', 'acf_contact', '', '', '2017-12-12 03:55:24', '2017-12-12 03:55:24', '', 0, 'http://localhost/hangar49/?post_type=acf&#038;p=91', 0, 'acf', '', 0),
-(92, 1, '2017-12-12 03:58:57', '2017-12-12 03:58:57', '', 'Contact', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2017-12-12 03:58:57', '2017-12-12 03:58:57', '', 24, 'http://localhost/hangar49/uncategorized/24-revision-v1/', 0, 'revision', '', 0);
+(91, 1, '2017-12-12 03:54:40', '2017-12-12 03:54:40', '', 'Contact', '', 'publish', 'closed', 'closed', '', 'acf_contact', '', '', '2017-12-12 08:42:08', '2017-12-12 08:42:08', '', 0, 'http://localhost/hangar49/?post_type=acf&#038;p=91', 0, 'acf', '', 0),
+(92, 1, '2017-12-12 03:58:57', '2017-12-12 03:58:57', '', 'Contact', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2017-12-12 03:58:57', '2017-12-12 03:58:57', '', 24, 'http://localhost/hangar49/uncategorized/24-revision-v1/', 0, 'revision', '', 0),
+(93, 1, '2017-12-12 12:22:13', '2017-12-12 12:22:13', '', 'Contact', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2017-12-12 12:22:13', '2017-12-12 12:22:13', '', 24, 'http://localhost/hangar49/uncategorized/24-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1141,13 +1232,13 @@ INSERT INTO `h49_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VAL
 (12, 1, 'h49_user_level', '10'),
 (13, 1, 'dismissed_wp_pointers', ''),
 (14, 1, 'show_welcome_panel', '1'),
-(15, 1, 'session_tokens', 'a:1:{s:64:"ada792402b7392348203ddfeb2d5f7b0b32dad94925b84855d4a1752a843acd4";a:4:{s:10:"expiration";i:1513212161;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36";s:5:"login";i:1513039361;}}'),
+(15, 1, 'session_tokens', 'a:2:{s:64:"ada792402b7392348203ddfeb2d5f7b0b32dad94925b84855d4a1752a843acd4";a:4:{s:10:"expiration";i:1513212161;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36";s:5:"login";i:1513039361;}s:64:"522bc99190d2990c670b3637f892edad53ea55adf9920c2ae5b257ee5654668a";a:4:{s:10:"expiration";i:1513240364;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36";s:5:"login";i:1513067564;}}'),
 (16, 1, 'h49_dashboard_quick_press_last_post_id', '90'),
 (17, 1, 'community-events-location', 'a:1:{s:2:"ip";s:9:"127.0.0.0";}'),
 (18, 1, 'nav_menu_recently_edited', '2'),
 (19, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";i:4;s:15:"title-attribute";}'),
 (20, 1, 'metaboxhidden_nav-menus', 'a:9:{i:0;s:18:"add-post-type-post";i:1;s:25:"add-post-type-testimonial";i:2;s:22:"add-post-type-aircraft";i:3;s:22:"add-post-type-projects";i:4;s:23:"add-post-type-inventory";i:5;s:12:"add-category";i:6;s:12:"add-post_tag";i:7;s:21:"add-aircraft-category";i:8;s:24:"add-inventory-categories";}'),
-(21, 1, 'closedpostboxes_acf', 'a:0:{}'),
+(21, 1, 'closedpostboxes_acf', 'a:1:{i:0;s:9:"submitdiv";}'),
 (22, 1, 'metaboxhidden_acf', 'a:1:{i:0;s:7:"slugdiv";}'),
 (23, 1, 'closedpostboxes_page', 'a:0:{}'),
 (24, 1, 'metaboxhidden_page', 'a:6:{i:0;s:12:"revisionsdiv";i:1;s:10:"postcustom";i:2;s:16:"commentstatusdiv";i:3;s:11:"commentsdiv";i:4;s:7:"slugdiv";i:5;s:9:"authordiv";}'),
@@ -1206,6 +1297,35 @@ ALTER TABLE `h49_comments`
   ADD KEY `comment_date_gmt` (`comment_date_gmt`),
   ADD KEY `comment_parent` (`comment_parent`),
   ADD KEY `comment_author_email` (`comment_author_email`(10));
+
+--
+-- Indexes for table `h49_easymail_recipients`
+--
+ALTER TABLE `h49_easymail_recipients`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `newsletter` (`newsletter`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `h49_easymail_stats`
+--
+ALTER TABLE `h49_easymail_stats`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `newsletter` (`newsletter`),
+  ADD KEY `recipient` (`recipient`);
+
+--
+-- Indexes for table `h49_easymail_subscribers`
+--
+ALTER TABLE `h49_easymail_subscribers`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `h49_easymail_unsubscribed`
+--
+ALTER TABLE `h49_easymail_unsubscribed`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `h49_links`
@@ -1332,6 +1452,21 @@ ALTER TABLE `h49_commentmeta`
 ALTER TABLE `h49_comments`
   MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `h49_easymail_recipients`
+--
+ALTER TABLE `h49_easymail_recipients`
+  MODIFY `ID` int(11) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `h49_easymail_stats`
+--
+ALTER TABLE `h49_easymail_stats`
+  MODIFY `ID` int(11) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `h49_easymail_subscribers`
+--
+ALTER TABLE `h49_easymail_subscribers`
+  MODIFY `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `h49_links`
 --
 ALTER TABLE `h49_links`
@@ -1355,17 +1490,17 @@ ALTER TABLE `h49_newsletter_stats`
 -- AUTO_INCREMENT for table `h49_options`
 --
 ALTER TABLE `h49_options`
-  MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=643;
+  MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=650;
 --
 -- AUTO_INCREMENT for table `h49_postmeta`
 --
 ALTER TABLE `h49_postmeta`
-  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=539;
+  MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=562;
 --
 -- AUTO_INCREMENT for table `h49_posts`
 --
 ALTER TABLE `h49_posts`
-  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=93;
+  MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `h49_termmeta`
 --

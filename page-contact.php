@@ -30,57 +30,35 @@ get_header(); ?>
             <?php
             if(function_exists('get_field')){
                 if(get_field('location')){
-//                    echo '<h2>Skype Sessions</h2>';
+                    echo '<h2>Where We Operate</h2>';
                     the_field('location');
                     }
                 }
             ?>    
-
             </div>
             <div class="contact_info">
+<!--            Load contact info fields and assign them to variables    -->
+            <?php
+                if(function_exists('get_field')){
+                    if(get_field('phone_number')){ 
+                        $phone = get_field('phone_number');}
+                    if(get_field('fax')){ 
+                        $fax = get_field('fax');}
+                    if(get_field('email')){ 
+                        $email = get_field('email');}
+                    if(get_field('address')){ 
+                        $address = get_field('address');}
+                } 
+            ?>
+                <ul>
+                    <li><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></li>
+                    <?php if(get_field('fax')) {
+                    echo '<li><a href="fax:' . $fax . '">' . $fax . '</a></li>'; 
+                        } ?>
+                    <li><a href="email:<?php echo $email; ?>"><?php echo $email; ?></a></li>
+                    <li><?php echo $address; ?></li>
 
-                
-                
-                
-<!--
-                <?php if( have_rows('repeater_field_name') ): ?>
-
-	<ul class="slides">
-
-	<?php while( have_rows('repeater_field_name') ): the_row(); 
-
-		// vars
-		$image = get_sub_field('image');
-		$content = get_sub_field('content');
-		$link = get_sub_field('link');
-
-		?>
-
-		<li class="slide">
-
-			<?php if( $link ): ?>
-				<a href="<?php echo $link; ?>">
-			<?php endif; ?>
-
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-
-			<?php if( $link ): ?>
-				</a>
-			<?php endif; ?>
-
-		    <?php echo $content; ?>
-
-		</li>
-
-	<?php endwhile; ?>
-
-	</ul>
-
-<?php endif; ?>
--->
-                
-                <tel></tel>
-                <email>contact@hangar49warbirds.com</email>
+                </ul>
             </div>
             <div class="contact_form">
                 <?php echo do_shortcode('[contact-form-7 id="87" title="Contact form 1"]'); ?>
