@@ -1,0 +1,26 @@
+.contact_info ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.follow_us ul {
+    margin: 0;
+    padding: 0 10vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.follow_us li {
+    display: inline-block;
+}
+
+.follow_us a {
+    font-size: 2em;
+    color: $color_font-nav;
+}
+
+.follow_us a:hover {
+    background-color: $color_font-nav-hover;
+}

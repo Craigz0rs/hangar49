@@ -734,6 +734,9 @@ object {
   right: 0;
   z-index: 99; }
 
+.content_wrapper {
+  padding: 0 10px; }
+
 .home_screen {
   height: 100vh;
   width: 100%;
@@ -746,7 +749,7 @@ object {
 .intro {
   text-align: center;
   color: white;
-  padding: 12vh 10px 0 10px; }
+  padding-top: 12vh; }
 
 .intro h1 {
   font-size: 2.5em;
@@ -993,6 +996,28 @@ object {
 
     .intro h2 {
       font-size: 2em; } } }
+.contact_info ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.follow_us ul {
+  margin: 0;
+  padding: 0 10vw;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly; }
+
+.follow_us li {
+  display: inline-block; }
+
+.follow_us a {
+  font-size: 2em;
+  color: white; }
+
+.follow_us a:hover {
+  background-color: darkgreen; }
+
 #inventory_page_header {
   background-image: url(images/inventory_background2.jpg);
   background-repeat: no-repeat;

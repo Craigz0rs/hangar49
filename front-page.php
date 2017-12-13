@@ -8,14 +8,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <div class="home_screen" id="home">
-                <div class="intro">
-                    <h1>Hangar 49</h1>
-                    <h1>warbirds</h1>
-                    <h2>maintenance • restorations • sales</h2>
-                    <p>Our full site is under construction but we're adding more content each week! Check back often for updates.</p>
-                   <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
-<!--                    <p class="subscribe_disclaimer">We promise not to spam you!</p>-->
-                </div><!-- .intro -->
+                <div class="content_wrapper">
+                    <div class="intro">
+                        <h1>Hangar 49</h1>
+                        <h1>warbirds</h1>
+                        <h2>maintenance • restorations • sales</h2>
+                        <p>Our full site is under construction but we're adding more content each week! Check back often for updates.</p>
+                       <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
+    <!--                    <p class="subscribe_disclaimer">We promise not to spam you!</p>-->
+                    </div><!-- .intro -->
+                </div><!-- .content_wrapper -->
                 <div class="home_navigation">
                     <div class="home_nav_block"><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
                     <div class="home_nav_block"><a href="<?php echo get_post_type_archive_link( 'projects' ); ?>" class="smoothScroll"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>

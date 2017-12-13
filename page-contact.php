@@ -25,6 +25,7 @@ get_header(); ?>
                 <p>Give us a shout!</p>
 -->
             </div>
+            <div class="content_wrapper">
             <div class="location">
 
             <?php
@@ -60,10 +61,18 @@ get_header(); ?>
 
                 </ul>
             </div>
+            <div class="follow_us">
+                <ul>
+                    <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
             <div class="contact_form">
                 <?php echo do_shortcode('[contact-form-7 id="87" title="Contact form 1"]'); ?>
             </div>
-            
+            </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
