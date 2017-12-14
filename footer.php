@@ -25,7 +25,7 @@
         </div>
 -->
         <div class="footer_contact" id="contact">
-            <h2>Contact Us</h2>
+            <strong class="footer_heading">Contact Us</strong>
             <p>Have any questions or want to inquire about one of our warbirds? Give us a shout!</p>
             <ul>
                 <li><a href="tel:15878885001"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> 587-888-5001</a></li>
@@ -33,7 +33,7 @@
             </ul>
         </div>
         <div class="footer_nav">
-            <p>Navigate</p>
+            <strong class="footer_heading">Navigate</strong>
         <?php if (is_front_page()) { ?>
             <ul>
                 <li><a href="#home" class="smoothScroll">Home</a></li>
@@ -50,16 +50,36 @@
             </ul>
         <?php } ?>
         </div>
-<!--
         <div class="footer_social">
-            <p>Follow us</p>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
+            <strong class="footer_heading">Follow us</strong>
+<!--            Load social fields and assign them to variables    -->
+            <?php
+                if(function_exists('get_field')){
+                    if(get_field('facebook')){ 
+                        $facebook = get_field('facebook');}
+                    if(get_field('twitter')){ 
+                        $twitter = get_field('twitter');}
+                    if(get_field('instagram')){ 
+                        $instagram = get_field('instagram');}
+                    if(get_field('youtube')){ 
+                        $youtube = get_field('youtube');}
+                } 
+            ?>
+                <ul class="footer_social-list">
+                    <?php if($facebook) {
+                    echo '<li><a href="' . $facebook . '"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($twitter) {
+                    echo '<li><a href="' . $twitter . '"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($instagram) {
+                    echo '<li><a href="' . $instagram . '"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($youtube) {
+                    echo '<li><a href="' . $youtube . '"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>                            
+                </ul>
         </div>
--->
         <div class="footer_copyright">
             <p>Copyright 2017-2018 Hangar 49</p>
 <!--            <p>Website by <a href="www.craigdarcy.ca">Company</a></p>-->

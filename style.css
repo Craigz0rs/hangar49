@@ -726,13 +726,14 @@ object {
 .page_header h1 {
   position: absolute;
   color: white;
-  bottom: -19px;
+  bottom: 0;
   font-family: "Orbitron", sans-serif;
   font-size: 3.3em;
   text-align: center;
   left: 0;
   right: 0;
-  z-index: 99; }
+  z-index: 99;
+  line-height: 1em; }
 
 .content_wrapper {
   padding: 0 10px; }
@@ -996,6 +997,12 @@ object {
 
     .intro h2 {
       font-size: 2em; } } }
+#contact_page_header {
+  background-image: url(images/contact_header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 .contact_info ul {
   margin: 0;
   padding: 0;
@@ -1122,6 +1129,12 @@ object {
   color: white;
   background-color: #444444; }
 
+.footer_heading {
+  font-family: "Jura", sans-serif;
+  font-size: 1.1em;
+  color: #E1E1E1;
+  margin: 0.6em 0; }
+
 .site-footer ul {
   margin: 0;
   padding: 0;
@@ -1159,7 +1172,7 @@ object {
   margin-top: -12px; }
 
 .footer_contact {
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   padding: 0 20px;
   text-align: left; }
 
@@ -1190,6 +1203,15 @@ object {
 .footer_contact a {
   line-height: 1.5em; }
 
+.footer_social {
+  margin-bottom: 20px; }
+
+.footer_social ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2em;
+  padding-top: 10px; }
+
 .footer_copyright p {
   margin: 0;
   padding: 0;
@@ -1204,13 +1226,7 @@ object {
 
 .footer_nav {
   text-align: left;
-  padding: 0 20px;
-  padding-bottom: 30px; }
-
-.footer_nav p {
-  font-family: "Jura", sans-serif;
-  font-size: 1.1em;
-  color: #E1E1E1;
-  margin: 0.6em 0; }
+  margin-bottom: 15px;
+  padding: 0 20px; }
 
 /*# sourceMappingURL=style.css.map */

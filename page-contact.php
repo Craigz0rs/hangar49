@@ -62,11 +62,35 @@ get_header(); ?>
                 </ul>
             </div>
             <div class="follow_us">
+<!--            Load social fields and assign them to variables    -->
+            <?php
+                if(function_exists('get_field')){
+                    if(get_field('facebook')){ 
+                        $facebook = get_field('facebook');}
+                    if(get_field('twitter')){ 
+                        $twitter = get_field('twitter');}
+                    if(get_field('instagram')){ 
+                        $instagram = get_field('instagram');}
+                    if(get_field('youtube')){ 
+                        $youtube = get_field('youtube');}
+                } 
+            ?>
+                    <?php if($facebook || $twitter || $instagram || $youtube) {
+                    echo '<h2>Follow Us</h2>';
+                        } ?>
                 <ul>
-                    <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                    <?php if($facebook) {
+                    echo '<li><a href="' . $facebook . '"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($twitter) {
+                    echo '<li><a href="' . $twitter . '"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($instagram) {
+                    echo '<li><a href="' . $instagram . '"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>'; 
+                        } ?>
+                    <?php if($youtube) {
+                    echo '<li><a href="' . $youtube . '"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>'; 
+                        } ?>                            
                 </ul>
             </div>
             <div class="contact_form">

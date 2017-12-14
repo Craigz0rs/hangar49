@@ -28,13 +28,14 @@
 .page_header h1 {
     position: absolute;
     color: $color_font-page-headings;
-    bottom: -19px;
+    bottom: 0;
     font-family: $font_logo;
     font-size: 3.3em;
     text-align: center;
     left: 0;
     right: 0;
     z-index: 99;
+    line-height: 1em;
     
 }
 
