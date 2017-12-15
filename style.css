@@ -1025,6 +1025,10 @@ object {
 .follow_us a:hover {
   background-color: darkgreen; }
 
+.wpcf7-textarea,
+.wpcf7-text {
+  max-width: 100%; }
+
 #inventory_page_header {
   background-image: url(images/inventory_background2.jpg);
   background-repeat: no-repeat;

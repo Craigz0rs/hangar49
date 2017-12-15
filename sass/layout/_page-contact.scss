@@ -32,3 +32,8 @@
 .follow_us a:hover {
     background-color: $color_font-nav-hover;
 }
+
+.wpcf7-textarea,
+.wpcf7-text {
+    max-width: 100%;
+}
