@@ -27,9 +27,18 @@
         <div class="footer_contact" id="contact">
             <strong class="footer_heading">Contact Us</strong>
             <p>Have any questions or want to inquire about one of our warbirds? Give us a shout!</p>
+            <!--            Load contact info fields and assign them to variables    -->
+            <?php
+                if(function_exists('get_field')){
+                    if(get_field('phone_number', 24)){ 
+                        $phone = get_field('phone_number', 24);}
+                    if(get_field('email', 24)){ 
+                        $email = get_field('email', 24);}
+                } 
+            ?>
             <ul>
-                <li><a href="tel:15878885001"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> 587-888-5001</a></li>
-                <li><a href="email:contact@hangar49warbirds.com"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> contact@hangar49warbirds.com</a></li>
+                <li><a href="tel:<?php echo $phone; ?>"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> <?php echo $phone; ?></a></li>
+                <li><a href="email:<?php echo $email; ?>"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> <?php echo $email; ?></a></li>
             </ul>
         </div>
         <div class="footer_nav">

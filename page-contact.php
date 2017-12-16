@@ -25,7 +25,7 @@ get_header(); ?>
                 <p>Give us a shout!</p>
 -->
             </div>
-            <div class="content_wrapper">
+            <div class="content_wrapper" id="contact_wrapper">
             <div class="location">
 
             <?php
@@ -38,6 +38,7 @@ get_header(); ?>
             ?>    
             </div>
             <div class="contact_info">
+                <h2>Contact Info</h2>
 <!--            Load contact info fields and assign them to variables    -->
             <?php
                 if(function_exists('get_field')){
@@ -52,13 +53,12 @@ get_header(); ?>
                 } 
             ?>
                 <ul>
-                    <li><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></li>
+                    <li id="address_li"><i class="fa fa-building" aria-hidden="true"></i> <div class="address"><?php echo $address; ?></div></li>
+                    <li id="phone_li"><a href="tel:<?php echo $phone; ?>"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> <?php echo $phone; ?></a></li>
                     <?php if(get_field('fax')) {
-                    echo '<li><a href="fax:' . $fax . '">' . $fax . '</a></li>'; 
+                    echo '<li><a href="fax:' . $fax . '"><i class="fa fa-fax" aria-hidden="true"></i> ' . $fax . '</a></li>'; 
                         } ?>
-                    <li><a href="email:<?php echo $email; ?>"><?php echo $email; ?></a></li>
-                    <li><?php echo $address; ?></li>
-
+                    <li><a href="email:<?php echo $email; ?>"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> <?php echo $email; ?></a></li>
                 </ul>
             </div>
             <div class="follow_us">

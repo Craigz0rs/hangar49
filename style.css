@@ -701,8 +701,8 @@ object {
 .site {
   min-height: 100vh; }
 
-.site-main {
-  background-color: black; }
+.content-area {
+  background-color: rgba(153, 153, 153, 0.2); }
 
 .page_header {
   height: 15em;
@@ -1003,10 +1003,34 @@ object {
   background-size: cover;
   background-position: center; }
 
+#contact_wrapper {
+  color: #404040;
+  font-family: "Metrophobic", sans-serif; }
+
 .contact_info ul {
   margin: 0;
   padding: 0;
   list-style-type: none; }
+
+.contact_info a {
+  text-decoration: none;
+  color: #404040; }
+
+.contact_info i {
+  margin-right: 4px; }
+
+#address_li {
+  display: flex;
+  margin-bottom: 20px; }
+
+#address_li i {
+  margin-top: 4px; }
+
+.address {
+  margin-left: 6px; }
+
+#phone_li i {
+  margin-right: 7px; }
 
 .follow_us ul {
   margin: 0;

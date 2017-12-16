@@ -5,11 +5,50 @@
     background-position: center;
 }
 
+#contact_wrapper {
+    color: $color_font-content-text;
+    font-family: $font_text;
+}
+
+#contact_wrapper h2 {
+//    font-family: $font_heading;
+}
+
 
 .contact_info ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.contact_info li:first-of-type {
+    
+}
+
+.contact_info a {
+    text-decoration: none;
+    color: $color_font-content-text;
+}
+
+.contact_info i {
+    margin-right: 4px;
+}
+
+#address_li {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#address_li i {
+    margin-top: 4px;
+}
+
+.address {
+    margin-left: 6px;
+}
+
+#phone_li i {
+    margin-right: 7px;
 }
 
 .follow_us ul {
