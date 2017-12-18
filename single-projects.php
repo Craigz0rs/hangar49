@@ -7,7 +7,7 @@
  * @package Hangar_49
  */
 
-get_header(); ?>
+get_header('archive'); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

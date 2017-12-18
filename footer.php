@@ -64,14 +64,14 @@
 <!--            Load social fields and assign them to variables    -->
             <?php
                 if(function_exists('get_field')){
-                    if(get_field('facebook')){ 
-                        $facebook = get_field('facebook');}
-                    if(get_field('twitter')){ 
-                        $twitter = get_field('twitter');}
-                    if(get_field('instagram')){ 
-                        $instagram = get_field('instagram');}
-                    if(get_field('youtube')){ 
-                        $youtube = get_field('youtube');}
+                    if(get_field('facebook', 24)){ 
+                        $facebook = get_field('facebook', 24);}
+                    if(get_field('twitter', 24)){ 
+                        $twitter = get_field('twitter', 24);}
+                    if(get_field('instagram', 24)){ 
+                        $instagram = get_field('instagram', 24);}
+                    if(get_field('youtube', 24)){ 
+                        $youtube = get_field('youtube', 24);}
                 } 
             ?>
                 <ul class="footer_social-list">
@@ -98,7 +98,9 @@
 
 
 <?php wp_footer(); ?>
+<!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
+-->
 </body>
 </html>
