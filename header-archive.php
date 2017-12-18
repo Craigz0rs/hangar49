@@ -24,8 +24,8 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
     <link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' ); ?>/flexslider.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+<!--
     <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/jquery.flexslider-min.js"></script>
     <script type="text/javascript" charset="utf-8">
         $(window).load(function() {
@@ -49,6 +49,7 @@
           });
         });
     </script>
+-->
 </head>
 
 <body <?php body_class(); ?>>
