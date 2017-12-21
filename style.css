@@ -1322,6 +1322,9 @@ object {
       margin: 10px 0 20px 0;
       grid-column: 3/4; }
 
+    .footer_nav ul {
+      margin: 0.6em 0; }
+
     .footer_social {
       margin: 10px 0 20px 0;
       grid-column: 2/3;
