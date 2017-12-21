@@ -772,7 +772,9 @@ object {
 
 .intro p {
   font-family: "Metrophobic", sans-serif;
-  font-size: 0.7em; }
+  font-size: 0.7em;
+  max-width: 350px;
+  margin: 0 auto; }
 
 .home_navigation {
   display: flex;
@@ -785,7 +787,7 @@ object {
 .home_nav_block {
   display: inline-block;
   width: 33%;
-  min-height: 18vh;
+  min-height: 110px;
   margin: 0;
   background-color: rgba(153, 153, 153, 0.35);
   transition: 0.2s;
@@ -796,7 +798,7 @@ object {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding-top: 3vh;
+  padding-top: 21px;
   font-family: "Orbitron", sans-serif;
   text-decoration: none;
   color: white;
@@ -972,20 +974,19 @@ object {
   position: relative; }
 
 @supports (grid-area: auto) {
-  @media screen and (min-width: 801px) {
-    .inventory {
-      min-height: auto; }
+  @media screen and (min-width: 700px) {
+    .intro h1:first-of-type {
+      font-size: 4em; }
 
-    .projects {
-      min-height: auto; }
+    .intro h1:nth-of-type(2) {
+      font-size: 3.33em;
+      margin-top: -34px; }
 
-    .inventory_list,
-    .project_list {
-      display: grid;
-      grid-template-columns: auto auto; }
+    .intro h2 {
+      font-size: 1.5em; }
 
-    .aircraft_tile {
-      height: 30vw; } }
+    .intro p {
+      font-size: 1em; } }
   @media screen and (min-width: 1024px) {
     .intro h1:first-of-type {
       font-size: 6em;
