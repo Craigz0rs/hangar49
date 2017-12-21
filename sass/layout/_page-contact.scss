@@ -104,3 +104,15 @@
     border: 2px solid $color_font-nav-hover !important;
     transition: 0.2s;
 }
+
+//////////////////////////////////////////
+////// Grid and Responsive Styling ///////
+//////////////////////////////////////////
+
+@supports (grid-area: auto) {
+    
+    @media screen and (min-width: 801px) {
+        
+        
+    }
+}

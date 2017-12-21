@@ -5,6 +5,11 @@
     background-color: $color_footer-background;
 }
 
+.footer_wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
 .footer_heading {
     font-family: $font_heading;
     font-size: 1.1em;
@@ -59,6 +64,7 @@
     margin: 20px 0 20px 0;
     padding: 0 20px;
     text-align: left;
+    max-width: 320px;
 }
 
 .footer_contact h2 {
@@ -95,7 +101,9 @@
 }
 
 .footer_social {
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    max-width: 350px;
 }
 
 .footer_social ul {
@@ -126,4 +134,60 @@
     padding: 0 20px;
 }
 
+//////////////////////////////////////////
+////// Grid and Responsive Styling ///////
+//////////////////////////////////////////
 
+
+@supports (grid-area: auto) {
+    
+    @media screen and (min-width: 680px) {
+        
+        .footer_wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .footer_branding {
+            grid-column: 1/4;
+            padding-bottom: 20px;
+        }
+        
+        .footer_line_div {
+            grid-column: 1/4;
+        }
+        
+        .footer_line {
+            display: block;
+            border: none;
+            color: white;
+            height: 2px;
+            background: black;
+            background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from($color_header-main-nav-border), to(rgba(255,255,255,0)));
+        }
+        
+        .footer_contact {
+            margin: 10px 0 20px 0;
+            padding-left: 20px;
+            padding-right: 0;
+        }
+        
+        .footer_nav {
+            text-align: right;
+            margin: 10px 0 20px 0;
+            grid-column: 3/4;
+        }
+        
+        .footer_social {
+            margin: 10px 0 20px 0;
+            grid-column: 2/3;
+            grid-row: 3/4;
+            width: 100%;
+        }
+        
+        .footer_copyright {
+            margin-top: 15px;
+        }
+    }
+    
+}

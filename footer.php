@@ -14,9 +14,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+        <div class="footer_wrapper">
         <div class="footer_branding">
             <p>Hangar 49</p>
             <p>Warbirds</p>
+        </div>
+        <div class="footer_line_div">
+            <span class="footer_line"></span>
         </div>
 <!--
         <div class="footer_about">
@@ -88,6 +92,7 @@
                     echo '<li><a href="' . $youtube . '"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>'; 
                         } ?>                            
                 </ul>
+        </div>
         </div>
         <div class="footer_copyright">
             <p>Copyright 2017-2018 Hangar 49</p>
