@@ -19,10 +19,10 @@ get_header(); ?>
             </div>
             <div class="archive_sorting" id="inventory_sorting">
 <!--                <img src="<?php echo get_template_directory_uri() ?>/images/inventory_background2.jpg">-->
-                <p>Sorting stuff</p>
+                <a href="#inventory" class="smoothScroll">see all warbirds</a>
             </div>
 
-              <div class="inventory_tiles">
+              <div class="inventory_tiles" id="inventory">
                     <?php 
 
                     $posts = get_posts(array(

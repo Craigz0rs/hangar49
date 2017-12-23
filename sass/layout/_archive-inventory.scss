@@ -6,12 +6,43 @@
 }
 
 #inventory_sorting {
-    background-image: url(images/inventory_background2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.5);
-    filter: blur(20px);
-    transform: scale(1.4);
-    overflow: hidden;
+//    background-image: url(images/inventory_background2.jpg);
+//    background-repeat: no-repeat;
+//    background-size: cover;
+//    background-position: center;
+//    filter: brightness(0.5);
+//    filter: blur(20px);
+//    transform: scale(1.4);
+//    overflow: hidden;
+}
+
+.inventory_tiles {
+    padding-top: 40px;
+    background-color: black;
+}
+
+@supports (grid-area: auto) {
+    
+    @media screen and (min-width: 960px) {
+        .inventory_list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .inventory_tile {
+            height: 38vw;
+        }
+        
+    }
+    
+    @media screen and (min-width: 1400px) {
+        .inventory_list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .inventory_tile {
+            height: 24vw;
+        }
+    }
 }

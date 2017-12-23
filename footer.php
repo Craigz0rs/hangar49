@@ -133,5 +133,6 @@
       });
     });
 </script>
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
 </body>
 </html>

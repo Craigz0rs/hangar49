@@ -11,7 +11,7 @@
 }
 
 .page_header {
-    height: 20em;
+    height: 22em;
     position: relative;
 //    margin-bottom: 20px;
     top: 0;
@@ -56,7 +56,8 @@
 
 .archive_sorting {
     background-color: black;
-    height: 22em;
+    padding-top: 28px;
+    height: 14em;
     z-index: -1;
 }
 
@@ -64,6 +65,25 @@
     margin: 0;
     padding: 0;
     color: white;
+}
+
+.archive_sorting a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 175px;
+    border: 2px solid white;
+    line-height: 40px;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    font-family: $font_heading;
+}
+
+.archive_sorting a:hover {
+    background-color: white;
+    color: $color_font-nav-hover;
+    transition: 0.3s;
 }
 
 .content_wrapper {
