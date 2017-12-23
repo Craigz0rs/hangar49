@@ -701,13 +701,15 @@ object {
 .site {
   min-height: 100vh; }
 
+.site-main {
+  overflow: hidden; }
+
 .content-area {
   background-color: rgba(153, 153, 153, 0.2); }
 
 .page_header {
-  height: 15em;
+  height: 20em;
   position: relative;
-  margin-bottom: 20px;
   top: 0; }
 
 .page_header_overlay {
@@ -726,7 +728,7 @@ object {
 .page_header h1 {
   position: absolute;
   color: white;
-  bottom: 0;
+  top: 1em;
   font-family: "Orbitron", sans-serif;
   font-size: 3.3em;
   text-align: center;
@@ -734,6 +736,26 @@ object {
   right: 0;
   z-index: 99;
   line-height: 1em; }
+
+.page_header h2 {
+  margin: 0;
+  position: absolute;
+  top: 10em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Jura", sans-serif;
+  color: #8C8C8C; }
+
+.archive_sorting {
+  background-color: black;
+  height: 22em;
+  z-index: -1; }
+
+.archive_sorting p {
+  margin: 0;
+  padding: 0;
+  color: white; }
 
 .content_wrapper {
   padding: 0 10px; }
@@ -1085,6 +1107,16 @@ object {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
+#inventory_sorting {
+  background-image: url(images/inventory_background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+  filter: blur(20px);
+  transform: scale(1.4);
+  overflow: hidden; }
 
 #projects_page_header {
   background-image: url(images/projects2-1.jpeg);

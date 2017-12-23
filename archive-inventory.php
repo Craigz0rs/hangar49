@@ -12,9 +12,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <div class="page_header" id="inventory_page_header">
-            <div class="page_header_overlay" id="inventory_page_header_overlay">
-            </div>
+                <div class="page_header_overlay" id="inventory_page_header_overlay">
+                </div>
                 <h1>Inventory</h1>
+                <h2>warbirds for sale</h2>
+            </div>
+            <div class="archive_sorting" id="inventory_sorting">
+<!--                <img src="<?php echo get_template_directory_uri() ?>/images/inventory_background2.jpg">-->
+                <p>Sorting stuff</p>
             </div>
 
               <div class="inventory_tiles">
