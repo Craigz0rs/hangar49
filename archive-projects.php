@@ -13,12 +13,16 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
             <div class="page_header" id="projects_page_header">
-            <div class="page_header_overlay" id="projects_page_header_overlay">
-            </div>
-                <h1>Projects</h1>
-            </div>
-
-                <div class="project_tiles">
+                <div class="page_header" id="projects_page_header">
+                    <div class="page_header_overlay" id="projects_page_header_overlay">
+                    </div>
+                        <h1>Projects</h1>
+                    </div>
+                    <div class="archive_sorting" id="project_sorting">
+                        <a href="#projects" class="smoothScroll">see all projects</a>
+                    </div>
+                </div>
+                <div class="project_tiles aircraft_tiles" id="projects">
                     <?php 
 
                     $projects = get_posts(array(
@@ -28,7 +32,7 @@ get_header(); ?>
 
                     if( $projects ): ?>
 
-                        <ul class="project_list">
+                        <ul class="project_list aircraft_list">
 
                         <?php foreach( $projects as $post ): 
                             

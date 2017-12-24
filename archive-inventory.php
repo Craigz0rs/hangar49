@@ -11,18 +11,19 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <div class="page_header" id="inventory_page_header">
-                <div class="page_header_overlay" id="inventory_page_header_overlay">
+            <div class="page_header_wrapper" id="inventory_header_wrapper">
+                <div class="page_header" id="inventory_page_header">
+                    <div class="page_header_overlay" id="inventory_page_header_overlay">
+                    </div>
+                    <h1>Inventory</h1>
+                    <h2>warbirds for sale</h2>
+                    <div class="archive_sorting" id="inventory_sorting">
+                        <a href="#inventory" class="smoothScroll">see all warbirds</a>
+                    </div>
                 </div>
-                <h1>Inventory</h1>
-                <h2>warbirds for sale</h2>
+               
             </div>
-            <div class="archive_sorting" id="inventory_sorting">
-<!--                <img src="<?php echo get_template_directory_uri() ?>/images/inventory_background2.jpg">-->
-                <a href="#inventory" class="smoothScroll">see all warbirds</a>
-            </div>
-
-              <div class="inventory_tiles" id="inventory">
+              <div class="inventory_tiles aircraft_tiles" id="inventory">
                     <?php 
 
                     $posts = get_posts(array(
@@ -31,7 +32,7 @@ get_header(); ?>
                     ));
 
                     if( $posts ): ?>
-                        <ul class="inventory_list">
+                        <ul class="inventory_list aircraft_list">
                     
                         <?php foreach( $posts as $post ): 
 

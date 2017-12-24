@@ -1,13 +1,25 @@
-#contact_page_header {
+#contact_page_background {
     background-image: url(images/contact_header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    width: 100vw;
 }
 
 #contact_wrapper {
-    color: $color_font-content-text;
+    background-color: $color_contact-overlay;
+    color: $color_font-text;
     font-family: $font_text;
+    margin-top: -20px;
+    padding: 0 10px;
+}
+
+.contact_info_wrapper {
+
+    padding: 45px 0;
 }
 
 #contact_wrapper h2 {
@@ -79,6 +91,7 @@
 .wpcf7-textarea,
 .wpcf7-text {
     max-width: 100%;
+    background-color: $color_contact-overlay;
 }
 
 .wpcf7-submit {

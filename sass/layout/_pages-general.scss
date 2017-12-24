@@ -10,8 +10,12 @@
     background-color: $color_site-main-background;
 }
 
+.page_header_wrapper {
+    background-color: black;
+}
+
 .page_header {
-    height: 22em;
+    height: 90vh;
     position: relative;
 //    margin-bottom: 20px;
     top: 0;
@@ -46,44 +50,12 @@
 .page_header h2 {
     margin: 0;
     position: absolute;
-    top: 10em;
+    bottom: 2em;
     left: 0;
     right: 0;
     text-align: center;
     font-family: $font_heading;
     color: $color_page_header-h2;
-}
-
-.archive_sorting {
-    background-color: black;
-    padding-top: 28px;
-    height: 14em;
-    z-index: -1;
-}
-
-.archive_sorting p {
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
-.archive_sorting a {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 175px;
-    border: 2px solid white;
-    line-height: 40px;
-    transition: 0.3s;
-    color: white;
-    text-decoration: none;
-    font-family: $font_heading;
-}
-
-.archive_sorting a:hover {
-    background-color: white;
-    color: $color_font-nav-hover;
-    transition: 0.3s;
 }
 
 .content_wrapper {
