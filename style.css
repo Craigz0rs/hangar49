@@ -880,7 +880,6 @@ object {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: absolute;
   top: 0;
   width: 100vw; }
 
@@ -889,6 +888,7 @@ object {
   color: white;
   font-family: "Metrophobic", sans-serif;
   margin-top: -20px;
+  margin-bottom: -24px;
   padding: 0 10px; }
 
 .contact_info_wrapper {
