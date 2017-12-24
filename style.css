@@ -1102,7 +1102,7 @@ object {
   #projects_page_header h1,
   #inventory_page_header h1 {
     font-size: 5.3em; } }
-@supports (grid: auto) {
+@supports (grid-area: auto) {
   @media screen and (min-width: 960px) {
     .aircraft_list {
       display: grid;

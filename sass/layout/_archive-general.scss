@@ -164,7 +164,7 @@
     }
 }
 
-@supports (grid: auto) {
+@supports (grid-area: auto) {
     
     @media screen and (min-width: 960px) {
         .aircraft_list {
