@@ -53,7 +53,7 @@ get_header(); ?>
                     } 
                 ?>
                     <ul>
-                        <li id="address_li"><i class="fa fa-building" aria-hidden="true"></i> <div class="address"><?php echo $address; ?></div></li>
+                        <li id="address_li"><div class="address"><?php echo $address; ?></div></li>
                         <li id="phone_li"><a href="tel:<?php echo $phone; ?>"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> <?php echo $phone; ?></a></li>
                         <?php if(get_field('fax')) {
                         echo '<li><a href="fax:' . $fax . '"><i class="fa fa-fax" aria-hidden="true"></i> ' . $fax . '</a></li>'; 
@@ -105,4 +105,4 @@ get_header(); ?>
 
 <?php
 
-get_footer();
+//get_footer();
