@@ -130,19 +130,33 @@
         #contact_wrapper {
             display: grid;
             background-color: transparent;
-            padding: 0;
-            margin: 0;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 1400px;
             min-height: 100vh;
-            grid-template:  ". . . . ." 100px
-                            ". contact . form ." 1fr
-                            / 0.2fr 1fr 0.1fr 1fr 0.2fr;
+            grid-template:  ". . ." 100px
+                            "contact . form" 1fr
+                            / 1fr 0.1fr 1fr;
+        }
+        
+        #contact_wrapper h1 {
+            position: absolute;
+            color: white;
+            top: 1.3em;
+            font-family: "Orbitron", sans-serif;
+            font-size: 5.3em;
+            text-align: center;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            line-height: 1em;
         }
         
         .contact_info_wrapper {
             grid-area: contact;
             align-self: end;
             height: 100%;
-            padding: 110px 50px 0 50px;
+            padding: 160px 50px 0 50px;
             background-color: $color_contact-overlay;
             text-align: center;
             
@@ -152,7 +166,7 @@
             grid-area: form;
             align-self: end;
             height: 100%;
-            padding: 110px 0 0 0;
+            padding: 160px 0 0 0;
         }
         
         .contact_form h2 {

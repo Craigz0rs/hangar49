@@ -25,7 +25,7 @@ get_header(); ?>
 
             
             <div class="content_wrapper" id="contact_wrapper">
-<!--                <h1>Contact Us</h1>-->
+                <h1>Contact</h1>
             <div class="contact_info_wrapper">
                 <div class="location">
                 <?php
