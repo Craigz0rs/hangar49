@@ -4,27 +4,56 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-//    position: absolute;
+    position: absolute;
     top: 0;
     width: 100vw;
 }
 
 #contact_wrapper {
-    background-color: $color_contact-overlay;
     color: $color_font-text;
     font-family: $font_text;
-    margin-top: -20px;
-    margin-bottom: -24px;
+//    margin-top: -20px;
+//    margin-bottom: -24px;
+    min-height: 100vh;
     padding: 0 10px;
 }
 
-.contact_info_wrapper {
+#contact_wrapper h1 {
+    position: absolute;
+    color: $color_font-page-headings;
+    top: 65px;
+    font-family: $font_logo;
+    font-size: 3.3em;
+    text-align: center;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    line-height: 1em;
+}
 
-    padding: 45px 0;
+.contact_info_wrapper {
+    background-color: $color_contact-overlay;
+    padding: 85px 10px 45px 10px;
+    text-align: left;
+    margin-top: 40px;
 }
 
 #contact_wrapper h2 {
-//    font-family: $font_heading;
+    font-size: 1.6em;
+}
+
+.location {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.location p {
+    text-align: left;
+}
+
+.contact_info {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 
@@ -32,6 +61,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    text-align: left;
 }
 
 .contact_info li:first-of-type {
@@ -52,11 +82,15 @@
 }
 
 .address {
-    margin-left: 6px;
+//    margin-left: 6px;
 }
 
 #phone_li i {
     margin-right: 7px;
+}
+
+.follow_us {
+    margin-top: 50px;
 }
 
 .follow_us ul {
@@ -84,25 +118,47 @@
     transition: 0.2s;
 }
 
+.contact_form {
+    padding-top: 1px;
+    background-color: $color_contact-overlay;
+}
+
+.contact_form h2 {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-bottom: 12px;
+}
+
+#wpcf7-f87-o1 {
+    text-align: center;
+}
+
+.wpcf7-form p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 40px;
+}
+
 .wpcf7-textarea,
 .wpcf7-text {
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
     background-color: $color_contact-overlay;
     color: $color_font-text !important;
     border-radius: 0px !important;
 }
 
-.wpcf7-textarea {
-    max-width: 500px;
+.wpcf7-text {
+    height: 45px;
 }
 
 .wpcf7-submit {
     width: 100%;
+    max-width: 400px;
     height: 45px;
     font-family: jura;
     color: white !important;
-    background-color: rgba(153, 153, 153, 1) !important;
-    font-size: 1.3em !important;
+    background-color: $color_header-main-nav-background-hov !important;
+    font-size: 1em !important;
     line-height: 38px;
     padding: 0 !important;
     border: 2px solid white !important;
@@ -116,8 +172,12 @@
 .wpcf7-submit:active {
     color: $color_font-nav-hover !important;
     background-color: $color_header-main-nav-link-background-hover !important;
-    border: 2px solid $color_font-nav-hover !important;
+    border: 2px solid white !important;
     transition: 0.2s;
+}
+
+.ajax-loader {
+    display: none !important;
 }
 
 //////////////////////////////////////////
@@ -126,13 +186,30 @@
 
 @supports (grid-area: auto) {
     
+    @media screen and (max-width: 440px) {
+        .contact_form h2 {
+            margin-left: 10px;
+        }
+    }
+    
+    @media screen and (min-width: 600px) {
+        #contact_wrapper h1 {
+            font-size: 4em;
+            top: 80px;
+        }
+        
+        .contact_info_wrapper {
+            padding-top: 115px;
+        }
+    }
+    
     @media screen and (min-width: 900px) {
         #contact_wrapper {
             display: grid;
             background-color: transparent;
             padding: 0 20px;
             margin: 0 auto;
-            max-width: 1400px;
+            max-width: 1600px;
             min-height: 100vh;
             grid-template:  ". . ." 100px
                             "contact . form" 1fr
@@ -152,14 +229,34 @@
             line-height: 1em;
         }
         
+        #contact_wrapper h2 {
+            font-size: 1.9em;
+        }
+        
+        #contact_wrapper p {
+            font-size: 1.1em;
+        }
+        
         .contact_info_wrapper {
             grid-area: contact;
             align-self: end;
             height: 100%;
-            padding: 160px 50px 0 50px;
-            background-color: $color_contact-overlay;
+            padding: 135px 50px 0 50px;
             text-align: center;
             
+        }
+        
+        .contact_info {
+            margin-top: 40px;
+        }
+        
+        .contact_info ul {
+            font-size: 1.2em;
+        }
+        
+        .follow_us {
+            margin-top: 100px;
+            font-size: 1.2em;
         }
         
         .contact_form {
@@ -167,17 +264,21 @@
             align-self: end;
             height: 100%;
             padding: 160px 0 0 0;
+            background-color: transparent;
         }
         
         .contact_form h2 {
-            padding-left: 10%;
+            margin-left: 10%;
+            max-width: 500px;
             text-align: center;
+            margin-bottom: 17px;
         }
         
         #wpcf7-f87-o1 {
             display: flex;
             justify-content: right;
             padding-left: 10%;
+            text-align: left;
         }
         
         .wpcf7-form {
@@ -193,46 +294,44 @@
             width: 100%;
             height: 45px;
             max-width: 500px;
+            font-weight: 600;
+        }
+        
+        .wpcf7-textarea {
+            font-weight: 600;
+            max-width: 500px;
         }
         
         .wpcf7-submit {
             width: 50%;
         }
         
-//        #contact_wrapper {
-//            display: grid;
-//            background-color: transparent;
-//            padding: 0;
-//            margin: 0;
-//            min-height: 100vh;
-////            grid-template-rows: 50px auto;
-////            grid-template-colums: 50px 1fr 1fr 50px;
-//            grid-template:  ". . . ." 0.4fr
-//                            ". contact form ." auto
-//                            / 0.2fr 1fr 1fr 0.2fr;
-//            position: relative;
-//                            
-//        }
-//        
-//        .contact_info_wrapper {
-//            background-color: $color_contact-overlay;
-//            padding: 130px 50px 20px 50px;
-//            grid-area: contact;
-//            text-align: center;
-//        }
-//        
-//        .follow_us ul {
-//            padding: 0 3vw;
-//        }
-//        
-//        .contact_form {
-//            position: absolute;
-//            bottom: 0;
-//            height: 100%;
-//            padding: 130px 10% 20px 10%;
-//            grid-area: form;
-//            
-//        }
-        
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    $color_placeholder-text;
+            font-weight: 500;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    $color_placeholder-text;
+            opacity:  1;
+            font-weight: 500;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    $color_placeholder-text;
+            opacity:  1;
+            font-weight: 500;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:    $color_placeholder-text;
+            font-weight: 500;
+        }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color:    $color_placeholder-text;
+            font-weight: 500;
+        }
+
+        ::placeholder { /* Most modern browsers support this now. */
+            color:    $color_placeholder-text;
+            font-weight: 500;
+        }
     }
 }
