@@ -98,7 +98,7 @@ get_header(); ?>
                 <h2>Send a Message</h2>
                 <?php echo do_shortcode('[contact-form-7 id="87" title="Contact form 1"]'); ?>
             </div>
-                <?php get_footer(); ?>
+
             </div>
                
             </div>
@@ -107,4 +107,4 @@ get_header(); ?>
 
 <?php
 
-//get_footer();
+get_footer();

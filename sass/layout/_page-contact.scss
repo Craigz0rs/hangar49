@@ -4,8 +4,6 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: absolute;
-    top: 0;
     width: 100vw;
 }
 
@@ -33,9 +31,9 @@
 
 .contact_info_wrapper {
     background-color: $color_contact-overlay;
-    padding: 85px 10px 45px 10px;
+    padding: 115px 10px 45px 10px;
     text-align: left;
-    margin-top: 40px;
+//    margin-top: 40px;
 }
 
 #contact_wrapper h2 {
@@ -199,7 +197,7 @@
         }
         
         .contact_info_wrapper {
-            padding-top: 115px;
+            padding-top: 150px;
         }
     }
     

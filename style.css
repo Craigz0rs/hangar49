@@ -880,8 +880,6 @@ object {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: absolute;
-  top: 0;
   width: 100vw; }
 
 #contact_wrapper {
@@ -904,9 +902,8 @@ object {
 
 .contact_info_wrapper {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 85px 10px 45px 10px;
-  text-align: left;
-  margin-top: 40px; }
+  padding: 115px 10px 45px 10px;
+  text-align: left; }
 
 #contact_wrapper h2 {
   font-size: 1.6em; }
@@ -1028,7 +1025,7 @@ object {
       top: 80px; }
 
     .contact_info_wrapper {
-      padding-top: 115px; } }
+      padding-top: 150px; } }
   @media screen and (min-width: 900px) {
     #contact_wrapper {
       display: grid;
