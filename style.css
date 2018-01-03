@@ -1214,15 +1214,13 @@ object {
 
 .read_more {
   position: absolute;
-  top: 50%;
+  bottom: 5%;
   left: 0;
   right: 0;
   border: 2px solid white;
   width: 120px;
   margin: 0 auto;
   line-height: 40px;
-  visibility: hidden;
-  opacity: 0;
   transition: visibility 0.3s, opacity 0.3s;
   transition: 0.3s; }
 
@@ -1234,19 +1232,16 @@ object {
   transition: 0.3s; }
 
 .tile_overlay {
-  margin: 0;
+  margin: 50px 5px;
   padding: 0;
   position: absolute;
   display: block;
   height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   line-height: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
   transition: visibility 0.3s, opacity 0.3s; }
 
 .aircraft_tile:hover span,
@@ -1255,44 +1250,39 @@ object {
   visibility: visible;
   opacity: 1; }
 
-.aircraft_list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-
-.aircraft_list li {
-  overflow: hidden;
-  position: relative; }
-
 .aircraft_tiles {
   padding-top: 40px;
   background-color: black; }
 
+.aircraft_list {
+  margin: 0;
+  padding: 10px 10px 1px 10px;
+  list-style-type: none;
+  height: 100%; }
+
+.aircraft_list li {
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0; }
+
+@media screen and (min-width: 450px) {
+  .aircraft_tile h3 {
+    top: 18%;
+    font-size: 1.6em; } }
 @media screen and (min-width: 600px) {
   #projects_page_header h1,
   #inventory_page_header h1 {
     font-size: 4.3em; } }
+@media screen and (min-width: 700px) {
+  .aircraft_tile h3 {
+    font-size: 1.8em; }
+
+  .tile_overlay {
+    margin: 50px 10px; } }
 @media screen and (min-width: 960px) {
   #projects_page_header h1,
   #inventory_page_header h1 {
     font-size: 5.3em; } }
-@supports (grid-area: auto) {
-  @media screen and (min-width: 960px) {
-    .aircraft_list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
-      padding: 10px; }
-
-    .aircraft_tile {
-      height: 38vw; } }
-  @media screen and (min-width: 1400px) {
-    .aircraft_list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr; }
-
-    .aircraft_tile {
-      height: 24vw; } } }
 #inventory_page_header {
   background-image: url(images/inventory_background2.jpg);
   background-repeat: no-repeat;
