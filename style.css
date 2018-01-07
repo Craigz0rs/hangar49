@@ -1385,6 +1385,14 @@ object {
   overflow: hidden;
   position: relative; }
 
+#featured_slider .flex-viewport {
+  height: 60vh; }
+
+#featured_slider .gallery_slides img {
+  height: 60vh;
+  object-fit: cover;
+  object-position: center; }
+
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
