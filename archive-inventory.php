@@ -45,15 +45,15 @@ get_header(); ?>
                                     setup_postdata($post);
                                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
                                     echo '<li><div class="aircraft_tile inventory_tile"'; 
-                                    echo '><a href="' . get_the_permalink() . '">';
+                                    echo '>';
                                     if( $feat_image ) : ?>
                                     <img src="<?php echo $feat_image; ?>">
                                     <?php
                                     endif;
-                                    echo '<span class="tile_overlay"></span>';
+                                    echo '<a href="' . get_the_permalink() . '"><span class="tile_overlay"></span></a>';
                                     echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '<span class="read_more">learn more</class>';
-                                    echo '</a></li>';
+                                    echo '<a href="' . get_the_permalink() . '"><span class="read_more">learn more</span></a>';
+                                    echo '</li>';
                                 endforeach;
                                 
                                 wp_reset_postdata();

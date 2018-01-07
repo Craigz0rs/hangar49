@@ -134,5 +134,6 @@
     });
 </script>
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/hoverscript.js"></script>
 </body>
 </html>

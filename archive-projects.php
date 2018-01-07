@@ -38,7 +38,7 @@ get_header(); ?>
                             
                             setup_postdata( $post );
 
-                            echo '<li><div class="aircraft_tile project_tile"><a href="' . get_the_permalink() . '">';
+                            echo '<li><div class="aircraft_tile project_tile">';
                             
                             $planes = get_field('aircraft');
                             if( $planes ) {
@@ -49,13 +49,13 @@ get_header(); ?>
                                     <img src="<?php echo $feat_image; ?>">
                                     <?php
                                     endif;
-                                    echo '<span class="tile_overlay"></span>';
+                                    echo '<a href="' . get_the_permalink() . '"><span class="tile_overlay"></span></a>';
                                     echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '<span class="read_more">see project</class>';
+                                    echo '<a href="' . get_the_permalink() . '"><span class="read_more">see project</class></a>';
                                 endforeach;
                                 wp_reset_postdata();
                             }
-                            echo '</a></div></li>';
+                            echo '</div></li>';
                             ?>
 
                         <?php endforeach; ?>

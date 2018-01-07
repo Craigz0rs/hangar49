@@ -1182,27 +1182,14 @@ object {
   object-fit: cover;
   display: block;
   filter: grayscale(0) blur(0);
-  transition: 0.3s ease-in-out; }
+  transition: 0.5s ease-in-out; }
 
 .aircraft_tile:hover img,
 .aircraft_tile:focus img,
 .aircraft_tile:active img {
   filter: grayscale(60%) blur(1px);
   transform: scale(1.1);
-  transition: 0.3s ease-in-out; }
-
-.aircraft_tile a {
-  display: block;
-  position: absolute;
-  top: 0;
-  color: white;
-  font-family: "Jura", sans-serif;
-  text-align: center;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%; }
+  transition: 5s ease-out; }
 
 .aircraft_tile h3 {
   margin: 0;
@@ -1210,7 +1197,11 @@ object {
   position: absolute;
   top: 5%;
   left: 0;
-  right: 0; }
+  right: 0;
+  color: white;
+  font-family: "Jura", sans-serif;
+  text-align: center;
+  text-decoration: none; }
 
 .read_more {
   position: absolute;
@@ -1220,7 +1211,13 @@ object {
   border: 2px solid white;
   width: 120px;
   margin: 0 auto;
+  color: white;
+  font-family: "Jura", sans-serif;
+  text-align: center;
+  text-decoration: none;
   line-height: 40px;
+  visibility: hidden;
+  opacity: 0;
   transition: visibility 0.3s, opacity 0.3s;
   transition: 0.3s; }
 
@@ -1242,13 +1239,29 @@ object {
   right: 0;
   line-height: 30px;
   background-color: rgba(0, 0, 0, 0.3);
-  transition: visibility 0.3s, opacity 0.3s; }
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s; }
 
-.aircraft_tile:hover span,
-.aircraft_tile:focus span,
-.aircraft_tile:active span {
+.aircraft_tile:hover .tile_overlay,
+.aircraft_tile:focus .tile_overlay {
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+  animation-name: overlay-transition;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out; }
+
+@keyframes overlay-transition {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+.aircraft_tile:hover .read_more,
+.aircraft_tile:focus .read_more,
+.aircraft_tile:active .read_more {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px); }
 
 .aircraft_tiles {
   padding-top: 40px;
@@ -1282,7 +1295,36 @@ object {
 @media screen and (min-width: 960px) {
   #projects_page_header h1,
   #inventory_page_header h1 {
-    font-size: 5.3em; } }
+    font-size: 5.3em; }
+
+  .aircraft_list {
+    padding: 10px 20px 1px 20px; }
+
+  .aircraft_list li {
+    margin: 20px 0; } }
+@supports (grid-area: auto) {
+  @media screen and (min-width: 960px) {
+    .aircraft_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      padding: 10px; }
+
+    .aircraft_tile {
+      height: 38vw; }
+
+    .aircraft_list li {
+      margin: 0; }
+
+    .tile_overlay {
+      margin: 50px 10px; } }
+  @media screen and (min-width: 1400px) {
+    .aircraft_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; }
+
+    .aircraft_tile {
+      height: 24vw; } } }
 #inventory_page_header {
   background-image: url(images/inventory_background2.jpg);
   background-repeat: no-repeat;
