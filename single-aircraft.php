@@ -69,7 +69,7 @@ get_header('archive'); ?>
 							$height = $image['sizes'][ $size . '-height' ];
 
 						?>
-						<li>
+						<li data-thumb="<?php echo $url; ?>">
                             <div class="slider_image">
 							<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                             </div>
@@ -77,6 +77,7 @@ get_header('archive'); ?>
                         <?php endwhile; ?>
 					</ul>
 				</div>
+<!--
                 <div id="carousel" class="flexslider">
 					<ul class="slides gallery_slides">
 						<?php while( have_rows('image_gallery') ): the_row();
@@ -103,6 +104,7 @@ get_header('archive'); ?>
                         <?php endwhile; ?>
 					</ul>
                 </div>
+-->
                 <?php endif; ?>
                 <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                 <div class="aircraft_status">
