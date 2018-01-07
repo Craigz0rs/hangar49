@@ -11,34 +11,6 @@ get_header('archive'); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-                <?php if( have_rows('image_gallery') ): ?>
-				<div class="flexslider gallery_slider" id="featured_slider">
-					<ul class="slides gallery_slides">
-						<?php while( have_rows('image_gallery') ): the_row();
-							$image = get_sub_field('slider_image');
-							$title = $image['title'];
-							$description = $image['description'];
-                            $caption = $image['caption'];
-
-							$url = $image['url'];
-							$alt = $image['alt'];
-                        
-
-							$size = 'full';
-							$myimage = $image['sizes'][ $size ];
-							$width = $image['sizes'][ $size . '-width' ];
-							$height = $image['sizes'][ $size . '-height' ];
-
-						?>
-						<li data-thumb="<?php echo $url; ?>">
-                            <div class="slider_image">
-							<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                            </div>
-						</li>
-                        <?php endwhile; ?>
-					</ul>
-				</div>
-                <?php endif; ?>
             <div class="content_wrapper" id="aircraft_wrapper">      
                 <?php
                 while ( have_posts() ) : the_post();
@@ -78,6 +50,62 @@ get_header('archive'); ?>
                                 $misc = get_field('misc');}
                         } 
                 ?>
+                <?php if( have_rows('image_gallery') ): ?>
+				<div class="flexslider gallery_slider" id="slider">
+					<ul class="slides gallery_slides">
+						<?php while( have_rows('image_gallery') ): the_row();
+							$image = get_sub_field('slider_image');
+							$title = $image['title'];
+							$description = $image['description'];
+                            $caption = $image['caption'];
+
+							$url = $image['url'];
+							$alt = $image['alt'];
+                        
+
+							$size = 'full';
+							$myimage = $image['sizes'][ $size ];
+							$width = $image['sizes'][ $size . '-width' ];
+							$height = $image['sizes'][ $size . '-height' ];
+
+						?>
+						<li data-thumb="<?php echo $url; ?>">
+                            <div class="slider_image">
+							<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                            </div>
+						</li>
+                        <?php endwhile; ?>
+					</ul>
+				</div>
+<!--
+                <div id="carousel" class="flexslider">
+					<ul class="slides gallery_slides">
+						<?php while( have_rows('image_gallery') ): the_row();
+							$image = get_sub_field('slider_image');
+							$title = $image['title'];
+							$description = $image['description'];
+                            $caption = $image['caption'];
+
+							$url = $image['url'];
+							$alt = $image['alt'];
+                        
+
+							$size = 'full';
+							$myimage = $image['sizes'][ $size ];
+							$width = $image['sizes'][ $size . '-width' ];
+							$height = $image['sizes'][ $size . '-height' ];
+
+						?>
+						<li>
+                            <div class="slider_image">
+							<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                            </div>
+						</li>
+                        <?php endwhile; ?>
+					</ul>
+                </div>
+-->
+                <?php endif; ?>
                 <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                 <div class="aircraft_status">
                     <strong class="spec_title">FOR SALE</strong>

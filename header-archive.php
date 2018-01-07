@@ -54,8 +54,8 @@
     <script type="text/javascript" charset="utf-8">
   $(window).load(function() {
     $('.flexslider').flexslider({
-//        animation: "slide",
-//        controlNav: "thumbnails"
+        animation: "slide",
+        controlNav: "thumbnails"
     });
   });
 </script>
