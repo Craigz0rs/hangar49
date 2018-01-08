@@ -27,38 +27,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
     <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/jquery.flexslider.js"></script>
-<!--
-    <script type="text/javascript" charset="utf-8">
-        $(window).load(function() {
-          // The slider being synced must be initialized first
-          $('#carousel').flexslider({
-            animation: "slide",
-            controlNav: false,
-            animationLoop: false,
-            slideshow: false,
-            itemWidth: 210,
-            itemMargin: 5,
-            asNavFor: '#slider'
-          });
 
-          $('#slider').flexslider({
-            animation: "slide",
-            controlNav: false,
-            animationLoop: false,
-            slideshow: false,
-            sync: "#carousel"
-          });
-        });
-    </script>
--->
     <script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-        animation: "slide",
-        controlNav: "thumbnails"
-    });
-  });
-</script>
+          $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+          });
+    </script>
 
 </head>
 

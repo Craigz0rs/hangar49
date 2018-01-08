@@ -704,9 +704,6 @@ object {
 .site-main {
   overflow: hidden; }
 
-.content-area {
-  background-color: rgba(153, 153, 153, 0.2); }
-
 .page_header_wrapper {
   background-color: black; }
 
@@ -1384,6 +1381,116 @@ object {
 .project_list li {
   overflow: hidden;
   position: relative; }
+
+#featured_slider {
+  margin: 0;
+  padding-top: 40px;
+  border-radius: 0px;
+  background: black;
+  height: 60vh; }
+
+#featured_slider_overlay {
+  z-index: 1; }
+
+#featured_slider .flex-control-nav {
+  display: none; }
+
+#featured_slider img {
+  object-fit: cover;
+  object-position: center;
+  height: 60vh; }
+
+.aircraft_page_nav {
+  background-color: black;
+  height: 150px; }
+
+#aircraft_page_header {
+  height: 100vh; }
+
+#aircraft_page_header h1 {
+  top: 2em;
+  font-size: 1.7em; }
+
+#aircraft_page_header span {
+  bottom: 10em;
+  font-family: "Metrophobic", sans-serif;
+  font-weight: 500;
+  color: white;
+  z-index: 2;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center; }
+
+#aircraft_page_header p {
+  margin-bottom: 0; }
+
+#aircraft_page_header .special_info {
+  font-size: 0.7em; }
+
+#aircraft_sorting {
+  bottom: 1.5em;
+  padding: 0 50px; }
+
+#aircraft_sorting a {
+  padding: 0;
+  margin-bottom: 20px;
+  width: 100%; }
+
+.aircraft_section_heading {
+  padding: 17px 0;
+  font-family: "Jura", sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgba(153, 153, 153, 0.2);
+  color: #515151; }
+
+.aircraft_section_heading h2 {
+  margin: 0;
+  position: relative;
+  z-index: 99; }
+
+.aircraft_section_line {
+  display: block;
+  border: none;
+  color: #666;
+  height: 2px;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 250, from(#3F8C3F), to(rgba(153, 153, 153, 0.2)));
+  position: relative; }
+
+#aircraft_wrapper {
+  background-color: rgba(153, 153, 153, 0.2);
+  position: relative;
+  color: #666;
+  padding: 20px 10px 30px; }
+
+.specification_overlay {
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  right: 0;
+  width: calc(58%);
+  height: calc(100% + 60px);
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 10px; }
+
+.spec_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #666;
+  position: relative; }
+
+.spec_item:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.spec_value {
+  margin: 0;
+  padding: 0;
+  width: 42%; }
 
 .content-area {
   float: left;
