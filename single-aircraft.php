@@ -134,15 +134,24 @@ get_header('archive'); ?>
                         <strong class="spec_title">Registration Number:</strong>
                         <p class="spec_value"><?php echo $registration_number; ?></p>
                     </div>
+                    <div class="spec_item">
+                        <strong class="spec_title">Price:</strong>
+                        <p class="spec_value"><?php echo $price; ?></p>
+                    </div>
+                    <div class="spec_item">
+                        <strong class="spec_title">Location:</strong>
+                        <p class="spec_value"><?php echo $location; ?></p>
+                    </div>
                 </div>
             </div>
             <div class="aircraft_details">
                 <div class="aircraft_section_heading">
                     <h2>details</h2>
                 </div>
+                <span class="aircraft_section_line"></span>
                 <div class="content_wrapper" id="aircraft_wrapper">
                     <div class="detail_item">
-                        <strong class="detail_title">Airframe</strong>
+                        <strong class="detail_title">Airframe:</strong>
                         <p class="detail_value"><?php echo $airframe; ?></p>
                     </div>
                     <div class="detail_item">
@@ -162,7 +171,7 @@ get_header('archive'); ?>
                         <p class="detail_value"><?php echo $exterior; ?></p>
                     </div>
                     <div class="detail_item">
-                        <strong class="detail_title">Interior</strong>
+                        <strong class="detail_title">Interior:</strong>
                         <p class="detail_value"><?php echo $interior; ?></p>
                     </div>
                     <div class="detail_item">
