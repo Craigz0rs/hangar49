@@ -20,6 +20,12 @@
     height: 60vh;
 }
 
+#exterior_slider,
+#interior_slider,
+#gallery {
+    margin-bottom: 0;
+}
+
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs,
 #gallery .flex-control-thumbs {
@@ -119,7 +125,11 @@
     background-color: rgba(153, 153, 153, 0.2);
     position: relative;
     color: #666;
-    padding: 20px 10px 30px;
+    padding: 20px 10px 0px;
+}
+
+#aircraft_info .content_wrapper {
+    padding-bottom: 30px;
 }
 
 .specification_overlay {
@@ -157,6 +167,7 @@
 
 .detail_item {
     font-family: metrophobic;
+    margin-bottom: 15px;
 }
 
 .detail_value {
