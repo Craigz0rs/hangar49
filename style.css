@@ -1400,6 +1400,26 @@ object {
   object-position: center;
   height: 60vh; }
 
+#exterior_slider .flex-control-thumbs,
+#interior_slider .flex-control-thumbs,
+#gallery .flex-control-thumbs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+#exterior_slider .flex-control-thumbs li,
+#interior_slider .flex-control-thumbs li,
+#gallery .flex-control-thumbs li {
+  width: calc(25% - 4px);
+  margin: 2px; }
+
+#exterior_slider .flex-control-thumbs img,
+#interior_slider .flex-control-thumbs img,
+#gallery .flex-control-thumbs img {
+  height: calc(25vw - 20px);
+  object-fit: cover;
+  object-position: center; }
+
 .aircraft_page_nav {
   background-color: black;
   height: 150px; }
@@ -1491,6 +1511,14 @@ object {
   margin: 0;
   padding: 0;
   width: 42%; }
+
+.detail_item {
+  font-family: metrophobic; }
+
+.detail_value {
+  margin: 0;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.7); }
 
 .content-area {
   float: left;
