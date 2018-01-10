@@ -102,8 +102,9 @@ get_header('archive'); ?>
                         </p>
                     </span>
                     <div class="archive_sorting" id="aircraft_sorting">
-                        <a href="#aircraft_info" class="smoothScroll">see details</a>
+                        <a href="#aircraft_info" class="smoothScroll">specifications</a>
                         <a href="#gallery" class="smoothScroll">view gallery</a>
+                        <a href="#details" class="smoothScroll">see details</a>
                     </div>
                 </div>
             </div>
@@ -144,7 +145,43 @@ get_header('archive'); ?>
                     </div>
                 </div>
             </div>
-            <div class="aircraft_details">
+            
+            <div class="aircraft_gallery" id="gallery">
+                <div class="aircraft_section_heading">
+                    <h2>gallery</h2>
+                </div>
+                <span class="aircraft_section_line"></span>
+                <?php if( have_rows('image_gallery') ): ?>
+                        <div class="flexslider gallery_slider" id="interior_slider">
+                                <ul class="slides gallery_slides">
+                                    <?php while( have_rows('image_gallery') ): the_row();
+                                        $image = get_sub_field('aircraft_gallery_image');
+                                        $title = $image['title'];
+                                        $description = $image['description'];
+                                        $caption = $image['caption'];
+
+                                        $url = $image['url'];
+                                        $alt = $image['alt'];
+
+
+                                        $size = 'full';
+                                        $myimage = $image['sizes'][ $size ];
+                                        $width = $image['sizes'][ $size . '-width' ];
+                                        $height = $image['sizes'][ $size . '-height' ];
+
+                                    ?>
+                                    <li data-thumb="<?php echo $url; ?>">
+                                        <div class="aircraft_slider_image">
+                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                                        </div>
+                                    </li>
+                                    <?php endwhile; ?>
+                                </ul>
+                        </div>
+                <?php endif; ?>
+            </div>               
+            
+            <div class="aircraft_details" id="details">
                 <div class="aircraft_section_heading">
                     <h2>details</h2>
                 </div>
@@ -241,40 +278,7 @@ get_header('archive'); ?>
                 </div>
             </div>
 
-            <div class="aircraft_gallery" id="gallery">
-                <div class="aircraft_section_heading">
-                    <h2>gallery</h2>
-                </div>
-                <span class="aircraft_section_line"></span>
-                <?php if( have_rows('image_gallery') ): ?>
-                        <div class="flexslider gallery_slider" id="interior_slider">
-                                <ul class="slides gallery_slides">
-                                    <?php while( have_rows('image_gallery') ): the_row();
-                                        $image = get_sub_field('aircraft_gallery_image');
-                                        $title = $image['title'];
-                                        $description = $image['description'];
-                                        $caption = $image['caption'];
-
-                                        $url = $image['url'];
-                                        $alt = $image['alt'];
-
-
-                                        $size = 'full';
-                                        $myimage = $image['sizes'][ $size ];
-                                        $width = $image['sizes'][ $size . '-width' ];
-                                        $height = $image['sizes'][ $size . '-height' ];
-
-                                    ?>
-                                    <li data-thumb="<?php echo $url; ?>">
-                                        <div class="aircraft_slider_image">
-                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                        </div>
-                                    </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                        </div>
-                <?php endif; ?>
-            </div>    
+ 
 
                 <?php
                 endwhile; // End of the loop.

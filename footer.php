@@ -22,12 +22,6 @@
         <div class="footer_line_div">
             <span class="footer_line"></span>
         </div>
-<!--
-        <div class="footer_about">
-            <p>About Us</p>
-            <p>Based on Vancouver Island on the west coast of Canada, we authentically restore classic warbirds, provide aircraft maintenance services and broker aircraft locally and internationally.</p>
-        </div>
--->
         <div class="footer_contact" id="contact">
             <strong class="footer_heading">Contact Us</strong>
             <p>Have any questions or want to inquire about one of our warbirds? Give us a shout!</p>
@@ -103,38 +97,18 @@
 
 
 <?php wp_footer(); ?>
-<!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
--->
-<!--
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
-  <script type="text/javascript">
-    $(window).load(function(){
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/jquery.flexslider.js"></script>
 
-      $('#slider').flexslider({
+<script type="text/javascript" charset="utf-8">
+  $(window).on("load", function() {
+    $('.flexslider').flexslider({
         animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
+        controlNav: "thumbnails"
     });
+  });
 </script>
--->
+
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/hoverscript.js"></script>
 </body>

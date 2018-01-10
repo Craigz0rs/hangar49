@@ -1392,7 +1392,8 @@ object {
 #featured_slider_overlay {
   z-index: 1; }
 
-#featured_slider .flex-control-nav {
+#featured_slider .flex-control-nav,
+#featured_slider .flex-direction-nav {
   display: none; }
 
 #featured_slider img {
@@ -1406,7 +1407,7 @@ object {
   margin-bottom: 0; }
 
 #exterior_slider .gallery_slides img,
-#interior_slider.gallery_slides img,
+#interior_slider .gallery_slides img,
 #gallery .gallery_slides img {
   object-fit: cover;
   object-position: center;
@@ -1445,7 +1446,7 @@ object {
   font-size: 1.7em; }
 
 #aircraft_page_header span {
-  bottom: 10em;
+  bottom: 12em;
   font-family: "Metrophobic", sans-serif;
   font-weight: 500;
   color: white;
@@ -1465,12 +1466,12 @@ object {
   font-size: 0.7em; }
 
 #aircraft_sorting {
-  bottom: 1.5em;
+  bottom: 1em;
   padding: 0 50px; }
 
 #aircraft_sorting a {
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   width: 100%; }
 
 .aircraft_section_heading {
@@ -1478,8 +1479,8 @@ object {
   font-family: "Jura", sans-serif;
   font-size: 1.2em;
   text-align: center;
-  background-color: rgba(153, 153, 153, 0.2);
-  color: #515151; }
+  color: #515151;
+  background-color: rgba(0, 0, 0, 0.05); }
 
 .aircraft_section_heading h2 {
   margin: 0;
@@ -1498,7 +1499,7 @@ object {
   background-color: rgba(153, 153, 153, 0.2);
   position: relative;
   color: #666;
-  padding: 20px 10px 0px; }
+  padding: 20px 10px 1px; }
 
 #aircraft_info .content_wrapper {
   padding-bottom: 30px; }
@@ -1531,6 +1532,12 @@ object {
 .detail_item {
   font-family: metrophobic;
   margin-bottom: 15px; }
+
+.detail_title {
+  display: block;
+  width: 100%;
+  padding-left: 5px;
+  background-color: rgba(0, 0, 0, 0.05); }
 
 .detail_value {
   margin: 0;
