@@ -83,6 +83,7 @@ get_header('archive'); ?>
 				</div>
                 <?php endif; ?>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
+                    <div class="header_info_box">
                     <span>
                         <p><?php 
                             if($serial_number){
@@ -104,6 +105,7 @@ get_header('archive'); ?>
                     <div class="archive_sorting" id="aircraft_sorting">
                         <a href="#gallery" class="smoothScroll">view gallery</a>
                         <a href="#aircraft_info" class="smoothScroll">see details</a>
+                    </div>
                     </div>
                 </div>
             </div>
