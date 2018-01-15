@@ -1680,18 +1680,17 @@ object {
   font-family: "Jura", sans-serif;
   font-size: 1.2em;
   text-align: center;
-  color: #515151;
-  background-color: rgba(0, 0, 0, 0.05); }
+  background-color: #2D2D2D;
+  color: #E1E1E1; }
 
 .aircraft_section_heading h2 {
   margin: 0;
-  position: relative;
-  z-index: 99; }
+  position: relative; }
 
 .aircraft_section_line {
   display: block;
   border: none;
-  color: #666;
+  color: black;
   height: 2px;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#3F8C3F), to(rgba(0, 0, 0, 0.2)));
   position: relative; }
@@ -1699,7 +1698,8 @@ object {
 @media screen and (min-width: 900px) {
   .aircraft_section_heading {
     padding: 0;
-    font-size: 3em;
+    font-size: 2.45em;
+    line-height: 2;
     height: 125px; }
 
   .aircraft_section_heading h2 {
@@ -1709,7 +1709,8 @@ object {
     background-color: rgba(255, 255, 255, 0.15); }
 
   .aircraft_section_line {
-    height: 4px; } }
+    height: 4px;
+    background: -webkit-linear-gradient(left, rgba(63, 140, 63, 0.71) 0%, #3f8c3f 27%, transparent 100%); } }
 #aircraft_wrapper {
   background-color: rgba(153, 153, 153, 0.2);
   position: relative;
