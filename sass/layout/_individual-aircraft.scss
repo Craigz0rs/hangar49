@@ -164,7 +164,7 @@
     }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 900px) {
     #featured_slider_overlay {
         display: none;
     }
@@ -216,7 +216,7 @@
 #interior_slider,
 #gallery_slider {
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: black;
 }
 
 #exterior_slider .gallery_slides img,
@@ -280,6 +280,21 @@
     top: 30vw;
 }
 
+.flex-direction-nav a::before {
+    font-family: fontAwesome;
+    content: '\f0d9';
+    font-size: 38px;
+}
+
+.flex-direction-nav a.flex-next::before {
+    content: '\f0da'
+}
+
+.flex-direction-nav a:active,
+.flex-direction-nav a:focus {
+    outline: none;
+}
+
 
 @media screen and (min-width: 520px) {
     #gallery_slider .flex-control-thumbs li {
@@ -310,21 +325,23 @@
 @media screen and (min-width: 900px) {
     #gallery_slider {
         display: flex;
+        padding: 2px 1px 2px 2px;
     }
     
-    #gallery_slider .flex-viewport {
+    #gallery_slider .gallery_slides {
         width: 70vw;
-        height: 60vh;
     }
     
     #gallery_slider .gallery_slides img {
-        height: 60vh;
+        height: 44vw;
+//        max-height: 60vh;
     }
     
     #gallery_slider .flex-control-thumbs {
         display: unset;
         width: 30vw;
-        max-height: 60vh;
+        max-height: 44vw;
+        padding-top: 0;
     }
     
     #gallery_slider .flex-control-thumbs li {
@@ -332,27 +349,37 @@
         height: calc(13vw - 20px);
     }
     
+    #gallery_slider .flex-control-thumbs li:first-of-type,
+    #gallery_slider .flex-control-thumbs li:nth-of-type(2) {
+        margin-top: 0;
+    }
+    
     #gallery_slider .flex-control-thumbs img {
         height: calc(13vw - 20px);
     }
+    
+    #gallery_slider .flex-direction-nav a {
+        top: 22vw;
+    }
+    
+    #gallery_slider .flex-prev {
+        left: -8px;
+    }
+    
+    #gallery_slider:hover .flex-prev {
+        left: 10px;
+    }
+    
+    #gallery_slider .flex-next {
+        right: calc(30vw - 8px);
+    }
+    
+    #gallery_slider:hover .flex-next {
+        right: calc(30vw + 10px);
+    }
 }
 
-
-
-.flex-direction-nav a::before {
-    font-family: fontAwesome;
-    content: '\f0d9';
-    font-size: 38px;
-}
-
-.flex-direction-nav a.flex-next::before {
-    content: '\f0da'
-}
-
-.flex-direction-nav a:active,
-.flex-direction-nav a:focus {
-    outline: none;
-}
+////Section Headings////
 
 .aircraft_section_heading {
     padding: 17px 0;
@@ -375,8 +402,27 @@
     border: none;
     color: #666;
     height: 2px;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 250, from($color_font-nav-hover), to(rgba(153, 153, 153, 0.2)));
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from($color_font-nav-hover), to(rgba(0, 0, 0, 0.2)));
     position: relative;
+}
+
+@media screen and (min-width: 900px) {
+    .aircraft_section_heading {
+        padding: 0;
+        font-size: 3em;
+        height: 125px;
+    }
+    
+    .aircraft_section_heading h2 {
+        margin-left: 20px;
+        width: calc(50% - 20px);
+        height: 100%;
+        background-color: rgba(255,255,255,0.15);
+    }
+    
+    .aircraft_section_line {
+        height: 4px;
+    }
 }
 
 #aircraft_wrapper {
@@ -385,6 +431,14 @@
     color: #666;
     padding: 20px 10px 1px;
 }
+
+////Gallery Section Styling////
+
+#gallery {
+    background-color: black;
+}
+
+
 
 #aircraft_info .content_wrapper {
     padding-bottom: 30px;
