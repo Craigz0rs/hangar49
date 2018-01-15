@@ -102,8 +102,12 @@
 
 <script type="text/javascript" charset="utf-8">
   $(window).on("load", function() {
-    $('.flexslider').flexslider({
+    $('#featured_slider').flexslider({
         animation: "slide",
+//        controlNav: "thumbnails"
+    });
+    $('#gallery_slider').flexslider({
+        animation: "fade",
         controlNav: "thumbnails"
     });
   });
