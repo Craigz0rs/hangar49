@@ -1692,7 +1692,7 @@ object {
   border: none;
   color: black;
   height: 2px;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#3F8C3F), to(rgba(0, 0, 0, 0.2)));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#3F8C3F), to(black));
   position: relative; }
 
 @media screen and (min-width: 900px) {
@@ -1728,25 +1728,30 @@ object {
   bottom: 0;
   left: -10px;
   right: 0;
-  width: calc(58%);
-  height: calc(100% + 60px);
-  background-color: rgba(255, 255, 255, 0.7);
+  width: calc(55%);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   margin: 0 10px; }
 
 .spec_item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #666;
+  color: #FFFFFF;
   position: relative; }
 
 .spec_item:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.05); }
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.spec_title {
+  color: #E8E8E8;
+  margin-left: 8px; }
 
 .spec_value {
   margin: 0;
   padding: 0;
-  width: 42%; }
+  width: 42%;
+  color: #666; }
 
 .detail_item {
   font-family: metrophobic;
