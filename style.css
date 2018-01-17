@@ -1573,12 +1573,6 @@ object {
   padding: 1px 1px 1px;
   margin: 0; }
 
-#exterior_slider .flex-control-thumbs,
-#interior_slider .flex-control-thumbs {
-  padding: 1px 1px 1px 0;
-  margin-left: -1px;
-  width: calc(100% + 3px); }
-
 #gallery_slider .flex-control-thumbs li {
   width: calc(33.33333333% - 2px);
   margin: 1px; }
@@ -1617,10 +1611,14 @@ object {
   outline: none; }
 
 @media screen and (min-width: 520px) {
+  #exterior_slider .flex-control-thumbs li,
+  #interior_slider .flex-control-thumbs li,
   #gallery_slider .flex-control-thumbs li {
     width: calc(25% - 2px);
     margin: 1px; }
 
+  #exterior_slider .flex-control-thumbs img,
+  #interior_slider .flex-control-thumbs img,
   #gallery_slider .flex-control-thumbs img {
     height: calc(17vw - 20px); } }
 @media screen and (max-height: 500px) {
@@ -1634,14 +1632,18 @@ object {
     width: calc(25% - 2px);
     margin: 1px; } }
 @media screen and (min-width: 900px) {
-  #gallery_slider {
+  #gallery_slider, interior_slider, exterior_slider {
     display: flex;
     padding: 2px 1px 2px 2px; }
 
-  #gallery_slider .gallery_slides {
+  #gallery_slider .gallery_slides,
+  #interior_slider .gallery_slides,
+  #exterior_slider .gallery_slides {
     width: 70vw; }
 
-  #gallery_slider .gallery_slides img {
+  #gallery_slider .gallery_slides img,
+  #interior_slider .gallery_slides img,
+  #exterior_slider .gallery_slides img {
     height: 44vw; }
 
   #gallery_slider .flex-control-thumbs {
@@ -1709,8 +1711,7 @@ object {
     background-color: rgba(255, 255, 255, 0.15); }
 
   .aircraft_section_line {
-    height: 4px;
-    background: -webkit-linear-gradient(left, rgba(63, 140, 63, 0.71) 0%, #3f8c3f 27%, transparent 100%); } }
+    height: 4px; } }
 #aircraft_wrapper {
   background-color: rgba(153, 153, 153, 0.2);
   position: relative;
@@ -1768,6 +1769,14 @@ object {
   padding: 15px 20px;
   background-color: rgba(255, 255, 255, 0.7); }
 
+@media screen and (min-width: 900px) {
+  #aircraft_info .content_wrapper {
+    width: calc(50% - 20px);
+    margin-left: 20px; }
+
+  #details .aircraft_section_heading,
+  #details .aircraft_section_line {
+    display: none; } }
 .content-area {
   float: left;
   margin: 0 -25% 0 0;

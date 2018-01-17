@@ -245,9 +245,9 @@
 
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs {
-    padding: 1px 1px 1px 0;
-    margin-left: -1px;
-    width: calc(100% + 3px);
+//    padding: 1px 1px 1px 0;
+//    margin-left: -1px;
+//    width: calc(100% + 3px);
 }
 
 #gallery_slider .flex-control-thumbs li {
@@ -297,14 +297,19 @@
 
 
 @media screen and (min-width: 520px) {
+    #exterior_slider .flex-control-thumbs li,
+    #interior_slider .flex-control-thumbs li,   
     #gallery_slider .flex-control-thumbs li {
         width: calc(25% - 2px);
         margin: 1px;
     }
     
+    #exterior_slider .flex-control-thumbs img,
+    #interior_slider .flex-control-thumbs img,     
     #gallery_slider .flex-control-thumbs img {
         height: calc(17vw - 20px);
-    }    
+    } 
+    
 }
 
 @media screen and (max-height: 500px) {
@@ -323,16 +328,20 @@
 }
 
 @media screen and (min-width: 900px) {
-    #gallery_slider {
+    #gallery_slider, interior_slider, exterior_slider {
         display: flex;
         padding: 2px 1px 2px 2px;
     }
     
-    #gallery_slider .gallery_slides {
+    #gallery_slider .gallery_slides,
+    #interior_slider .gallery_slides,
+    #exterior_slider .gallery_slides {
         width: 70vw;
     }
     
-    #gallery_slider .gallery_slides img {
+    #gallery_slider .gallery_slides img,
+    #interior_slider .gallery_slides img,
+    #exterior_slider .gallery_slides img {
         height: 44vw;
 //        max-height: 60vh;
     }
@@ -422,7 +431,7 @@
     
     .aircraft_section_line {
         height: 4px;
-        background: -webkit-linear-gradient(left, rgba(63,140,63,0.71) 0%, rgba(63,140,63,1) 27%, rgba(0,0,0,0) 100%);
+//        background: -webkit-linear-gradient(left, rgba(63,140,63,0.71) 0%, rgba(63,140,63,1) 27%, rgba(0,0,0,0) 100%);
     }
 }
 
@@ -439,7 +448,7 @@
     background-color: black;
 }
 
-
+////Specification and Detail Section Styling////
 
 #aircraft_info .content_wrapper {
     padding-bottom: 30px;
@@ -496,4 +505,18 @@
     margin: 0;
     padding: 15px 20px;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (min-width: 900px) {
+    
+    #aircraft_info .content_wrapper {
+        width: calc(50% - 20px);
+        margin-left: 20px;
+    }
+    
+    #details .aircraft_section_heading,
+    #details .aircraft_section_line {
+        display: none;
+    }
+
 }

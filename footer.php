@@ -110,6 +110,10 @@
         animation: "fade",
         controlNav: "thumbnails"
     });
+    $('#interior_slider, #exterior_slider').flexslider({
+        animation: "fade",
+        controlNav: "thumbnails"
+    });
   });
 </script>
 
