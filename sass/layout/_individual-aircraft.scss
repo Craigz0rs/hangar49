@@ -328,7 +328,7 @@
 }
 
 @media screen and (min-width: 900px) {
-    #gallery_slider, interior_slider, exterior_slider {
+    #gallery_slider, #interior_slider, #exterior_slider {
         display: flex;
         padding: 2px 1px 2px 2px;
     }
@@ -346,14 +346,18 @@
 //        max-height: 60vh;
     }
     
-    #gallery_slider .flex-control-thumbs {
+    #gallery_slider .flex-control-thumbs,
+    #interior_slider .flex-control-thumbs,
+    #exterior_slider .flex-control-thumbs {
         display: unset;
         width: 30vw;
         max-height: 44vw;
         padding-top: 0;
     }
     
-    #gallery_slider .flex-control-thumbs li {
+    #gallery_slider .flex-control-thumbs li, 
+    #interior_slider .flex-control-thumbs li,
+    #exterior_slider .flex-control-thumbs li {
         width: calc(50% - 2px);
         height: calc(13vw - 20px);
     }
@@ -436,7 +440,7 @@
 }
 
 #aircraft_wrapper {
-    background-color: rgba(153, 153, 153, 0.2);
+    background-color: #EBEBEB;
     position: relative;
     color: #666;
     padding: 20px 10px 1px;
@@ -459,9 +463,9 @@
     bottom: 0;
     left: -10px;
     right: 0;
-    width: calc(55%);
+    width: calc(57%);
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #5E5E5E;
     margin: 0 10px;
 }
 
@@ -478,7 +482,7 @@
 }
 
 .spec_title {
-    color: #E8E8E8;
+    color: #EBEBEB;
     margin-left: 8px;
 }
 
@@ -486,25 +490,28 @@
     margin: 0;
     padding: 0;
     width: 42%;
-    color: #666;
+    color: #2D2D2D;
 }
 
 .detail_item {
     font-family: metrophobic;
     margin-bottom: 15px;
+    background-color: #EBEBEB;
 }
 
 .detail_title {
     display: block;
     width: 100%;
     padding-left: 5px;
-    background-color: rgba(0,0,0,0.05);   
+    background-color: #5E5E5E;
+    color: #EBEBEB;  
 }
 
 .detail_value {
     margin: 0;
     padding: 15px 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #EBEBEB;
+    color: #2D2D2D;
 }
 
 @media screen and (min-width: 900px) {
