@@ -39,6 +39,12 @@
     padding: 0 20px;
 }
 
+@media screen and (min-width: 1600px) {
+    #aircraft_header_wrapper .aircraft_content_wrap {
+        position: relative;
+    }
+}
+
 .header_info_box {
     position: absolute;
     bottom: 0;
@@ -520,7 +526,19 @@
     
     .aircraft_section_line {
         height: 4px;
-//        background: -webkit-linear-gradient(left, rgba(63,140,63,0.71) 0%, rgba(63,140,63,1) 27%, rgba(0,0,0,0) 100%);
+        background: -moz-linear-gradient(left, rgba(63,140,63,0.75) 1%, rgba(63,140,63,1) 26%, rgba(63,140,63,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(63,140,63,0.75) 1%,rgba(63,140,63,1) 26%,rgba(63,140,63,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(63,140,63,0.75) 1%,rgba(63,140,63,1) 26%,rgba(63,140,63,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf3f8c3f', endColorstr='#003f8c3f',GradientType=1 );
+    }
+    
+    .aircraft_content_wrap {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+    
+    .aircraft_section_heading .aircraft_content_wrap {
+        height: 100%;
     }
 }
 
@@ -569,6 +587,7 @@
 .spec_title {
     color: #EBEBEB;
     margin-left: 8px;
+    font-family: $font_heading;
 }
 
 .spec_value {
@@ -576,10 +595,10 @@
     padding: 0;
     width: 42%;
     color: #2D2D2D;
+    font-family: $font_text;
 }
 
 .detail_item {
-    font-family: metrophobic;
     margin-bottom: 15px;
     background-color: #EBEBEB;
 }
@@ -589,7 +608,8 @@
     width: 100%;
     padding-left: 5px;
     background-color: #5E5E5E;
-    color: #EBEBEB;  
+    color: #EBEBEB;
+    font-family: $font_heading;
 }
 
 .detail_value {
@@ -597,6 +617,7 @@
     padding: 15px 20px;
     background-color: #EBEBEB;
     color: #2D2D2D;
+    font-family: $font_text;
 }
 
 @media screen and (min-width: 375px) {
@@ -613,7 +634,7 @@
     
     #aircraft_info,
     #details {
-        background-color: black;
+        background-color: #2D2D2D;
     }
     
     #aircraft_info .content_wrapper {
@@ -664,6 +685,8 @@
         margin-top: -2px;
         padding-left: 18px;
         border-top: 2px solid #EBEBEB;
+        line-height: 120px;
+        font-size: 1.4em;
     }
     
     .detail_value {
