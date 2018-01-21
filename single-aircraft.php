@@ -203,35 +203,37 @@ get_header('archive'); ?>
                     </div>
                     <div class="detail_item">
                         <strong class="detail_title">Exterior:</strong>
-                        <p class="detail_value"><?php echo $exterior; ?></p>
-                        <?php if( have_rows('exterior_image_gallery') ): ?>
-                        <div class="flexslider gallery_slider" id="exterior_slider">
-                                <ul class="slides gallery_slides">
-                                    <?php while( have_rows('exterior_image_gallery') ): the_row();
-                                        $image = get_sub_field('exterior_gallery_image');
-                                        $title = $image['title'];
-                                        $description = $image['description'];
-                                        $caption = $image['caption'];
+                        <div class="detail_with_slider">
+                            <p class="detail_value"><?php echo $exterior; ?></p>
+                            <?php if( have_rows('exterior_image_gallery') ): ?>
+                            <div class="flexslider gallery_slider" id="exterior_slider">
+                                    <ul class="slides gallery_slides">
+                                        <?php while( have_rows('exterior_image_gallery') ): the_row();
+                                            $image = get_sub_field('exterior_gallery_image');
+                                            $title = $image['title'];
+                                            $description = $image['description'];
+                                            $caption = $image['caption'];
 
-                                        $url = $image['url'];
-                                        $alt = $image['alt'];
+                                            $url = $image['url'];
+                                            $alt = $image['alt'];
 
 
-                                        $size = 'full';
-                                        $myimage = $image['sizes'][ $size ];
-                                        $width = $image['sizes'][ $size . '-width' ];
-                                        $height = $image['sizes'][ $size . '-height' ];
+                                            $size = 'full';
+                                            $myimage = $image['sizes'][ $size ];
+                                            $width = $image['sizes'][ $size . '-width' ];
+                                            $height = $image['sizes'][ $size . '-height' ];
 
-                                    ?>
-                                    <li data-thumb="<?php echo $url; ?>">
-                                        <div class="exterior_slider_image">
-                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                        </div>
-                                    </li>
-                                    <?php endwhile; ?>
-                                </ul>
+                                        ?>
+                                        <li data-thumb="<?php echo $url; ?>">
+                                            <div class="exterior_slider_image">
+                                                 <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                                            </div>
+                                        </li>
+                                        <?php endwhile; ?>
+                                    </ul>
+                            </div>
+                            <?php endif; ?>
                         </div>
-                        <?php endif; ?>
                     </div>
                     <div class="detail_item">
                         <strong class="detail_title">Avionics:</strong>
@@ -243,35 +245,37 @@ get_header('archive'); ?>
                     </div>
                     <div class="detail_item">
                         <strong class="detail_title">Interior:</strong>
-                        <p class="detail_value"><?php echo $interior; ?></p>
-                        <?php if( have_rows('interior_image_gallery') ): ?>
-                        <div class="flexslider gallery_slider" id="interior_slider">
-                                <ul class="slides gallery_slides">
-                                    <?php while( have_rows('interior_image_gallery') ): the_row();
-                                        $image = get_sub_field('interior_gallery_image');
-                                        $title = $image['title'];
-                                        $description = $image['description'];
-                                        $caption = $image['caption'];
+                        <div class="detail_with_slider">
+                            <p class="detail_value"><?php echo $interior; ?></p>
+                            <?php if( have_rows('interior_image_gallery') ): ?>
+                            <div class="flexslider gallery_slider" id="interior_slider">
+                                    <ul class="slides gallery_slides">
+                                        <?php while( have_rows('interior_image_gallery') ): the_row();
+                                            $image = get_sub_field('interior_gallery_image');
+                                            $title = $image['title'];
+                                            $description = $image['description'];
+                                            $caption = $image['caption'];
 
-                                        $url = $image['url'];
-                                        $alt = $image['alt'];
+                                            $url = $image['url'];
+                                            $alt = $image['alt'];
 
 
-                                        $size = 'full';
-                                        $myimage = $image['sizes'][ $size ];
-                                        $width = $image['sizes'][ $size . '-width' ];
-                                        $height = $image['sizes'][ $size . '-height' ];
+                                            $size = 'full';
+                                            $myimage = $image['sizes'][ $size ];
+                                            $width = $image['sizes'][ $size . '-width' ];
+                                            $height = $image['sizes'][ $size . '-height' ];
 
-                                    ?>
-                                    <li data-thumb="<?php echo $url; ?>">
-                                        <div class="interior_slider_image">
-                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                        </div>
-                                    </li>
-                                    <?php endwhile; ?>
-                                </ul>
+                                        ?>
+                                        <li data-thumb="<?php echo $url; ?>">
+                                            <div class="interior_slider_image">
+                                                 <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                                            </div>
+                                        </li>
+                                        <?php endwhile; ?>
+                                    </ul>
+                            </div>
+                            <?php endif; ?>
                         </div>
-                        <?php endif; ?>
                     </div>
                     <div class="detail_item">
                         <strong class="detail_title">Miscellaneous:</strong>

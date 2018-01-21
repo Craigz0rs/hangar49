@@ -1546,11 +1546,14 @@ object {
   #aircraft_sorting a {
     max-width: 260px;
     margin-bottom: 25px; } }
-#exterior_slider,
-#interior_slider,
 #gallery_slider {
   margin-bottom: 0;
   background-color: black; }
+
+#exterior_slider,
+#interior_slider {
+  margin-bottom: 0;
+  background-color: transparent; }
 
 #exterior_slider .gallery_slides img,
 #interior_slider .gallery_slides img,
@@ -1564,13 +1567,19 @@ object {
   overflow: auto;
   max-height: 33vw; }
 
-#exterior_slider .flex-control-thumbs,
-#interior_slider .flex-control-thumbs,
 #gallery_slider .flex-control-thumbs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 1px 1px 1px;
+  margin: 0; }
+
+#exterior_slider .flex-control-thumbs,
+#interior_slider .flex-control-thumbs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1px 0px;
   margin: 0; }
 
 #gallery_slider .flex-control-thumbs li {
@@ -1581,6 +1590,16 @@ object {
 #interior_slider .flex-control-thumbs li {
   width: calc(25% - 2px);
   margin: 1px; }
+
+#exterior_slider .flex-control-thumbs li:first-of-type,
+#interior_slider .flex-control-thumbs li:first-of-type {
+  margin-left: 0px;
+  width: calc(25% - 1px); }
+
+#exterior_slider .flex-control-thumbs li:last-of-type,
+#interior_slider .flex-control-thumbs li:last-of-type {
+  margin-right: 0px;
+  width: calc(25% - 1px); }
 
 #gallery_slider .flex-control-thumbs img {
   height: calc(26vw - 20px);
@@ -1632,35 +1651,66 @@ object {
     width: calc(25% - 2px);
     margin: 1px; } }
 @media screen and (min-width: 900px) {
-  #gallery_slider, #interior_slider, #exterior_slider {
+  #gallery_slider {
     display: flex;
     padding: 2px 1px 2px 2px;
     border-radius: 0px; }
 
-  #gallery_slider .gallery_slides,
-  #interior_slider .gallery_slides,
-  #exterior_slider .gallery_slides {
+  #interior_slider, #exterior_slider {
+    display: flex;
+    padding: 2px;
+    border-radius: 0px;
+    background-color: transparent; }
+
+  #gallery_slider .gallery_slides {
     width: 70vw; }
 
-  #gallery_slider .gallery_slides img,
-  #interior_slider .gallery_slides img,
-  #exterior_slider .gallery_slides img {
+  #interior_slider .gallery_slides,
+  #exterior_slider .gallery_slides {
+    width: 80%; }
+
+  #gallery_slider .gallery_slides img {
     height: 44vw; }
 
-  #gallery_slider .flex-control-thumbs,
-  #interior_slider .flex-control-thumbs,
-  #exterior_slider .flex-control-thumbs {
+  #interior_slider .gallery_slides img,
+  #exterior_slider .gallery_slides img {
+    height: 40vw; }
+
+  #gallery_slider .flex-control-thumbs {
     display: unset;
     width: 30vw;
     max-height: 44vw;
     padding-top: 0; }
 
-  #gallery_slider .flex-control-thumbs li,
-  #interior_slider .flex-control-thumbs li,
-  #exterior_slider .flex-control-thumbs li {
+  #interior_slider .flex-control-thumbs,
+  #exterior_slider .flex-control-thumbs {
+    display: unset;
+    width: 20%;
+    height: 40vw;
+    padding-top: 0;
+    padding-left: 1px; }
+
+  #gallery_slider .flex-control-thumbs li {
     width: calc(50% - 2px);
     height: calc(13vw - 20px); }
 
+  #interior_slider .flex-control-thumbs li,
+  #exterior_slider .flex-control-thumbs li {
+    width: 100%;
+    height: 10vw; }
+
+  #exterior_slider .flex-control-thumbs li:first-of-type,
+  #interior_slider .flex-control-thumbs li:first-of-type {
+    margin-left: 1px;
+    width: 100%; }
+
+  #exterior_slider .flex-control-thumbs li:last-of-type,
+  #interior_slider .flex-control-thumbs li:last-of-type {
+    margin-right: 1px;
+    width: 100%; }
+
+  #interior_slider .flex-control-thumbs li:first-of-type,
+  #exterior_slider .flex-control-thumbs li:first-of-type,
   #gallery_slider .flex-control-thumbs li:first-of-type,
   #gallery_slider .flex-control-thumbs li:nth-of-type(2) {
     margin-top: 0; }
@@ -1668,20 +1718,44 @@ object {
   #gallery_slider .flex-control-thumbs img {
     height: calc(13vw - 20px); }
 
+  #interior_slider .flex-control-thumbs img,
+  #exterior_slider .flex-control-thumbs img {
+    height: 10vw; }
+
   #gallery_slider .flex-direction-nav a {
     top: 22vw; }
+
+  #interior_slider .flex-direction-nav a,
+  #exterior_slider .flex-direction-nav a {
+    top: 20vw; }
 
   #gallery_slider .flex-prev {
     left: -8px; }
 
+  #interior_slider .flex-prev,
+  #exterior_slider .flex-prev {
+    left: 0px; }
+
   #gallery_slider:hover .flex-prev {
+    left: 10px; }
+
+  #interior_slider:hover .flex-prev,
+  #exterior_slider:hover .flex-prev {
     left: 10px; }
 
   #gallery_slider .flex-next {
     right: calc(30vw - 8px); }
 
+  #interior_slider .flex-next,
+  #exterior_slider .flex-next {
+    right: calc(20%); }
+
   #gallery_slider:hover .flex-next {
-    right: calc(30vw + 10px); } }
+    right: calc(30vw + 10px); }
+
+  #interior_slider:hover .flex-next,
+  #exterior_slider:hover .flex-next {
+    right: calc(20% + 10px); } }
 .aircraft_section_heading {
   padding: 17px 0;
   font-family: "Jura", sans-serif;
@@ -1798,6 +1872,7 @@ object {
     font-size: 1.2em; }
 
   .specification_overlay {
+    min-width: 240px;
     max-width: 240px; }
 
   .spec_value {
@@ -1820,14 +1895,18 @@ object {
     border-top: none; }
 
   .detail_title {
-    max-width: 240px;
+    flex: none;
+    width: 240px;
     margin-top: -2px;
     padding-left: 18px;
     border-top: 2px solid #EBEBEB; }
 
   .detail_value {
     margin: 0;
-    padding: 50px 20px; } }
+    padding: 50px 20px; }
+
+  .detail_with_slider {
+    max-width: calc(100% - 240px); } }
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
