@@ -52,14 +52,14 @@
     object-position: center;
     object-fit: cover;
     display: block;
-    filter: grayscale(0) blur(0);
+    filter: grayscale(0);
     transition: 0.5s ease-in-out;
 }
 
 .aircraft_tile:hover img,
 .aircraft_tile:focus img,
 .aircraft_tile:active img {
-    filter: grayscale(60%) blur(1px);
+    filter: grayscale(60%);
     transform: scale(1.1);
     transition: 5s ease-out;
 }

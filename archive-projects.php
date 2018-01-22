@@ -37,6 +37,8 @@ get_header(); ?>
                         <?php foreach( $projects as $post ): 
                             
                             setup_postdata( $post );
+                            
+                            $project_link = get_the_permalink();
 
                             echo '<li><div class="aircraft_tile project_tile">';
                             
@@ -49,9 +51,9 @@ get_header(); ?>
                                     <img src="<?php echo $feat_image; ?>">
                                     <?php
                                     endif;
-                                    echo '<a href="' . get_the_permalink() . '"><span class="tile_overlay"></span></a>';
+                                    echo '<a href="' . $project_link . '"><span class="tile_overlay"></span></a>';
                                     echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '<a href="' . get_the_permalink() . '"><span class="read_more">see project</class></a>';
+                                    echo '<a href="' . $project_link . '"><span class="read_more">see project</class></a>';
                                 endforeach;
                                 wp_reset_postdata();
                             }

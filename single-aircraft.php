@@ -52,8 +52,8 @@ get_header('archive'); ?>
                 ?>
             <div class="page_header_wrapper" id="aircraft_header_wrapper">
                 <div class="page_header" id="aircraft_page_header">
+                    <div class="flexslider gallery_slider" id="featured_slider">
                 <?php if( have_rows('featured_image_gallery') ): ?>
-				<div class="flexslider gallery_slider" id="featured_slider">
                     <div class="page_header_overlay" id="featured_slider_overlay">
                         <ul class="slides gallery_slides">
                             <?php while( have_rows('featured_image_gallery') ): the_row();
@@ -80,8 +80,9 @@ get_header('archive'); ?>
                             <?php endwhile; ?>
                         </ul>
                     </div>
-				</div>
+				
                 <?php endif; ?>
+                </div>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                     <div class="aircraft_content_wrap">
                         <div class="header_info_box">
