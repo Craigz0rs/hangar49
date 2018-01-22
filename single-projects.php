@@ -96,7 +96,7 @@ get_header('archive'); ?>
                         </ul>
                     </div>
 				<?php endif; ?>
-                    </div>
+                </div>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                     <div class="aircraft_content_wrap">
                         <div class="header_info_box">
@@ -146,13 +146,13 @@ get_header('archive'); ?>
                                     $entry_date = $row['entry_date'];
                                     $work_entry = $row['work_entry']; 
                                     $work_gallery = $row['project_update_gallery']; ?>
-                                    <div class="detail_item">
-                                        <div class="detail_title">
+                                    <div class="detail_item project_post">
+                                        <div class="detail_title project_post_title">
                                             <h3><?php echo $entry_title; ?></h3>
-                                                <p><?php echo $entry_date; ?></p>
+                                            <p><?php echo $entry_date; ?></p>
                                         </div>
-                                        <div class="detail_with_slider">
-                                            <div class="detail_value">
+                                        <div class="detail_with_slider project_post_content">
+                                            <div class="detail_value project_post_text">
                                                 <p><?php echo $work_entry; ?></p>
                                             </div>
                                             <?php if( $work_gallery ) { ?>

@@ -1,3 +1,28 @@
 .project_section {
     background-color: #2D2D2D;
 }
+
+#project_wrapper {
+    padding: 0 20px;
+}
+
+.project_post {
+    margin: 10px 0;
+}
+
+.project_post_title {
+    margin-top: 0;
+    border-top: none;
+    background-color: white;
+    color: $color_font-nav-hover;
+    line-height: 1em;
+}
+
+.project_post_title h3 {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.project_post_title p {
+    font-size: 1.5em;
+}
