@@ -148,11 +148,12 @@ get_header('archive'); ?>
                                     $work_gallery = $row['project_update_gallery']; ?>
                                     <div class="detail_item project_post">
                                         <div class="detail_title project_post_title">
-                                            <h3><?php echo $entry_title; ?></h3>
+                                            
                                             <p><?php echo $entry_date; ?></p>
                                         </div>
                                         <div class="detail_with_slider project_post_content">
                                             <div class="detail_value project_post_text">
+                                                <h3><?php echo $entry_title; ?></h3>
                                                 <p><?php echo $work_entry; ?></p>
                                             </div>
                                             <?php if( $work_gallery ) { ?>
