@@ -135,7 +135,7 @@ get_header('archive'); ?>
                 <span class="aircraft_section_line"></span>
                 <div class="aircraft_content_wrap">
                     <div class="content_wrapper" id="project_wrapper">
-                        <div class="detail_item">
+                        <div class="detail_item" id="overview">
                             <strong class="detail_title">Overview:</strong>
                             <p class="detail_value"><?php echo $project_overview; ?></p>
                         </div>

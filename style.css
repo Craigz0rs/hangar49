@@ -1930,13 +1930,19 @@ object {
   .detail_with_slider {
     max-width: calc(100% - 240px); } }
 .project_section {
-  background-color: #2D2D2D; }
+  background-color: #2D2D2D;
+  padding-bottom: 10px; }
 
 #project_wrapper {
   padding: 0 20px; }
 
+#overview .detail_title {
+  margin-top: 0;
+  border: none; }
+
 .project_post {
-  margin: 10px 0; }
+  margin: 10px 0;
+  border: none; }
 
 .project_post_title {
   position: relative;
@@ -1969,6 +1975,9 @@ object {
   color: #3F8C3F; }
 
 @media screen and (min-width: 900px) {
+  .project_post {
+    min-height: 550px; }
+
   .project_post_title {
     background-color: #5E5E5E;
     color: #868686; }
