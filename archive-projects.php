@@ -30,43 +30,93 @@ get_header(); ?>
                         'post_type'			=> 'projects'
                     ));
 
-                    if( $projects ): ?>
+                    if( $projects ){ ?>
 
                         <ul class="project_list aircraft_list">
 
-                        <?php foreach( $projects as $post ): 
+                        <?php foreach( $projects as $post ){ 
                             
                             setup_postdata( $post );
                             
                             $project_link = get_the_permalink();
-
-                            echo '<li><div class="aircraft_tile project_tile">';
                             
                             $planes = get_field('aircraft');
                             if( $planes ) {
-                               foreach ( $planes as $post ):
+                               foreach ( $planes as $post ){
                                     setup_postdata($post);
-                                    $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-                                    if( $feat_image ) : ?>
-                                    <img src="<?php echo $feat_image; ?>">
-                                    <?php
-                                    endif;
-                                    echo '<a href="' . $project_link . '"><span class="tile_overlay"></span></a>';
-                                    echo '<h3>' . get_field('manufacture_year') . ' ' . get_field('manufacturer') . ' ' . get_field('model') . '</h3>';
-                                    echo '<a href="' . $project_link . '"><span class="read_more">see project</class></a>';
-                                endforeach;
-                                wp_reset_postdata();
-                            }
-                            echo '</div></li>';
+                                    if(function_exists('get_field')){
+                                        if(get_field('manufacture_year' , $post->ID)){ 
+                                            $year = get_field('manufacture_year' , $post->ID);} else { $year = ''; }
+                                        if(get_field('manufacturer' , $post->ID)){ 
+                                            $manufacturer = get_field('manufacturer' , $post->ID);} else { $manufacturer = ''; }
+                                        if(get_field('model' , $post->ID)){ 
+                                            $model = get_field('model' , $post->ID);} else { $model = ''; }
+                                        if(get_field('serial_number' , $post->ID)){ 
+                                            $serial_number = get_field('serial_number' , $post->ID);} else { $serial_number = ''; }
+                                        if(get_field('registration_number' , $post->ID)){ 
+                                            $registration_number = get_field('registration_number' , $post->ID);} else { $registration_number = ''; }
+                                        if(get_field('special_info' , $post->ID)){
+                                            $special_info = get_field('special_info' , $post->ID);} else { $special_info = ''; }
+                                        if(get_field('price' , $post->ID)){ 
+                                            $price = get_field('price' , $post->ID);} else { $price = ''; }
+                                        $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                                    }
+                                ?>
+                                <li>
+                                    <div class="aircraft_tile project_tile">
+                                    <?php if( $feat_image ) { ?>
+                                        <img src="<?php echo $feat_image; ?>">
+                                    <?php } ?>                                  
+                                      <a href="<?php echo $project_link; ?>">
+                                            <span class="tile_overlay"></span> 
+                                            <h3><?php
+                                                if( $year ){
+                                                    echo $year . ' ';
+                                                }
+                                                if( $manufacturer ){
+                                                    echo $manufacturer . ' ';
+                                                }
+                                                if( $model ){
+                                                    echo $model;
+                                                } ?>
+                                            </h3>
+                                            <div class="aircraft_brief">
+                                                <p><?php 
+                                                    if($serial_number){
+                                                        echo 'S/N: ' . $serial_number;
+                                                    }
+                                                    if($serial_number && $registration_number){
+                                                        echo ' • ';
+                                                    }
+                                                    if($registration_number){
+                                                        echo 'R/N: ' . $registration_number;
+                                                    }
+                                                    if($price){
+                                                        echo '<br>' . $price;
+                                                    } ?>   
+                                                </p>
+                                                <p class="special_info"><?php
+                                                    if($special_info){
+                                                        echo $special_info;
+                                                    } ?>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <a href="<?php echo $project_link; ?>">
+                                            <span class="read_more">see project</span>
+                                        </a>
+                                    </div>
+                                    
+                                </li>
+                            <?php 
+                                } //end foreach $planes as $post
+                            wp_reset_postdata();
+                            } //end if $planes
+                        } //end foreach $projects as $post
                             ?>
 
-                        <?php endforeach; ?>
-
                         </ul>
-
-                        <?php wp_reset_postdata(); ?>
-
-                    <?php endif; ?>
+                    <?php } //end if $projects ?>
                 </div>   
 
 		</main><!-- #main -->

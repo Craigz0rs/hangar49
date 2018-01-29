@@ -48,12 +48,13 @@ get_header('archive'); ?>
                                 $location = get_field('location');}
                             if(get_field('misc')){ 
                                 $misc = get_field('misc');}
+                            $featured_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                         } 
                 ?>
             <div class="page_header_wrapper" id="aircraft_header_wrapper">
                 <div class="page_header" id="aircraft_page_header">
                     <div class="flexslider gallery_slider" id="featured_slider">
-                <?php if( have_rows('featured_image_gallery') ): ?>
+                    <?php if( have_rows('featured_image_gallery') ) { ?>
                     <div class="page_header_overlay" id="featured_slider_overlay">
                         <ul class="slides gallery_slides">
                             <?php while( have_rows('featured_image_gallery') ): the_row();
@@ -79,10 +80,18 @@ get_header('archive'); ?>
                             </li>
                             <?php endwhile; ?>
                         </ul>
+                    </div>    
+                    <?php } else { ?>    
+                    <div class="page_header_overlay" id="featured_slider_overlay">
+                        <ul class="slides gallery_slides">
+                            <li>
+                                <div class="slider_image">
+                                    <img src="<?php echo $featured_image; ?>"/>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-				
-                <?php endif; ?>
-                </div>
+				    <?php } ?>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                     <div class="aircraft_content_wrap">
                         <div class="header_info_box">
@@ -201,6 +210,10 @@ get_header('archive'); ?>
                 <span class="aircraft_section_line"></span>
                 <div class="aircraft_content_wrap">
                     <div class="content_wrapper" id="aircraft_wrapper">
+                        <div class="detail_item">
+                            <strong class="detail_title">History:</strong>
+                            <p class="detail_value"><?php echo $history; ?></p>
+                        </div>
                         <div class="detail_item">
                             <strong class="detail_title">Airframe:</strong>
                             <p class="detail_value"><?php echo $airframe; ?></p>

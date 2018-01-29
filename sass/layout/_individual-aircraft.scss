@@ -171,6 +171,7 @@
 }
 
 @media screen and (min-width: 900px) {
+    
     #featured_slider_overlay {
         display: none;
     }
@@ -187,6 +188,12 @@
     #aircraft_page_header h1 {
         top: 3.7em;
         font-size: 3em;
+    }
+    
+        @media screen and (max-height: 620px) {
+        #aircraft_page_header h1 {
+            top: 2em;
+        }
     }
     
     .header_info_box {
@@ -552,7 +559,7 @@
 ////Gallery Section Styling////
 
 #gallery {
-    background-color: black;
+    background-color: #151515;
 }
 
 ////Specification and Detail Section Styling////
@@ -634,7 +641,7 @@
     
     #aircraft_info,
     #details {
-        background-color: #2D2D2D;
+        background-color: #151515;
     }
     
     #aircraft_info .content_wrapper {

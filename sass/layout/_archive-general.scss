@@ -91,6 +91,29 @@
     text-decoration: none;
 }
 
+.aircraft_brief {
+    position: absolute;
+    top: 27%;
+    left: 0;
+    right: 0;
+    font-family: $font_text;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 0 30px;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.aircraft_tile:hover .aircraft_brief,
+.aircraft_tile:focus .aircraft_brief,
+.aircraft_tile:active .aircraft_brief {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
 .read_more {
     position: absolute;
     bottom: 5%;
@@ -178,11 +201,31 @@
     margin: 10px 0;
 }
 
+@media screen and (min-width: 400px) {
+    .aircraft_brief {
+        top: 25%;
+        font-size: 1em;
+    } 
+}
+
+
 @media screen and (min-width: 450px) {
     .aircraft_tile h3 {
         top: 18%;
         font-size: 1.6em;
     }
+    
+    .aircraft_brief {
+        top: 33%;
+        font-size: 1em;
+    } 
+}
+
+@media screen and (min-width: 500px) {
+    .aircraft_brief {
+        top: 33%;
+        font-size: 1em;
+    }   
 }
 
 
@@ -193,6 +236,31 @@
     }
 }
 
+@media screen and (max-height: 325px) {
+    .aircraft_tile {
+        max-height: 80vh;
+    }
+    
+    .aircraft_tile h3 {
+        top: 6%;
+    }
+    
+    .aircraft_brief {
+        top: 22%;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .aircraft_tile {
+        max-height: 80vh;
+    }
+    
+    .aircraft_tile h3 {
+        top: 10%;
+    }  
+}
+
 @media screen and (min-width: 700px) {
     .aircraft_tile h3 {
         font-size: 1.8em;
@@ -201,6 +269,12 @@
     .tile_overlay {
         margin: 50px 10px;
     }
+
+    .aircraft_brief {
+        max-width: 500px;
+        margin: 0 auto;
+    }  
+    
 }
 
 @media screen and (min-width: 960px) {

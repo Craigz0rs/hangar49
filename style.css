@@ -904,7 +904,7 @@ object {
   text-align: left; }
 
 #contact_wrapper h2 {
-  font-size: 1.6em; }
+  font-size: 1.5em; }
 
 .location {
   margin: 0 auto;
@@ -940,11 +940,12 @@ object {
   margin-top: 50px; }
 
 .follow_us ul {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 500px;
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-between; }
 
 .follow_us li {
   display: inline-block; }
@@ -1047,10 +1048,10 @@ object {
       line-height: 1em; }
 
     #contact_wrapper h2 {
-      font-size: 1.9em; }
+      font-size: 1.5em; }
 
     #contact_wrapper p {
-      font-size: 1.1em; }
+      font-size: 1em; }
 
     .contact_info_wrapper {
       grid-area: contact;
@@ -1059,15 +1060,18 @@ object {
       padding: 135px 50px 0 50px;
       text-align: center; }
 
+    .contact_info_wrapper h2 {
+      margin-bottom: 35px; }
+
     .contact_info {
       margin-top: 40px; }
 
     .contact_info ul {
-      font-size: 1.2em; }
+      font-size: 1em; }
 
     .follow_us {
       margin-top: 100px;
-      font-size: 1.2em; }
+      font-size: 1em; }
 
     .contact_form {
       grid-area: form;
@@ -1201,6 +1205,27 @@ object {
   text-align: center;
   text-decoration: none; }
 
+.aircraft_brief {
+  position: absolute;
+  top: 27%;
+  left: 0;
+  right: 0;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 0 30px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s; }
+
+.aircraft_tile:hover .aircraft_brief,
+.aircraft_tile:focus .aircraft_brief,
+.aircraft_tile:active .aircraft_brief {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px); }
+
 .read_more {
   position: absolute;
   bottom: 5%;
@@ -1276,20 +1301,52 @@ object {
   position: relative;
   margin: 10px 0; }
 
+@media screen and (min-width: 400px) {
+  .aircraft_brief {
+    top: 25%;
+    font-size: 1em; } }
 @media screen and (min-width: 450px) {
   .aircraft_tile h3 {
     top: 18%;
-    font-size: 1.6em; } }
+    font-size: 1.6em; }
+
+  .aircraft_brief {
+    top: 33%;
+    font-size: 1em; } }
+@media screen and (min-width: 500px) {
+  .aircraft_brief {
+    top: 33%;
+    font-size: 1em; } }
 @media screen and (min-width: 600px) {
   #projects_page_header h1,
   #inventory_page_header h1 {
     font-size: 4.3em; } }
+@media screen and (max-height: 325px) {
+  .aircraft_tile {
+    max-height: 80vh; }
+
+  .aircraft_tile h3 {
+    top: 6%; }
+
+  .aircraft_brief {
+    top: 22%;
+    font-size: 0.8em; } }
+@media screen and (max-height: 500px) {
+  .aircraft_tile {
+    max-height: 80vh; }
+
+  .aircraft_tile h3 {
+    top: 10%; } }
 @media screen and (min-width: 700px) {
   .aircraft_tile h3 {
     font-size: 1.8em; }
 
   .tile_overlay {
-    margin: 50px 10px; } }
+    margin: 50px 10px; }
+
+  .aircraft_brief {
+    max-width: 500px;
+    margin: 0 auto; } }
 @media screen and (min-width: 960px) {
   #projects_page_header h1,
   #inventory_page_header h1 {
@@ -1528,8 +1585,11 @@ object {
 
   #aircraft_page_header h1 {
     top: 3.7em;
-    font-size: 3em; }
-
+    font-size: 3em; } }
+@media screen and (min-width: 900px) and (max-height: 620px) {
+  #aircraft_page_header h1 {
+    top: 2em; } }
+@media screen and (min-width: 900px) {
   .header_info_box {
     background-color: rgba(0, 0, 0, 0.4);
     height: 85vh;
@@ -1815,7 +1875,7 @@ object {
   padding: 20px 10px 1px; }
 
 #gallery {
-  background-color: black; }
+  background-color: #151515; }
 
 #aircraft_info .content_wrapper {
   padding-bottom: 30px; }
@@ -1880,7 +1940,7 @@ object {
 @media screen and (min-width: 900px) {
   #aircraft_info,
   #details {
-    background-color: #2D2D2D; }
+    background-color: #151515; }
 
   #aircraft_info .content_wrapper {
     width: calc(50% - 20px);
@@ -1929,12 +1989,18 @@ object {
 
   .detail_with_slider {
     max-width: calc(100% - 240px); } }
+#project_header_info_box #project_info_box_span {
+  bottom: 12.5em; }
+
 .project_section {
-  background-color: #2D2D2D;
+  background-color: #EBEBEB;
   padding-bottom: 10px; }
 
+#project_section .detail_value {
+  padding: 15px 10px; }
+
 #project_wrapper {
-  padding: 0 20px; }
+  padding: 20px 10px 1px; }
 
 #overview .detail_title {
   margin-top: 0;
@@ -1942,54 +2008,108 @@ object {
 
 .project_post {
   margin: 10px 0;
-  border: none; }
+  border: none;
+  background-color: white; }
 
 .project_post_title {
   position: relative;
   margin-top: 0;
   border-top: none;
   background-color: #5E5E5E;
-  color: #868686;
-  line-height: 1em; }
+  color: #EBEBEB;
+  line-height: 4rem; }
 
 .project_post_title p {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  margin: 0; }
 
 .project_post_text {
   position: relative;
-  padding-top: 135px; }
+  padding-top: 135px;
+  background-color: white; }
 
 .project_post_text h3 {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 135px;
-  margin: 0;
-  padding-left: 20px;
+  margin: 10px 0 0 0;
   font-family: Jura;
   font-size: 2em;
   font-weight: 900;
-  line-height: 135px;
   background-color: white;
   color: #3F8C3F; }
 
+@media screen and (max-height: 500px) {
+  #project_header_info_box #project_info_box_span {
+    bottom: 5.5em; }
+
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 165px; } }
+@media screen and (max-height: 500px) and (min-width: 750px) {
+  #aircraft_sorting {
+    bottom: 2em; } }
+@media screen and (min-width: 750px) {
+  #project_header_info_box #aircraft_sorting {
+    max-width: 700px; }
+
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 200px; } }
 @media screen and (min-width: 900px) {
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 260px; }
+
+  #project_header_info_box #project_info_box_span {
+    bottom: 31vh; }
+
+  .project_section {
+    background-color: #151515; }
+
+  #project_gallery_title {
+    font-size: 3.4rem; }
+
+  #project_section .detail_value {
+    padding: 15px 20px; }
+
+  #overview .detail_value {
+    padding: 50px 20px; }
+
+  #project_wrapper {
+    padding: 0 20px; }
+
   .project_post {
-    min-height: 550px; }
+    min-height: 550px;
+    background-color: #EBEBEB; }
 
   .project_post_title {
     background-color: #5E5E5E;
-    color: #868686; }
+    color: #868686;
+    line-height: 1em; }
 
   .project_post_title p {
     position: absolute;
-    top: 167px;
-    left: -225px;
-    min-width: 72vh;
+    top: 255px;
+    left: -160px;
+    min-width: 550px;
     margin: 0;
     transform: rotate(-90deg);
-    font-size: 3em; } }
+    font-size: 3em; }
+
+  #project_section .project_post_text {
+    background-color: #EBEBEB;
+    padding-top: 150px; }
+
+  .project_post_text h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 2em;
+    font-weight: 900;
+    line-height: 135px; } }
 .content-area {
   float: left;
   margin: 0 -25% 0 0;

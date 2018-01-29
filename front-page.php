@@ -7,7 +7,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <div class="home_screen" id="home">
+            <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+            <div class="home_screen" id="home" style="background-image: url(<?php echo $url; ?>);">
                 <div class="content_wrapper">
                     <div class="intro">
                         <h1>Hangar 49</h1>

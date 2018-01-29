@@ -16,14 +16,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-           <div class="contact_background" id="contact_page_background">
-<!--
-            <div class="page_header_overlay" id="contact_page_header_overlay">
-            </div>
--->
-                
-
-            
+            <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+            <div class="contact_background" id="contact_page_background" style="background-image: url(<?php echo $url; ?>);">
             <div class="content_wrapper" id="contact_wrapper">
                 <h1>Contact</h1>
             <div class="contact_info_wrapper">
@@ -76,7 +70,6 @@ get_header(); ?>
                     } 
                 ?>
                         <?php if($facebook || $twitter || $instagram || $youtube) {
-//                        echo '<h2>Follow Us</h2>';
                             } ?>
                     <ul>
                         <?php if($facebook) {

@@ -20,6 +20,9 @@ get_header('archive'); ?>
                 if(get_field('work_update_entry')){
                     $work_update_entries = get_field('work_update_entry');
                 }
+                if(get_field('project_gallery')){
+                    $project_gallery = get_field('project_gallery');
+                }
             } 
             
 
@@ -62,13 +65,13 @@ get_header('archive'); ?>
                                 $location = get_field('location');}
                             if(get_field('misc')){ 
                                 $misc = get_field('misc');}
+                            $featured_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                         } 
                 ?>
             <div class="page_header_wrapper" id="aircraft_header_wrapper">
                 <div class="page_header" id="aircraft_page_header">
                     <div class="flexslider gallery_slider" id="featured_slider">
-                <?php if( have_rows('featured_image_gallery') ): ?>
-				
+                    <?php if( have_rows('featured_image_gallery') ) { ?>
                     <div class="page_header_overlay" id="featured_slider_overlay">
                         <ul class="slides gallery_slides">
                             <?php while( have_rows('featured_image_gallery') ): the_row();
@@ -94,13 +97,23 @@ get_header('archive'); ?>
                             </li>
                             <?php endwhile; ?>
                         </ul>
+                    </div>    
+                    <?php } else { ?>    
+                    <div class="page_header_overlay" id="featured_slider_overlay">
+                        <ul class="slides gallery_slides">
+                            <li>
+                                <div class="slider_image">
+                                    <img src="<?php echo $featured_image; ?>"/>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-				<?php endif; ?>
+				    <?php } ?>
                 </div>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                     <div class="aircraft_content_wrap">
-                        <div class="header_info_box">
-                        <span>
+                        <div id="project_header_info_box" class="header_info_box">
+                        <span id="project_info_box_span">
                             <p><?php 
                                 if($serial_number){
                                     echo 'S/N: ' . $serial_number . ' • ';
@@ -109,7 +122,7 @@ get_header('archive'); ?>
                                     echo 'R/N: ' . $registration_number;
                                 }
                                 if($price){
-                                    echo '<br>' . $price;
+//                                    echo '<br>' . $price;
                                 } ?>   
                             </p>
                             <p class="special_info"><?php
@@ -118,7 +131,8 @@ get_header('archive'); ?>
                                 } ?>
                             </p>
                         </span>
-                        <div class="archive_sorting" id="aircraft_sorting">
+                        <div class="archive_sorting project_sorting" id="aircraft_sorting">
+                            <a href="#project_section" class="smoothScroll">see project</a>
                             <a href="#gallery" class="smoothScroll">view gallery</a>
                             <a href="#aircraft_info" class="smoothScroll">see details</a>
                         </div>
@@ -146,7 +160,7 @@ get_header('archive'); ?>
                                     $entry_date = $row['entry_date'];
                                     $work_entry = $row['work_entry']; 
                                     $work_gallery = $row['project_update_gallery']; ?>
-                                    <div class="detail_item project_post">
+                                    <article class="detail_item project_post">
                                         <div class="detail_title project_post_title">
                                             
                                             <p><?php echo $entry_date; ?></p>
@@ -180,7 +194,7 @@ get_header('archive'); ?>
                                             
                                             
                                         </div>
-                                    </div> <?php
+                                    </article> <?php
                                 }
                             }
                         ?>
@@ -191,38 +205,32 @@ get_header('archive'); ?>
             <div class="aircraft_gallery" id="gallery">
                 <div class="aircraft_section_heading">
                     <div class="aircraft_content_wrap">
-                        <h2>gallery</h2>
+                        <h2 id="project_gallery_title">project gallery</h2>
                     </div>
                 </div>
                 <span class="aircraft_section_line"></span>
-                <?php if( have_rows('image_gallery') ): ?>
+                <?php if($project_gallery) { ?>
                         <div class="flexslider gallery_slider" id="gallery_slider">
                                 <ul class="slides gallery_slides">
-                                    <?php while( have_rows('image_gallery') ): the_row();
-                                        $image = get_sub_field('aircraft_gallery_image');
-                                        $title = $image['title'];
-                                        $description = $image['description'];
-                                        $caption = $image['caption'];
-
-                                        $url = $image['url'];
-                                        $alt = $image['alt'];
-
-
-                                        $size = 'full';
-                                        $myimage = $image['sizes'][ $size ];
-                                        $width = $image['sizes'][ $size . '-width' ];
-                                        $height = $image['sizes'][ $size . '-height' ];
-
+                                    <?php foreach( $project_gallery as $row ) {
+                                                    $image = $row['project_gallery_image'];
+                                                    $title = $image['title'];
+                                                    $description = $image['description'];
+                                                    $caption = $image['caption'];
+                                                    $url = $image['url'];
+                                                    $alt = $image['alt'];                           
                                     ?>
                                     <li data-thumb="<?php echo $url; ?>">
                                         <div class="aircraft_slider_image">
                                              <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                                         </div>
                                     </li>
-                                    <?php endwhile; ?>
+                                    
+                                    <?php  } ?>
                                 </ul>
-                        </div>
-                <?php endif; ?>
+                           </div> <?php
+                        } 
+                ?>
             </div>  
             <div class="aircraft_specifications" id="aircraft_info">
                 <div class="aircraft_section_heading">
@@ -265,9 +273,6 @@ get_header('archive'); ?>
                     </div>
                 </div>
             </div>
-            
-             
-            
             <div class="aircraft_details" id="details">
                 <div class="aircraft_section_heading">
                     <div class="aircraft_content_wrap">
@@ -277,18 +282,31 @@ get_header('archive'); ?>
                 <span class="aircraft_section_line"></span>
                 <div class="aircraft_content_wrap">
                     <div class="content_wrapper" id="aircraft_wrapper">
+                        <?php if( $history ) { ?>
+                        <div class="detail_item">
+                            <strong class="detail_title">History:</strong>
+                            <p class="detail_value"><?php echo $history; ?></p>
+                        </div>
+                        <?php } ?>
+                        <?php if( $airframe ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Airframe:</strong>
                             <p class="detail_value"><?php echo $airframe; ?></p>
                         </div>
+                        <?php } ?>
+                        <?php if( $engine ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Engine(s):</strong>
                             <p class="detail_value"><?php echo $engine; ?></p>
                         </div>
+                        <?php } ?>
+                        <?php if( $propeller ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Propeller(s):</strong>
                             <p class="detail_value"><?php echo $propeller; ?></p>
                         </div>
+                        <?php } ?>
+                        <?php if( $exterior ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Exterior:</strong>
                             <div class="detail_with_slider">
@@ -323,14 +341,20 @@ get_header('archive'); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
+                        <?php } ?>
+                        <?php if( $avionics ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Avionics:</strong>
                             <p class="detail_value"><?php echo $avionics; ?></p>
                         </div>
+                        <?php } ?>
+                        <?php if( $equipment ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Equipment:</strong>
                             <p class="detail_value"><?php echo $equipment; ?></p>
                         </div>
+                        <?php } ?>
+                        <?php if( $interior ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Interior:</strong>
                             <div class="detail_with_slider">
@@ -365,10 +389,13 @@ get_header('archive'); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
+                        <?php } ?>
+                        <?php if( $misc ) { ?>
                         <div class="detail_item">
                             <strong class="detail_title">Miscellaneous:</strong>
                             <p class="detail_value"><?php echo $misc; ?></p>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>                             

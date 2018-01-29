@@ -32,55 +32,9 @@
     background: -ms-radial-gradient(center, ellipse cover, rgba(1,59,0,1) 0%, rgba(18,28,0,1) 100%); /* ie10+ */
     background:radial-gradient(ellipse at center, rgba(1,59,0,1) 0%, rgba(18,28,0,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#013B00', endColorstr='#121C00',GradientType=1 ); /* ie6-9 */
-//    background-image: url(images/inventory_background.jpg);  
-//    background-position: center;
-//    background-size: cover;
-//    filter: grayscale(100%);
 }
 
 .section_title h2 {
     margin: 0;
     line-height: 100px;
 }
-
-//.inventory_list {
-//    margin: 0;
-//    padding: 0;
-//    list-style-type: none;
-//}
-//
-//.inventory_list li {
-//    overflow: hidden;
-//    position: relative;
-//}
-//
-//.inventory_tiles {
-//    padding-top: 40px;
-//    background-color: black;
-//}
-//
-//@supports (grid-area: auto) {
-//    
-//    @media screen and (min-width: 960px) {
-//        .inventory_list {
-//            display: grid;
-//            grid-template-columns: 1fr 1fr;
-//        }
-//        
-//        .inventory_tile {
-//            height: 38vw;
-//        }
-//        
-//    }
-//    
-//    @media screen and (min-width: 1400px) {
-//        .inventory_list {
-//            display: grid;
-//            grid-template-columns: 1fr 1fr 1fr;
-//        }
-//
-//        .inventory_tile {
-//            height: 24vw;
-//        }
-//    }
-//}
