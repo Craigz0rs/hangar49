@@ -92,6 +92,7 @@ get_header('archive'); ?>
                         </ul>
                     </div>
 				    <?php } ?>
+                </div>
                     <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
                     <div class="aircraft_content_wrap">
                         <div class="header_info_box">
@@ -119,7 +120,7 @@ get_header('archive'); ?>
                         </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
             <div class="aircraft_gallery" id="gallery">
                 <div class="aircraft_section_heading">
@@ -154,7 +155,10 @@ get_header('archive'); ?>
                                     </li>
                                     <?php endwhile; ?>
                                 </ul>
+                            <span id='scroll_L_Arrow' onclick="scrollThumb('Go_L')">Left</span>
+                            <span id='scroll_R_Arrow' onclick="scrollThumb('Go_R')">Right</span>
                         </div>
+
                 <?php endif; ?>
             </div>  
             <div class="aircraft_specifications" id="aircraft_info">

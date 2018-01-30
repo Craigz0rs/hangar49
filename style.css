@@ -1633,9 +1633,9 @@ object {
 #gallery_slider .flex-control-thumbs {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1px 1px 1px;
-  margin: 0; }
+  padding: 1px 0px 1px;
+  margin: 0;
+  width: calc(100% - 2px); }
 
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs {
@@ -1647,7 +1647,11 @@ object {
 
 #gallery_slider .flex-control-thumbs li {
   width: calc(33.33333333% - 2px);
-  margin: 1px; }
+  margin: 1px;
+  flex-shrink: 0; }
+
+#gallery_slider .flex-control-thumbs li:first-of-type {
+  margin-left: 2px; }
 
 #exterior_slider .flex-control-thumbs li,
 #interior_slider .flex-control-thumbs li {
