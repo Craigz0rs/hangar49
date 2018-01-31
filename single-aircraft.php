@@ -155,8 +155,10 @@ get_header('archive'); ?>
                                     </li>
                                     <?php endwhile; ?>
                                 </ul>
-                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L')">Left</span>
-                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R')">Right</span>
+                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+</span>
+                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+</span>
                         </div>
 
                 <?php endif; ?>
