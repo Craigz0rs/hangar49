@@ -30,14 +30,14 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
      function scrollThumb(direction) {
         if (direction=='Go_L') {   
             $('#gallery_slider .flex-control-thumbs').animate({
-                scrollLeft: "-=" + ($(document).width() - 1) + "px"
+                scrollLeft: "-=" + ($(document).width() - 2) + "px"
             }, function(){
                 // createCookie('scrollPos', $('#slide-wrap').scrollLeft());
             });
         }else
         if (direction=='Go_R') {
             $('#gallery_slider .flex-control-thumbs').animate({
-                scrollLeft: "+=" + ($(document).width() + 1) + "px"
+                scrollLeft: "+=" + ($(document).width() - 2) + "px"
             }, function(){
                 // createCookie('scrollPos', $('#slide-wrap').scrollLeft());
             });
