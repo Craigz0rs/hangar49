@@ -27,19 +27,38 @@ if (!window['jQuery']) alert('The jQuery library must be included before the smo
 // Initialize all .smoothScroll links
 jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 
-     function scrollThumb(direction) {
-        if (direction=='Go_L') {   
-            $('#gallery_slider .flex-control-thumbs').animate({
-                scrollLeft: "-=" + ($(document).width() - 2) + "px"
-            }, function(){
-                // createCookie('scrollPos', $('#slide-wrap').scrollLeft());
-            });
-        }else
-        if (direction=='Go_R') {
-            $('#gallery_slider .flex-control-thumbs').animate({
-                scrollLeft: "+=" + ($(document).width() - 2) + "px"
-            }, function(){
-                // createCookie('scrollPos', $('#slide-wrap').scrollLeft());
-            });
+     function scrollThumb(direction, slider) {
+        if( slider == 'gallery') {
+            if (direction=='Go_L') {
+                $('#gallery_slider .flex-control-thumbs').animate({
+                        scrollLeft: "-=" + ($(document).width() - 2) + "px"
+                });                                 
+            } else if (direction=='Go_R') {
+                    $('#gallery_slider .flex-control-thumbs').animate({
+                        scrollLeft: "+=" + ($(document).width() - 2) + "px"
+                    });
+            }
+        } else if ( slider == 'interior') {
+            
+            if (direction=='Go_L') {
+                $('#interior_slider .flex-control-thumbs').animate({
+                        scrollLeft: "-=" + ($(document).width() - 18) + "px"
+                });                                 
+            } else if (direction=='Go_R') {
+                    $('#interior_slider .flex-control-thumbs').animate({
+                        scrollLeft: "+=" + ($(document).width() - 18) + "px"
+                    });
+            }            
+        } else if ( slider == 'exterior') {
+            
+            if (direction=='Go_L') {
+                $('#exterior_slider .flex-control-thumbs').animate({
+                        scrollLeft: "-=" + ($(document).width() - 18) + "px"
+                });                                 
+            } else if (direction=='Go_R') {
+                $('#exterior_slider .flex-control-thumbs').animate({
+                        scrollLeft: "+=" + ($(document).width() - 18) + "px"
+                });
+            }
         }
-       }
+     }
