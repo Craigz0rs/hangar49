@@ -171,7 +171,7 @@ get_header('archive'); ?>
                                                 <p><?php echo $work_entry; ?></p>
                                             </div>
                                             <?php if( $work_gallery ) { ?>
-                                            <div class="flexslider gallery_slider" id="exterior_slider">
+                                            <div class="flexslider gallery_slider" id="project_slider">
                                                 <ul class="slides gallery_slides">
                                             <?php foreach( $work_gallery as $row ) {
                                                     $image = $row['project_update_gallery_image'];
@@ -189,6 +189,10 @@ get_header('archive'); ?>
                                             <?php
                                                 } ?>
                                                 </ul>
+                                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'project')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'project')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'project')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'project')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
                                             </div> <?php
                                             } ?>
                                             
@@ -228,6 +232,10 @@ get_header('archive'); ?>
                                     
                                     <?php  } ?>
                                 </ul>
+                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'gallery')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'gallery')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'gallery')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'gallery')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
                            </div> <?php
                         } 
                 ?>
@@ -337,6 +345,10 @@ get_header('archive'); ?>
                                             </li>
                                             <?php endwhile; ?>
                                         </ul>
+                                    <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'exterior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                                    <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'exterior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                                    <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'exterior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                                    <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'exterior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
                                 </div>
                                 <?php endif; ?>
                             </div>
@@ -385,6 +397,10 @@ get_header('archive'); ?>
                                             </li>
                                             <?php endwhile; ?>
                                         </ul>
+                                    <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'interior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                                    <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'interior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                                    <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'interior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                                    <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'interior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
                                 </div>
                                 <?php endif; ?>
                             </div>

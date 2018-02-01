@@ -230,12 +230,14 @@
     background-color: black;
 }
 
+#project_slider,
 #exterior_slider,
 #interior_slider {
     margin-bottom: 0;
     background-color: transparent;    
 }
 
+#project_slider .gallery_slides img,
 #exterior_slider .gallery_slides img,
 #interior_slider .gallery_slides img,
 #gallery_slider .gallery_slides img{
@@ -265,6 +267,7 @@
     }
 }
 
+#project_slider .flex-control-thumbs,
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs {
     display: flex;
@@ -322,6 +325,7 @@
     top: 2px;
 }
 
+#project_slider .flex-control-thumbs li,
 #exterior_slider .flex-control-thumbs li,
 #interior_slider .flex-control-thumbs li {
     width: calc(33.33333333%);
@@ -335,6 +339,7 @@
     object-position: center;
 }
 
+#project_slider .flex-control-thumbs img,
 #exterior_slider .flex-control-thumbs img,
 #interior_slider .flex-control-thumbs img{
     height: calc(25vw - 20px);
@@ -342,6 +347,7 @@
     object-position: center;
 }
 
+#project_slider .flex-direction-nav a,
 #exterior_slider .flex-direction-nav a,
 #interior_slider .flex-direction-nav a,
 #gallery_slider .flex-direction-nav a {
@@ -365,6 +371,7 @@
 
 
 @media screen and (min-width: 700px) {
+    #project_slider .flex-control-thumbs li,
     #exterior_slider .flex-control-thumbs li,
     #interior_slider .flex-control-thumbs li,   
     #gallery_slider .flex-control-thumbs li {
@@ -372,6 +379,7 @@
         padding: 0 1px;
     }
     
+    #project_slider .flex-control-thumbs img,
     #exterior_slider .flex-control-thumbs img,
     #interior_slider .flex-control-thumbs img,     
     #gallery_slider .flex-control-thumbs img {
@@ -417,7 +425,7 @@
         border-radius: 0px;
     }
     
-    #interior_slider, #exterior_slider {
+    #interior_slider, #exterior_slider, #project_slider {
         display: flex;
         padding: 2px;
         border-radius: 0px;
@@ -428,6 +436,7 @@
         width: 70vw;
     }
     
+    #project_slider .gallery_slides,
     #interior_slider .gallery_slides,
     #exterior_slider .gallery_slides {
         width: 80%;  
@@ -437,6 +446,7 @@
         height: 44vw;
     }
     
+    #project_slider .gallery_slides img,
     #interior_slider .gallery_slides img,
     #exterior_slider .gallery_slides img {
         height: 40vw;
@@ -465,6 +475,7 @@
         padding: 0 1px;
     }
     
+    #project_slider .flex-control-thumbs,
     #interior_slider .flex-control-thumbs,
     #exterior_slider .flex-control-thumbs {
         display: unset;
@@ -481,6 +492,7 @@
         padding: 0;
     }
     
+    #project_slider .flex-control-thumbs li,
     #interior_slider .flex-control-thumbs li,
     #exterior_slider .flex-control-thumbs li {
         width: 100%;
@@ -489,18 +501,21 @@
         margin: 1px;
     } 
     
+    #project_slider .flex-control-thumbs li:first-of-type,
     #exterior_slider .flex-control-thumbs li:first-of-type,
     #interior_slider .flex-control-thumbs li:first-of-type {
         margin-left: 1px;
         width: 100%;
     }
 
+    #project_slider .flex-control-thumbs li:last-of-type,
     #exterior_slider .flex-control-thumbs li:last-of-type,
     #interior_slider .flex-control-thumbs li:last-of-type {
         margin-right: 1px;
         width: 100%;
     }
-
+    
+    #project_slider .flex-control-thumbs li:first-of-type,
     #interior_slider .flex-control-thumbs li:first-of-type,
     #exterior_slider .flex-control-thumbs li:first-of-type, 
     #gallery_slider .flex-control-thumbs li:first-of-type,
@@ -512,6 +527,7 @@
         height: calc(13vw - 20px);
     }
 
+    #project_slider .flex-control-thumbs img,
     #interior_slider .flex-control-thumbs img,
     #exterior_slider .flex-control-thumbs img {
         height: 10vw;
@@ -521,6 +537,7 @@
         top: 22vw;
     }
     
+    #project_slider .flex-direction-nav a,
     #interior_slider .flex-direction-nav a,
     #exterior_slider .flex-direction-nav a {
         top: 20vw;
@@ -530,6 +547,7 @@
         left: -8px;
     }
     
+    #project_slider .flex-prev,
     #interior_slider .flex-prev,
     #exterior_slider .flex-prev {
         left: 0px;
@@ -539,6 +557,7 @@
         left: 10px;
     }
     
+    #project_slider:hover .flex-prev,
     #interior_slider:hover .flex-prev,
     #exterior_slider:hover .flex-prev {
         left: 10px;
@@ -548,6 +567,7 @@
         right: calc(30vw - 8px);
     }
     
+    #project_slider .flex-next,
     #interior_slider .flex-next,
     #exterior_slider .flex-next {
         right: calc(20%);
@@ -557,6 +577,7 @@
         right: calc(30vw + 10px);
     }
     
+    #project_slider:hover .flex-next,
     #interior_slider:hover .flex-next,
     #exterior_slider:hover .flex-next {
         right: calc(20% + 10px);

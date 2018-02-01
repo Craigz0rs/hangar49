@@ -110,7 +110,7 @@
         animation: "fade",
         controlNav: "thumbnails"
     });
-    $('#interior_slider, #exterior_slider').flexslider({
+    $('#interior_slider, #exterior_slider, #project_slider').flexslider({
         animation: "fade",
         controlNav: "thumbnails"
     });

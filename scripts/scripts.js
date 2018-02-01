@@ -84,5 +84,24 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                         scrollTop: "+=" + ($(document).width() * 0.4) + "px"
                 });
             }
+        } else if ( slider == 'project') {
+            
+            if (direction=='Go_L') {
+                $('#project_slider .flex-control-thumbs').animate({
+                        scrollLeft: "-=" + ($(document).width() - 18) + "px"
+                });                                 
+            } else if (direction=='Go_R') {
+                $('#project_slider .flex-control-thumbs').animate({
+                        scrollLeft: "+=" + ($(document).width() - 18) + "px"
+                });
+            } else if (direction=='Go_U') {
+                $('#project_slider .flex-control-thumbs').animate({
+                        scrollTop: "-=" + ($(document).width() * 0.4) + "px"
+                });                                 
+            } else if (direction=='Go_D') {
+                $('#project_slider .flex-control-thumbs').animate({
+                        scrollTop: "+=" + ($(document).width() * 0.4) + "px"
+                });
+            }
         }
      }
