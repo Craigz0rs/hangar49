@@ -34,9 +34,17 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                         scrollLeft: "-=" + ($(document).width() - 2) + "px"
                 });                                 
             } else if (direction=='Go_R') {
-                    $('#gallery_slider .flex-control-thumbs').animate({
+                $('#gallery_slider .flex-control-thumbs').animate({
                         scrollLeft: "+=" + ($(document).width() - 2) + "px"
-                    });
+                });
+            } else if (direction=='Go_U') {
+                $('#gallery_slider .flex-control-thumbs').animate({
+                        scrollTop: "-=" + ($(document).width() * 0.44) + "px"
+                });                                 
+            } else if (direction=='Go_D') {
+                    $('#gallery_slider .flex-control-thumbs').animate({
+                        scrollTop: "+=" + ($(document).width() * 0.44) + "px"
+                });
             }
         } else if ( slider == 'interior') {
             
@@ -45,10 +53,18 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                         scrollLeft: "-=" + ($(document).width() - 18) + "px"
                 });                                 
             } else if (direction=='Go_R') {
-                    $('#interior_slider .flex-control-thumbs').animate({
+                $('#interior_slider .flex-control-thumbs').animate({
                         scrollLeft: "+=" + ($(document).width() - 18) + "px"
-                    });
-            }            
+                });
+            } else if (direction=='Go_U') {
+                $('#interior_slider .flex-control-thumbs').animate({
+                        scrollTop: "-=" + ($(document).width() * 0.4) + "px"
+                });                                 
+            } else if (direction=='Go_D') {
+                $('#interior_slider .flex-control-thumbs').animate({
+                        scrollTop: "+=" + ($(document).width() * 0.4) + "px"
+                });
+            }           
         } else if ( slider == 'exterior') {
             
             if (direction=='Go_L') {
@@ -58,6 +74,14 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
             } else if (direction=='Go_R') {
                 $('#exterior_slider .flex-control-thumbs').animate({
                         scrollLeft: "+=" + ($(document).width() - 18) + "px"
+                });
+            } else if (direction=='Go_U') {
+                $('#exterior_slider .flex-control-thumbs').animate({
+                        scrollTop: "-=" + ($(document).width() * 0.4) + "px"
+                });                                 
+            } else if (direction=='Go_D') {
+                $('#exterior_slider .flex-control-thumbs').animate({
+                        scrollTop: "+=" + ($(document).width() * 0.4) + "px"
                 });
             }
         }

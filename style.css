@@ -1680,6 +1680,18 @@ object {
   right: 2px;
   text-align: right; }
 
+#scroll_U_Arrow,
+#scroll_D_Arrow {
+  display: none;
+  height: 48px;
+  position: absolute;
+  right: 0;
+  line-height: 48px;
+  text-align: center; }
+
+#scroll_U_Arrow {
+  top: 2px; }
+
 #exterior_slider .flex-control-thumbs li,
 #interior_slider .flex-control-thumbs li {
   width: calc(33.33333333%);
@@ -1773,28 +1785,45 @@ object {
   #exterior_slider .gallery_slides img {
     height: 40vw; }
 
+  #scroll_L_Arrow,
+  #scroll_R_Arrow {
+    display: none; }
+
+  #scroll_U_Arrow,
+  #scroll_D_Arrow {
+    display: block;
+    width: calc((100vw - 240px - 40px) * 0.2); }
+
+  #gallery_slider #scroll_U_Arrow,
+  #gallery_slider #scroll_D_Arrow {
+    width: 30vw; }
+
   #gallery_slider .flex-control-thumbs {
     display: unset;
     width: 30vw;
     max-height: 44vw;
-    padding-top: 0; }
+    padding: 0 1px; }
 
   #interior_slider .flex-control-thumbs,
   #exterior_slider .flex-control-thumbs {
     display: unset;
     width: 20%;
     height: 40vw;
-    padding-top: 0;
-    padding-left: 1px; }
+    margin: 0;
+    padding: 0 1px; }
 
   #gallery_slider .flex-control-thumbs li {
     width: calc(50% - 2px);
-    height: calc(13vw - 20px); }
+    height: calc(13vw - 20px);
+    margin: 1px;
+    padding: 0; }
 
   #interior_slider .flex-control-thumbs li,
   #exterior_slider .flex-control-thumbs li {
     width: 100%;
-    height: 10vw; }
+    height: 10vw;
+    padding: 0;
+    margin: 1px; }
 
   #exterior_slider .flex-control-thumbs li:first-of-type,
   #interior_slider .flex-control-thumbs li:first-of-type {
