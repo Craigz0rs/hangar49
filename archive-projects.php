@@ -63,10 +63,13 @@ get_header(); ?>
                                     }
                                 ?>
                                 <li>
-                                    <div class="aircraft_tile project_tile">
-                                    <?php if( $feat_image ) { ?>
+
+                                <?php if( $feat_image ) { ?>
+                                        <div class="aircraft_tile project_tile" style="background-image: url('<?php echo $feat_image; ?>')">  
                                         <img src="<?php echo $feat_image; ?>">
-                                    <?php } ?>                                  
+                                <?php } else { ?>
+                                        <div class="aircraft_tile project_tile">  
+                                <?php } ?>                                
                                       <a href="<?php echo $project_link; ?>">
                                             <span class="tile_overlay"></span> 
                                             <h3><?php

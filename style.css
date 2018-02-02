@@ -1175,7 +1175,9 @@ object {
 .aircraft_tile {
   width: 100%;
   height: 75vw;
-  max-height: 480px; }
+  max-height: 480px;
+  background-size: cover;
+  background-position: center center; }
 
 .aircraft_tile img {
   height: 100%;
@@ -1186,6 +1188,12 @@ object {
   filter: grayscale(0);
   transition: 0.5s ease-in-out; }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .aircraft_tile img {
+    display: none; } }
+@supports (-ms-ime-align: auto) {
+  .aircraft_tile img {
+    display: none; } }
 .aircraft_tile:hover img,
 .aircraft_tile:focus img,
 .aircraft_tile:active img {
@@ -1366,7 +1374,8 @@ object {
       padding: 10px; }
 
     .aircraft_tile {
-      height: 38vw; }
+      height: 38vw;
+      background-image: none !important; }
 
     .aircraft_list li {
       margin: 0; }
@@ -1810,7 +1819,7 @@ object {
     width: 30vw; }
 
   #gallery_slider .flex-control-thumbs {
-    display: unset;
+    display: block;
     width: 30vw;
     max-height: 44vw;
     padding: 0 1px; }
@@ -1818,7 +1827,7 @@ object {
   #project_slider .flex-control-thumbs,
   #interior_slider .flex-control-thumbs,
   #exterior_slider .flex-control-thumbs {
-    display: unset;
+    display: block;
     width: 20%;
     height: 40vw;
     margin: 0;
@@ -1826,7 +1835,7 @@ object {
 
   #gallery_slider .flex-control-thumbs li {
     width: calc(50% - 2px);
-    height: calc(13vw - 20px);
+    height: calc(11vw);
     margin: 1px;
     padding: 0; }
 
@@ -1858,7 +1867,7 @@ object {
     margin-top: 0; }
 
   #gallery_slider .flex-control-thumbs img {
-    height: calc(13vw - 20px); }
+    height: calc(11vw); }
 
   #project_slider .flex-control-thumbs img,
   #interior_slider .flex-control-thumbs img,
@@ -2073,7 +2082,8 @@ object {
     padding: 50px 20px; }
 
   .detail_with_slider {
-    max-width: calc(100% - 240px); } }
+    max-width: calc(100% - 240px);
+    overflow: hidden; } }
 #project_header_info_box #project_info_box_span {
   bottom: 12.5em; }
 

@@ -56,9 +56,12 @@ get_header(); ?>
                                     } 
                             ?>
                                 <li>
-                                    <div class="aircraft_tile inventory_tile">    
+                                       
                                 <?php if( $feat_image ) { ?>
+                                        <div class="aircraft_tile inventory_tile" style="background-image: url('<?php echo $feat_image; ?>')">  
                                         <img src="<?php echo $feat_image; ?>">
+                                <?php } else { ?>
+                                        <div class="aircraft_tile inventory_tile">  
                                 <?php } ?>
                                         <a href="<?php echo get_the_permalink(); ?>">
                                             <span class="tile_overlay"></span> 

@@ -44,7 +44,11 @@
     width: 100%;
     height: 75vw;
     max-height: 480px;
+    background-size: cover;
+    background-position: center center;
 }
+
+
 
 .aircraft_tile img {
     height: 100%;
@@ -55,6 +59,20 @@
     filter: grayscale(0);
     transition: 0.5s ease-in-out;
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .aircraft_tile img {
+        display: none;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    .aircraft_tile img {
+        display: none;
+    }
+}
+
+
 
 .aircraft_tile:hover img,
 .aircraft_tile:focus img,
@@ -304,6 +322,7 @@
         
         .aircraft_tile {
             height: 38vw;
+            background-image: none !important;
         }
         
         .aircraft_list li {
