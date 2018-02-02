@@ -1218,6 +1218,7 @@ object {
   top: 27%;
   left: 0;
   right: 0;
+  width: 100%;
   font-family: "Metrophobic", sans-serif;
   font-size: 0.7em;
   text-align: center;
