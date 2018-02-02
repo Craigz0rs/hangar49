@@ -320,6 +320,12 @@
             padding: 10px;
         }
         
+        @supports (-ms-ime-align:auto) {
+    .aircraft_tile img {
+        display: block;
+    }
+}
+        
         .aircraft_tile {
             height: 38vw;
             background-image: none !important;
