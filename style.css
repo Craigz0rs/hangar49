@@ -709,7 +709,7 @@ object {
   background-color: black; }
 
 .page_header {
-  height: 90vh;
+  height: 60vh;
   position: relative;
   top: 0; }
 
@@ -735,7 +735,7 @@ object {
   text-align: center;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 10;
   line-height: 1em; }
 
 .page_header h2 {
@@ -2260,7 +2260,10 @@ object {
 .main-navigation li {
   text-align: center;
   height: 100%;
-  transition: 0.2s; }
+  transition: 0.2s;
+  margin: 0 2px;
+  padding: 0 3px;
+  min-width: 60px; }
 
 .main-navigation li a {
   color: white;
@@ -2277,24 +2280,55 @@ object {
   background-color: rgba(255, 255, 255, 0.9);
   transition: 0.2s; }
 
-.main-navigation i {
+.main-navigation svg {
   transition: 0.2s; }
 
-.main-navigation li:hover i,
-.main-navigation li:active i {
+.main-navigation li:hover svg,
+.main-navigation li:active svg {
   color: #3F8C3F;
   padding-top: 0px;
   transition: 0.2s;
-  transform: rotate(270deg); }
-
-.main-navigation li:hover #envelope,
-.main-navigation li:active #envelope {
   transform: rotate(360deg); }
 
 .main-navigation li:hover #wrench,
 .main-navigation li:active #wrench {
   transform: rotate(270deg) scaleX(-1); }
 
+.main-navigation li:hover #fighterjet,
+.main-navigation li:active #fighterjet {
+  transform: rotate(270deg); }
+
+@media screen and (max-width: 825px) {
+  .main-navigation li {
+    margin: 0;
+    padding: 0; } }
+@media screen and (max-width: 750px) {
+  .menu-toggle {
+    display: block;
+    height: 38px;
+    padding: 0 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    transition: 0.2s; }
+
+  .menu-toggle:hover,
+  .menu-toggle:active {
+    color: #3F8C3F;
+    background-color: rgba(255, 255, 255, 0.9); }
+
+  .menu-toggled {
+    color: #3F8C3F;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 0.2s; }
+
+  .menu-toggle svg {
+    font-size: 2em; }
+
+  .menu-main-navigation-container {
+    display: none; } }
 .site-footer {
   text-align: center;
   padding-top: 22px;
