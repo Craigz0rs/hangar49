@@ -59,11 +59,8 @@
 }
 
 .main-navigation li:hover {
-//    background-color: rgba(153, 153, 153, 0.6);
     background-color: $color_header-main-nav-link-background-hover;
     transition: 0.2s;
-//    padding-top: 3vh;
-//    font-size: 1.1em;
 }
 
 .main-navigation svg {
@@ -94,6 +91,8 @@
     transform: rotate(270deg);
 }
 
+
+
 @media screen and (max-width: 825px) {
     .main-navigation li {
         margin: 0;
@@ -116,13 +115,13 @@
     
     .menu-toggle:hover,
     .menu-toggle:active {
-        color: $color_font-nav-hover;;
+        color: $color_font-nav-hover;
         background-color: $color_header-main-nav-link-background-hover;
     }
     
-    .menu-toggled {
-        color: $color_font-nav-hover;;
-        background-color: $color_header-main-nav-link-background-hover;
+    .button-toggled {
+        color: $color_font-nav-hover;
+        background-color: rgba(255,255,255,0.95);
         transition: 0.2s;
     }
     
@@ -131,10 +130,87 @@
     }
     
     .menu-main-navigation-container {
-        display: none;
+//        display: none;
+        position: absolute;
+        top: 38px;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;  
+        z-index: 99;
+    }
+    
+    .main-navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        border: 2px solid transparent;
+        height: calc(100vh - 38px);
+        overflow-y: scroll;
+        overflow-x: hidden;     
+    }
+    
+    .main-navigation li {
+        width: 33.3333%;
+        height: 33vw;
+        border: 2px solid transparent;
+        animation-name: menu-entry;
+        animation-duration: 0.2s;
+    }
+    
+    @keyframes menu-entry {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    .main-navigation li a {
+        width: 100%;
+        font-size: 1em;
+        width: 100%;
+        line-height: 30px;
+        padding-top: 25%;
+        background-color: rgba(255,255,255,0.95);
+        color: $color_font-nav-hover;
+    }
+    
+    .main-navigation li a svg {
+        font-size: 2.5em;
     }
     
     .mobile-menu-open {
-        
+        display: block;
+    }
+    
+    .mobile-menu-closed {
+        display: none;
+    }
+    
+    .menu-item a:focus {
+        background-color: white;
+        color: black;
+    }
+    
+    .main-navigation li:hover {
+        background-color: transparent;
+        transition: 0.2s;
+    }
+    
+    .menu-toggle:focus {
+        color: black;
+        background-color: white;
+    }
+    
+    
+}
+
+@media screen and (max-height: 500px) {
+    .main-navigation li {
+        width: 25%;
+        height: 25vw;
     }
 }

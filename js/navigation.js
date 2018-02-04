@@ -5,12 +5,16 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len;
 
+	var container, button, menu, links, i, len;
+    var navWrap;
+    
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
+    navWrap = document.getElementsByClassName('menu-main-navigation-container')[0];
+    navWrap.className += ( ' mobile-menu-closed' );
 
 	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
@@ -34,13 +38,37 @@
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
+            button.className = button.className.replace( 'button-toggled', '' );
 			menu.setAttribute( 'aria-expanded', 'false' );
+            navWrap.className = navWrap.className.replace( 'mobile-menu-open', 'mobile-menu-closed' );
+
+            
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
+            button.className += ' button-toggled';
 			menu.setAttribute( 'aria-expanded', 'true' );
+            navWrap.className = navWrap.className.replace( 'mobile-menu-closed', 'mobile-menu-open' ); 
+            $(document).on('click', function(event) {   
+                if ($(event.target).is('.menu-toggle')) {
+                    console.log("clicked button");
+                } else if (!$(event.target).is('#primary-menu li')) {
+                    console.log("clicked outside menu and not button");
+                    container.className = container.className.replace( ' toggled', '' );
+                    button.setAttribute( 'aria-expanded', 'false' );
+                    button.className = button.className.replace( 'button-toggled', '' );
+                    menu.setAttribute( 'aria-expanded', 'false' );
+                    navWrap.className = navWrap.className.replace( 'mobile-menu-open', 'mobile-menu-closed' );
+                  }
+                event.stopImmediatePropagation();
+            });            
 		}
+
 	};
+    
+
+    
+
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );
