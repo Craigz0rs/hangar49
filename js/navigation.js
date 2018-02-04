@@ -14,7 +14,7 @@
 		return;
 	}
     navWrap = document.getElementsByClassName('menu-main-navigation-container')[0];
-    navWrap.className += ( ' mobile-menu-closed' );
+//    navWrap.className += ( ' mobile-menu-closed' );
 
 	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
@@ -33,42 +33,67 @@
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
-
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-            button.className = button.className.replace( 'button-toggled', '' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-            navWrap.className = navWrap.className.replace( 'mobile-menu-open', 'mobile-menu-closed' );
-
-            
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-            button.className += ' button-toggled';
-			menu.setAttribute( 'aria-expanded', 'true' );
-            navWrap.className = navWrap.className.replace( 'mobile-menu-closed', 'mobile-menu-open' ); 
-            $(document).on('click', function(event) {   
-                if ($(event.target).is('.menu-toggle')) {
-                    console.log("clicked button");
-                } else if (!$(event.target).is('#primary-menu li')) {
-                    console.log("clicked outside menu and not button");
+    
+    $(document).on('click', function(event) {  
+        if($(event.target).is(button) || $(event.target).is(button.childNodes)) {
+            console.log("pushed button");                 
+                if ( button.classList.contains( 'button-toggled' ) ) {
+                    console.log("pushed button to close");
                     container.className = container.className.replace( ' toggled', '' );
                     button.setAttribute( 'aria-expanded', 'false' );
                     button.className = button.className.replace( 'button-toggled', '' );
                     menu.setAttribute( 'aria-expanded', 'false' );
-                    navWrap.className = navWrap.className.replace( 'mobile-menu-open', 'mobile-menu-closed' );
-                  }
-                event.stopImmediatePropagation();
-            });            
-		}
+                    navWrap.className = navWrap.className.replace( 'mobile-menu-open', '' );
+                } else {
+                    console.log("pushed button to open");
+                    container.className += ' toggled';
+                    button.setAttribute( 'aria-expanded', 'true' );
+                    button.className += ' button-toggled';
+                    menu.setAttribute( 'aria-expanded', 'true' );
+                    navWrap.className += ' mobile-menu-open';
+//                    navWrap.className = navWrap.className.replace( 'mobile-menu-closed', 'mobile-menu-open' );     
+                }
+            
+        } else if (($(event.target).is('.menu-item a')) || ($(event.target).is('.menu-item svg')) || ($(event.target).is('.menu-item path')) || ($(event.target).is('.menu-item i'))) {
+            console.log("Following hyperlink, don't close menu");
+        } else {  
+            if ( button.classList.contains( 'button-toggled' ) ) {
+                    console.log("clicked anywhere but button while menu is open");
+                    navWrap.className = navWrap.className.replace( 'mobile-menu-open', '' );
+                    container.className = container.className.replace( ' toggled', '' );
+                    button.setAttribute( 'aria-expanded', 'false' );
+                    button.className = button.className.replace( 'button-toggled', '' );
+                    menu.setAttribute( 'aria-expanded', 'false' );
+                    console.log("menu should now be closed");  
+                
+            } else {
+                console.log("clicked anywhere but button while menu is closed");
+            }
+        }
 
-	};
+    }); 
     
-
-    
-
+//                button.onclick = function() {
+//                if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+//                    console.log("pushed button to close");
+//                    container.className = container.className.replace( ' toggled', '' );
+//                    button.setAttribute( 'aria-expanded', 'false' );
+//                    button.className = button.className.replace( 'button-toggled', '' );
+//                    menu.setAttribute( 'aria-expanded', 'false' );
+//                    navWrap.className = navWrap.className.replace( 'mobile-menu-open', 'mobile-menu-closed' );
+//
+//
+//                } else {
+//                    console.log("pushed button to open");
+//                    container.className += ' toggled';
+//                    button.setAttribute( 'aria-expanded', 'true' );
+//                    button.className += ' button-toggled';
+//                    menu.setAttribute( 'aria-expanded', 'true' );
+//                    navWrap.className = navWrap.className.replace( 'mobile-menu-closed', 'mobile-menu-open' ); 
+//    
+//                }
+//
+//            };    
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );

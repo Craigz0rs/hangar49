@@ -24,8 +24,7 @@
     text-align: center;
     font-family: $font_logo;
     line-height: 0.8em;
-    padding-top: 5px;
-    
+    padding-top: 5px;   
 }
 
 .nav_branding span {
@@ -75,10 +74,6 @@
     transform: rotate(360deg);
 }
 
-//.main-navigation li:hover #envelope,
-//.main-navigation li:active #envelope {
-//    transform: rotate(360deg);
-//}
 
 .main-navigation li:hover #wrench,
 .main-navigation li:active #wrench {
@@ -91,16 +86,17 @@
     transform: rotate(270deg);
 }
 
-
-
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 850px) {
     .main-navigation li {
         margin: 0;
         padding: 0;
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 775px) {
+    
+
+    
     .menu-toggle {
         display: block;
         height: 38px;
@@ -111,6 +107,11 @@
         color: $color_font-nav;
         font-family: $font_logo;
         transition: 0.2s;
+    }
+    
+    .menu-toggle span {
+        font-family: fontawesome;
+        font-size: 2em;
     }
     
     .menu-toggle:hover,
@@ -125,12 +126,7 @@
         transition: 0.2s;
     }
     
-    .menu-toggle svg {
-        font-size: 2em;
-    }
-    
     .menu-main-navigation-container {
-//        display: none;
         position: absolute;
         top: 38px;
         left: 0;
@@ -139,6 +135,7 @@
         margin: 0;
         padding: 0;  
         z-index: 99;
+        display: none;
     }
     
     .main-navigation ul {
@@ -200,17 +197,10 @@
         transition: 0.2s;
     }
     
-    .menu-toggle:focus {
-        color: black;
-        background-color: white;
-    }
-    
-    
-}
-
-@media screen and (max-height: 500px) {
+        @media screen and (max-height: 500px) {
     .main-navigation li {
         width: 25%;
         height: 25vw;
     }
+}
 }
