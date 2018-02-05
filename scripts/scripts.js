@@ -105,3 +105,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
             }
         }
      }
+
+$(document).ready(function() {
+    document.getElementsByClassName('search-submit')[0].value = "";
+});

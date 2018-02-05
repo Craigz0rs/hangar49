@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 99;
+    z-index: 9999;
     background-color: $color_header-main-nav-background-hov;
     border-bottom: 2px solid $color_header-main-nav-border;
 }
@@ -134,7 +134,7 @@
         width: 100vw;
         margin: 0;
         padding: 0;  
-        z-index: 99;
+        z-index: 9999;
         display: none;
     }
     
@@ -197,10 +197,10 @@
         transition: 0.2s;
     }
     
-        @media screen and (max-height: 500px) {
-    .main-navigation li {
-        width: 25%;
-        height: 25vw;
+    @media screen and (max-height: 500px) {
+        .main-navigation li {
+            width: 25%;
+            height: 25vw;
+        }
     }
-}
 }

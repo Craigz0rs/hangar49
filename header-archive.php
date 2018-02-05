@@ -37,8 +37,7 @@
         <div class="nav_wrap">
 		<nav id="site-navigation" class="main-navigation">
             <a href="<?php echo get_home_url() ?>" class="nav_branding smoothScroll"><span>Hangar 49</span><br><span>Warbrids</span></a>
-
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hangar49' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( '<span></span><br>Menu', 'hangar49' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

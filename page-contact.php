@@ -73,17 +73,17 @@ get_header(); ?>
                             } ?>
                     <ul>
                         <?php if($facebook) {
-                        echo '<li><a href="' . $facebook . '"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>'; 
+                        echo '<li><a href="' . $facebook . '"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>'; 
                             } ?>
                         <?php if($twitter) {
-                        echo '<li><a href="' . $twitter . '"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>'; 
+                        echo '<li><a href="' . $twitter . '"><i class="fab fa-twitter-square" aria-hidden="true"></i></a></li>'; 
                             } ?>
                         <?php if($instagram) {
-                        echo '<li><a href="' . $instagram . '"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>'; 
+                        echo '<li><a href="' . $instagram . '"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>'; 
                             } ?>
                         <?php if($youtube) {
-                        echo '<li><a href="' . $youtube . '"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>'; 
-                            } ?>                            
+                        echo '<li><a href="' . $youtube . '"><i class="fab fa-youtube"></i></a></li>'; 
+                            } ?>                              
                     </ul>
                 </div>
             </div>

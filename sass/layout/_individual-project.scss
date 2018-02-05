@@ -30,7 +30,7 @@
     position: relative;
     margin-top: 0;
     border-top: none;
-    background-color: #5E5E5E;
+    background-color: $color_dark-backgrounds;
     color: #EBEBEB;
     line-height: 4rem;
 }
@@ -121,7 +121,7 @@
     }
     
     .project_post_title {
-        background-color: #5E5E5E;
+        background-color: $color_dark-backgrounds;
         color: #868686;
         line-height: 1em;
     }

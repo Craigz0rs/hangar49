@@ -15,7 +15,7 @@
 }
 
 .page_header {
-    height: 60vh;
+    height: 45vh;
     position: relative;
 //    margin-bottom: 20px;
     top: 0;
@@ -56,6 +56,11 @@
     text-align: center;
     font-family: $font_heading;
     color: $color_page_header-h2;
+}
+
+.page_main_wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .content_wrapper {

@@ -8,13 +8,118 @@
 	margin: 0 0 0 0;
 }
 
-.site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
-}
-
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+}
+
+.widget-area section {
+    background-color: white;
+}
+
+.widget-title {
+    margin: 0;
+    padding: 3px 0 3px 15px;
+    font-family: $font_heading;
+    background-color: $color_dark-backgrounds;
+    color: $color_font-light-headings;
+}
+
+.widget-area a {
+    text-decoration: none;
+    color: $color_font-nav-hover;
+    font-family: $font_heading;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.widget-area a:hover,
+.widget-area a:focus {
+    color: $color_font-dark-text;  
+    transition: 0.2s;
+}
+
+#search-2 .search-form {
+    position: relative;
+    padding: 25px 30px;
+}
+
+#search-2 .search-field {
+    width: 100%;
+    border-radius: 0px;
+    border: 2px solid #CECECE;
+    font-family: $font_text;
+    color: $color_font-content-text;
+    transition: 0.2s;
+}
+
+#search-2 .search-field:active,
+#search-2 .search-field:focus {
+    border: 2px solid $color_font-nav-hover;
+    transition: 0.2s;
+}
+
+#search-2 .search-submit {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 31px;
+    margin: auto;
+    height: 2.5em;
+    font-family: fontawesome;
+    font-size: 1em;
+    color: $color_font-nav-hover;
+    background-color: transparent;
+    border: none;
+    transition: 0.2s;
+}
+
+#search-2 .search-submit:hover,
+#search-2 .search-submit:active, 
+#search-2 .search-submit:focus {
+    color: $color_font-dark-text;  
+}
+
+#rpwwt-recent-posts-widget-with-thumbnails-3 img {
+    border-top: 1px solid $color_font-light-headings;
+    background-color: $color_medium-backgrounds;
+    padding: 0 0 0 10px;
+    margin: 0;
+    height: 140px !important;
+    object-fit: cover;
+    object-position: center;
+    width: 145px !important;
+}
+
+.rpwwt-widget ul li {
+    position: relative;
+    margin-bottom: 0 !important;
+}
+
+.rpwwt-widget li a span {
+    position: absolute;
+    top: 0;
+    left: 145px;
+    width: calc(100% - 145px);
+    padding: 10px 0 0 15px;
+    border-top: 1px solid $color_medium-backgrounds;
+}
+
+.rpwwt-widget li:first-of-type a span {
+    border-top: none;
+}
+
+.rpwwt-post-excerpt {
+    position: absolute;
+    margin-left: 160px;
+    bottom: 20px;
+}
+
+#categories-2 ul,
+#archives-2 ul {
+    list-style-type: none;
+    padding: 25px 30px;
+    margin: 0;
+    font-family: $font_text;
+    color: $color_font-medium-text;
 }
