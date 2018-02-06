@@ -11,9 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="article_side">
-        <p><?php echo get_the_date(); ?></p>
+        <?php if ( has_post_thumbnail() ) { ?>
+            <p><?php echo get_the_date(); ?></p>
+        <?php } else { ?>
+            <p id="article_side_no_thumb"><?php echo get_the_date(__('m-d-y')); ?></p>
+        <?php } ?>
     </div>
     <div class="article_preview_content">
+        <?php if ( has_post_thumbnail() ) { ?>
         <div class="article_media">
             <?php 
                 $thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -22,26 +27,29 @@
                 $caption = get_post(get_post_thumbnail_id())->post_excerpt;   
                 $description = get_post(get_post_thumbnail_id())->post_content; // The Description
             ?>
-            <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
+            <figure>
+                <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
+            </figure>
         </div><!-- .article_media -->
+        <?php } ?>
         <div class="article_excerpt_title">
             <?php
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); 
             ?>
         </div><!-- .article_excerpt_title -->
-        <div class="article_content">
+        <div class="news_article_content">
             <div class="article_excerpt">
                 <?php
                     the_excerpt();
                 ?>   
             </div>
-        </div><!-- .article_content -->
+        </div><!-- .news_article_content -->
         <footer class="article_footer">
             <?php
             if ( 'post' === get_post_type() ) : ?>
             <div class="entry-meta">
                 <ul class="article_meta_list">
-                    <li><i class="far fa-user"></i> by <?php echo get_the_author(); ?></li>
+                    <li><i class="far fa-user"></i> by <?php echo get_the_author('display_name'); ?></li>
                     <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
                 </ul>
                 <div class="article_category_list">

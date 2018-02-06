@@ -706,7 +706,8 @@ object {
   overflow: hidden; }
 
 .page_header_wrapper {
-  background-color: black; }
+  background-color: black;
+  overflow: hidden; }
 
 .page_header {
   height: 45vh;
@@ -1147,6 +1148,35 @@ object {
       /* Most modern browsers support this now. */
       color: #dfdfdf;
       font-weight: 500; } } }
+.article_header {
+  min-height: 75px;
+  padding: 25px 50px;
+  font-family: "Metrophobic", sans-serif;
+  border-bottom: 2px solid #F3F3F3; }
+
+.article_title {
+  font-family: "Jura", sans-serif;
+  color: #3F8C3F; }
+
+.article_header .article_title {
+  margin-bottom: 10px; }
+
+.entry-meta {
+  display: flex;
+  font-family: "Metrophobic", sans-serif;
+  color: #868686; }
+
+.article_media figure {
+  width: 100%;
+  margin: 0; }
+
+.article_media figure img {
+  max-height: 425px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center; }
+
 .archive_sorting {
   z-index: 2;
   bottom: 1em;
@@ -2324,10 +2354,21 @@ object {
   color: #868686; }
 
 #news_page_header {
-  background-image: url(images/projects2-1.jpeg);
+  background-image: url("images/sky5.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
+#single_news_page_header_nothumb {
+  background-image: url("images/sky5.jpeg"); }
+
+.news_post_header {
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  transform: scale(1.2); }
 
 #news_page_main_wrapper {
   display: flex;
@@ -2356,25 +2397,19 @@ object {
 
 .article_side p {
   position: absolute;
-  top: 308px;
+  top: 360px;
   left: -165px;
   min-width: 540px;
   margin: 0;
   transform: rotate(-90deg);
   font-size: 3em; }
 
-.article_media {
-  width: 100%;
-  height: 425px; }
-
-.article_media img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center; }
+#article_side_no_thumb {
+  top: 25px; }
 
 .article_excerpt_title {
   width: 100%;
+  margin-top: 20px;
   padding: 30px 50px;
   background-color: white; }
 
@@ -2396,7 +2431,7 @@ object {
   color: #5E5E5E;
   transition: 0.2s; }
 
-.article_content {
+.news_article_content {
   padding: 0px 50px 25px;
   background-color: white; }
 
@@ -2413,9 +2448,6 @@ object {
   padding: 25px 50px;
   font-family: "Metrophobic", sans-serif;
   color: #868686; }
-
-.entry-meta {
-  display: flex; }
 
 .article_meta_list {
   list-style-type: none;

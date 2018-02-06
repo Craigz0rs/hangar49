@@ -1,3 +1,43 @@
+.article_header {
+    min-height: 75px;
+    padding: 25px 50px;
+    font-family: $font_text;
+    border-bottom: 2px solid #F3F3F3;
+}
+
+.article_title {
+    font-family: $font_heading;
+    color: $color_font-nav-hover;
+}
+
+.article_header .article_title {
+    margin-bottom: 10px;
+}
+
+.entry-meta {
+    display: flex;
+    font-family: $font_text;
+    color: $color_font-medium-text;
+}
+
+.article_media {
+//    height: 425px;
+//    overflow: hidden;
+}
+
+.article_media figure {
+    width: 100%;
+    margin: 0;
+}
+
+.article_media figure img {
+    max-height: 425px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .archive_sorting {
 //    background-image: url(images/inventory_background2.jpg);
 //    background-repeat: no-repeat;

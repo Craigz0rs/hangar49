@@ -13,8 +13,35 @@
     <div class="article_side">
         <p><?php echo get_the_date(); ?></p>
     </div>
-    <div class=".article_preview_content">
-        <div class="article-media">
+    <div class="article_preview_content">
+        <header class="article_header" id="single_news_post_header">
+                <?php
+                if ( is_singular() ) : ?>
+                <div class="article_title">
+                <?php    
+                    the_title( '<h1 class="entry-title">', '</h1>' );
+                else : ?>
+                <div class="article_excerpt_title">
+                <?php    
+                    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                endif;     
+                ?>
+            </div><!-- .article_title .article_excerpt_title -->
+            <?php 
+                if ( 'post' === get_post_type() ) : ?>
+            <div class="entry-meta">
+                <ul class="article_meta_list">
+                    <li><i class="far fa-user"></i> by <?php echo get_the_author('display_name'); ?></li>
+                    <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
+                </ul>
+                <div class="article_category_list">
+                    <i class="fas fa-tags"></i> <?php echo get_the_category_list(); ?>
+                </div>
+            </div><!-- .entry-meta -->
+            <?php endif; ?>       
+        </header>    
+        <?php if ( has_post_thumbnail() ) { ?>
+        <div class="article_media">
             <?php 
                 $thumbnail_id = get_post_thumbnail_id( $post->ID );
                 $title = get_post(get_post_thumbnail_id())->post_title; 
@@ -22,18 +49,13 @@
                 $caption = get_post(get_post_thumbnail_id())->post_excerpt;   
                 $description = get_post(get_post_thumbnail_id())->post_content; // The Description
             ?>
-            <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
+            <figure>
+                <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
+                <figcaption><?php echo $caption; ?></figcaption>
+            </figure>          
         </div><!-- .article_media -->
-        <div class="article_excerpt_title">
-            <?php
-            if ( is_singular() ) :
-                the_title( '<h1 class="entry-title">', '</h1>' );
-            else :
-                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-            endif;     
-            ?>
-        </div><!-- .article_excerpt_title -->
-        <div class="article_content">
+        <?php } else {} ?>
+        <div class="news_article_content">
         <?php if ( is_singular() ) : ?>
             <?php
                 the_content( sprintf(
@@ -59,33 +81,10 @@
                  <?php the_excerpt(); ?>
             </div> <?php
         endif; ?> 
-        </div><!-- .article_content -->   
+<!--        </div> .news_article_content    -->
         <footer class="entry-footer">
-            <?php
-                        if ( 'post' === get_post_type() ) : ?>
-            <div class="entry-meta">
-                <ul class="article_meta_list">
-                    <li><i class="far fa-user"></i> by <?php echo get_the_author(); ?></li>
-                    <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
-                </ul>
-                <div class="article_category_list">
-                    <i class="fas fa-tags"></i> <?php echo get_the_category_list(); ?>
-                </div>
-                <div class="article_read_more">
-                    <a href="<?php echo get_permalink(); ?>">read more</a>
-                </div>
-            </div><!-- .entry-meta -->
-            <?php
-            endif; ?>
+
 <!--            <?php hangar49_entry_footer(); ?>-->
         </footer><!-- .entry-footer -->    
     </div><!-- .article_preview_content -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-
-
-//			wp_link_pages( array(
-//				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hangar49' ),
-//				'after'  => '</div>',
-//			) );
-//		?>
