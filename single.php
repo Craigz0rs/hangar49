@@ -15,12 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <div class="page_header_wrapper" id="single_news_header_wrapper">
-                <?php while ( have_posts() ) : the_post();
-                    if ( the_post_thumbnail_url( 'medium_large' ); ){ ?>
                 <div class="page_header" id="single_news_page_header">
-                    <?php else { ?>
-                <div class="page_header" id="single_news_page_header">   
-                    <?php } } ?>
                     <div class="page_header_overlay" id="single_news_page_header_overlay">
                     </div>
 <!--                    <h1>News</h1>-->
@@ -34,7 +29,6 @@ get_header(); ?>
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-                    
                 
 			get_template_part( 'template-parts/content', get_post_type() );
 
