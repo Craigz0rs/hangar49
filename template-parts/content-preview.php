@@ -23,12 +23,12 @@
                 $description = get_post(get_post_thumbnail_id())->post_content; // The Description
             ?>
             <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
-        </div>
+        </div><!-- .article_media -->
         <div class="article_excerpt_title">
             <?php
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); 
             ?>
-        </div>
+        </div><!-- .article_excerpt_title -->
         <div class="article_content">
             <div class="article_excerpt">
                 <?php
