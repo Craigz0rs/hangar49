@@ -85,10 +85,10 @@
     background-color: $color_medium-backgrounds;
     padding: 0 0 0 10px;
     margin: 0;
-    height: 140px !important;
+    height: 100px !important;
+    width: 110px !important;
     object-fit: cover;
     object-position: center;
-    width: 145px !important;
 }
 
 .rpwwt-widget ul li {
@@ -99,10 +99,11 @@
 .rpwwt-widget li a span {
     position: absolute;
     top: 0;
-    left: 145px;
-    width: calc(100% - 145px);
+    left: 110px;
+    width: calc(100% - 100px);
     padding: 10px 0 0 15px;
     border-top: 1px solid $color_medium-backgrounds;
+    font-size: 0.8rem;
 }
 
 .rpwwt-widget li:first-of-type a span {
@@ -111,8 +112,9 @@
 
 .rpwwt-post-excerpt {
     position: absolute;
-    margin-left: 160px;
-    bottom: 20px;
+    margin-left: 125px;
+    bottom: 0px;
+    font-size: 0.8rem;
 }
 
 #categories-2 ul,
@@ -122,4 +124,24 @@
     margin: 0;
     font-family: $font_text;
     color: $color_font-medium-text;
+}
+
+@media screen and (min-width: 1300px) {
+    #rpwwt-recent-posts-widget-with-thumbnails-3 img {
+        height: 140px !important;
+        width: 145px !important;
+    }
+    
+    .rpwwt-widget li a span {
+        left: 145px;
+        width: calc(100% - 145px);
+        padding: 10px 0 0 15px;
+        font-size: 1rem;
+    }
+    
+    .rpwwt-post-excerpt {
+        margin-left: 160px;
+        bottom: 20px;
+        font-size: 1rem;
+    }
 }
