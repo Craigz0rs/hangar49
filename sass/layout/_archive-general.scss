@@ -38,6 +38,14 @@
     object-position: center;
 }
 
+.article_media figcaption {
+    padding: 0 50px 10px;
+    text-align: center;
+    font-family: $font_text;
+    border-bottom: 2px solid $color_background_main;
+    color: $color_font-medium-text;
+}
+
 .archive_sorting {
 //    background-image: url(images/inventory_background2.jpg);
 //    background-repeat: no-repeat;

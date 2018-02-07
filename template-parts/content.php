@@ -51,7 +51,9 @@
             ?>
             <figure>
                 <img src="<?php the_post_thumbnail_url( 'medium_large' );  ?>" title="<?php echo $title ?>" alt="<?php echo $alt; ?>"/>
+                <?php if ($caption !== "") { ?>
                 <figcaption><?php echo $caption; ?></figcaption>
+                <?php } ?>
             </figure>          
         </div><!-- .article_media -->
         <?php } else {} ?>

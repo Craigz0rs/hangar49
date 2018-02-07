@@ -1177,6 +1177,13 @@ object {
   object-fit: cover;
   object-position: center; }
 
+.article_media figcaption {
+  padding: 0 50px 10px;
+  text-align: center;
+  font-family: "Metrophobic", sans-serif;
+  border-bottom: 2px solid #F3F3F3;
+  color: #868686; }
+
 .archive_sorting {
   z-index: 2;
   bottom: 1em;
@@ -2433,6 +2440,8 @@ object {
 
 .news_article_content {
   padding: 0px 50px 25px;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1.1rem;
   background-color: white; }
 
 .article_excerpt {
