@@ -39,6 +39,10 @@
     transition: 0.2s;
 }
 
+.widget_search {
+    width: 100%;
+}
+
 #search-2 .search-form {
     position: relative;
     padding: 25px 30px;
@@ -80,6 +84,10 @@
     color: $color_font-dark-text;  
 }
 
+.recent-posts-widget-with-thumbnails {
+    width: 100%;
+}
+
 #rpwwt-recent-posts-widget-with-thumbnails-3 img {
     border-top: 1px solid $color_font-light-headings;
     background-color: $color_medium-backgrounds;
@@ -100,10 +108,11 @@
     position: absolute;
     top: 0;
     left: 110px;
-    width: calc(100% - 100px);
-    padding: 10px 0 0 15px;
+    width: calc(100% - 110px);
+    padding: 10px 0 0 8px;
     border-top: 1px solid $color_medium-backgrounds;
     font-size: 0.8rem;
+    line-height: 0.9rem;
 }
 
 .rpwwt-widget li:first-of-type a span {
@@ -112,9 +121,10 @@
 
 .rpwwt-post-excerpt {
     position: absolute;
-    margin-left: 125px;
+    margin-left: 119px;
     bottom: 0px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    line-height: 0.9rem;    
 }
 
 #categories-2 ul,
@@ -124,6 +134,34 @@
     margin: 0;
     font-family: $font_text;
     color: $color_font-medium-text;
+}
+
+.widget_archive,
+.widget_categories {
+    width: calc(50% - 12.5px);
+}
+
+@media screen and (min-width: 900px) {
+    .widget_archive,
+    .widget_categories {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .rpwwt-widget li a span {
+        width: calc(100% - 100px);
+        padding: 10px 0 0 15px;
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+    
+    .rpwwt-post-excerpt {
+        bottom: 10px;
+        margin-left: 125px;
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }    
 }
 
 @media screen and (min-width: 1300px) {
