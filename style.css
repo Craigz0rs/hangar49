@@ -1150,8 +1150,8 @@ object {
       font-weight: 500; } } }
 .article_header {
   min-height: 75px;
-  padding: 25px 50px;
-  padding-right: 25px;
+  padding: 25px 10px;
+  padding-right: 10px;
   font-family: "Metrophobic", sans-serif;
   border-bottom: 2px solid #F3F3F3; }
 
@@ -1165,14 +1165,13 @@ object {
 .entry-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   font-family: "Metrophobic", sans-serif;
   color: #868686; }
 
 .article_category_list {
   display: flex;
   flex-grow: 1;
-  max-width: 215px; }
+  max-width: 100%; }
 
 .article_category_list svg {
   margin-top: 5px; }
@@ -1372,7 +1371,10 @@ object {
 @media screen and (min-width: 400px) {
   .aircraft_brief {
     top: 25%;
-    font-size: 1em; } }
+    font-size: 1em; }
+
+  .article_category_list {
+    max-width: 215px; } }
 @media screen and (min-width: 450px) {
   .aircraft_tile h3 {
     top: 18%;
@@ -2390,8 +2392,12 @@ object {
 
 .widget_archive,
 .widget_categories {
-  width: calc(50% - 12.5px); }
+  width: 100%; }
 
+@media screen and (min-width: 500px) {
+  .widget_archive,
+  .widget_categories {
+    width: calc(50% - 12.5px); } }
 @media screen and (min-width: 960px) {
   .widget_archive,
   .widget_categories {
@@ -2443,7 +2449,7 @@ object {
 #news_page_main_wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 40px 20px;
+  padding: 40px 10px;
   background-color: #F3F3F3; }
 
 .article_listings_wrapper {
@@ -2463,7 +2469,8 @@ object {
   color: #868686;
   line-height: 1em;
   background-color: #5E5E5E;
-  overflow: hidden; }
+  overflow: hidden;
+  display: none; }
 
 .article_side p {
   position: absolute;
@@ -2479,8 +2486,7 @@ object {
 
 .article_excerpt_title {
   width: 100%;
-  margin-top: 20px;
-  padding: 30px 50px;
+  padding: 30px 10px;
   background-color: white; }
 
 .article_excerpt_title h2 {
@@ -2502,9 +2508,9 @@ object {
   transition: 0.2s; }
 
 .news_article_content {
-  padding: 0px 50px 25px;
+  padding: 0px 10px 25px;
   font-family: "Metrophobic", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background-color: white; }
 
 .article_content figure {
@@ -2512,16 +2518,16 @@ object {
 
 .article_excerpt {
   font-family: "Metrophobic", sans-serif;
-  font-size: 1.1rem; }
+  font-size: 1rem; }
 
 .article_excerpt p {
   margin-top: 0; }
 
 .article_footer {
-  display: flex;
+  display: block;
   border-top: 2px solid #F3F3F3;
   min-height: 75px;
-  padding: 25px 50px;
+  padding: 25px 10px;
   font-family: "Metrophobic", sans-serif;
   color: #868686; }
 
@@ -2557,8 +2563,11 @@ object {
   transition: 0.2s; }
 
 .article_read_more {
-  margin-left: auto;
-  flex-shrink: 0; }
+  margin: 0 auto;
+  margin-top: 25px;
+  flex-shrink: 0;
+  text-align: center;
+  max-width: 175px; }
 
 .article_read_more a {
   display: block;
@@ -2585,9 +2594,35 @@ object {
   flex-wrap: wrap;
   justify-content: space-between; }
 
+@media screen and (min-width: 400px) {
+  .article_footer {
+    display: flex; }
+
+  .article_read_more {
+    max-width: auto;
+    margin-right: 0;
+    margin-top: 0; } }
+@media screen and (min-width: 500px) {
+  .article_side {
+    display: block; }
+
+  .article_header,
+  .article_excerpt_title,
+  .news_article_content,
+  .article_footer {
+    padding-left: 25px;
+    padding-right: 25px; } }
+@media screen and (min-width: 600px) {
+  .article_header,
+  .article_excerpt_title,
+  .news_article_content,
+  .article_footer {
+    padding-left: 50px;
+    padding-right: 50px; } }
 @media screen and (min-width: 960px) {
   #news_page_main_wrapper {
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    padding: 40px 20px; }
 
   .article_listings_wrapper {
     width: 75%;
@@ -2598,7 +2633,11 @@ object {
     min-width: 260px; }
 
   .sidebar_wrapper aside {
-    display: block; } }
+    display: block; }
+
+  .news_article_content,
+  .article_excerpt {
+    font-size: 1.1rem; } }
 @media screen and (min-width: 1100px) {
   .article_side {
     width: 150px; }
