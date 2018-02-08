@@ -1,6 +1,7 @@
 .article_header {
     min-height: 75px;
     padding: 25px 50px;
+    padding-right: 25px;
     font-family: $font_text;
     border-bottom: 2px solid #F3F3F3;
 }
@@ -16,8 +17,29 @@
 
 .entry-meta {
     display: flex;
+    flex-wrap: wrap;
+//    max-width: 55%;
+    justify-content: space-between;
     font-family: $font_text;
     color: $color_font-medium-text;
+}
+
+.article_category_list {
+    display: flex;
+    flex-grow: 1;
+    max-width: 215px;
+}
+
+.article_category_list svg {
+    margin-top: 5px;
+}
+
+.article_category_list ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .article_media {

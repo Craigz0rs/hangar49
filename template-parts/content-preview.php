@@ -55,10 +55,10 @@
                 <div class="article_category_list">
                     <i class="fas fa-tags"></i> <?php echo get_the_category_list(); ?>
                 </div>
-                <div class="article_read_more">
-                    <a href="<?php echo get_permalink(); ?>">read more</a>
-                </div>
             </div><!-- .entry-meta -->
+            <div class="article_read_more">
+                <a href="<?php echo get_permalink(); ?>">read more</a>
+            </div>
             <?php
             endif; ?>
         </footer><!-- .entry-footer -->
