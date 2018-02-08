@@ -43,7 +43,7 @@ get_header(); ?>
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
-
+            
 		endif; ?>
                 </div><!-- #news_article_listings_wrapper -->
                 <div class="sidebar_wrapper" id="news_archive_sidebar_wrapper">
