@@ -16,13 +16,14 @@ get_header(); ?>
                     <div class="page_header_overlay" id="inventory_page_header_overlay">
                     </div>
                     <h1>Inventory</h1>
-                    <h2>warbirds for sale</h2>
+<!--                    <h2>warbirds for sale</h2>-->
                     <div class="archive_sorting" id="inventory_sorting">
-                        <a href="#inventory" class="smoothScroll">see all warbirds</a>
+                        <p class="now_viewing">all inventory</p>
                     </div>
                 </div>
                
             </div>
+            <div class="page_main_wrapper aircraft_tile_main_wrapper" id="inventory_page_main_wrapper">
               <div class="inventory_tiles aircraft_tiles" id="inventory">
                     <?php
                     $airplanes = get_posts(array(
@@ -112,7 +113,7 @@ get_header(); ?>
                     </ul>
                     <?php endif; ?>
                 </div>
-
+            </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

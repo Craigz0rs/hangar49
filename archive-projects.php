@@ -19,9 +19,10 @@ get_header(); ?>
                         <h1>Projects</h1>
                     </div>
                     <div class="archive_sorting" id="project_sorting">
-                        <a href="#projects" class="smoothScroll">see all projects</a>
+                        <p class="now_viewing">all projects</p>
                     </div>
                 </div>
+                <div class="page_main_wrapper aircraft_tile_main_wrapper" id="project_page_main_wrapper">
                 <div class="project_tiles aircraft_tiles" id="projects">
                     <?php 
 
@@ -121,7 +122,7 @@ get_header(); ?>
                         </ul>
                     <?php } //end if $projects ?>
                 </div>   
-
+            </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -78,16 +78,30 @@
 //    transform: scale(1.4);
 //    overflow: hidden;
     z-index: 2;
-    bottom: 1em;
+    bottom: 5em;
     position: absolute;
     left: 0;
     right: 0;
 }
 
 .archive_sorting p {
-    margin: 0;
-    padding: 0;
+//    margin: 0 auto;
+//    padding: 0;
+//    color: white;
+}
+
+.now_viewing {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 250px;
+    border: 2px solid white;
+    line-height: 71px;
+    transition: 0.3s;
     color: white;
+    text-decoration: none;
+    font-family: $font_heading;
+    font-size: 2em;    
 }
 
 .archive_sorting a {
@@ -273,8 +287,8 @@
 }
 
 .aircraft_tiles {
-    padding-top: 40px;
-    background-color: black;
+//    padding-top: 40px;
+//    background-color: black;
 }
 
 .aircraft_list {
@@ -394,7 +408,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 10px;
-            padding: 10px;
+            padding: 40px 10px;
         }
         
         @supports (-ms-ime-align:auto) {
