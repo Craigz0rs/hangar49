@@ -141,14 +141,16 @@ get_header('archive'); ?>
                 </div>
             </div>
             <div class="project_section" id="project_section">
+<!--
                  <div class="aircraft_section_heading">
                     <div class="aircraft_content_wrap">
                         <h2>project</h2>
                     </div>
                 </div>
-                <span class="aircraft_section_line"></span>
-                <div class="aircraft_content_wrap">
-                    <div class="content_wrapper" id="project_wrapper">
+-->
+<!--                <span class="aircraft_section_line"></span>-->
+                <div class="page_main_wrapper" id="news_page_main_wrapper">
+                    <div class="article_listings_wrapper" id="project_wrapper">
                         <div class="detail_item" id="overview">
                             <strong class="detail_title">Overview:</strong>
                             <p class="detail_value"><?php echo $project_overview; ?></p>
@@ -160,8 +162,8 @@ get_header('archive'); ?>
                                     $entry_date = $row['entry_date'];
                                     $work_entry = $row['work_entry']; 
                                     $work_gallery = $row['project_update_gallery']; ?>
-                                    <article class="detail_item project_post">
-                                        <div class="detail_title project_post_title">
+                                    <article class="project_post">
+                                        <div class="article_side">
                                             
                                             <p><?php echo $entry_date; ?></p>
                                         </div>
