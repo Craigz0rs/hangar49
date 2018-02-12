@@ -1,28 +1,109 @@
 /////Heading Section/////
 
-#featured_slider {
-    margin: 0;
-    padding-top: 40px;
-    border-radius: 0px;
-    background: black;
-    height: 60vh;
-}
+//#aircraft_page_header {
+//    height: 100vh;
+//    background-repeat: no-repeat;
+//    background-size: cover;
+//    background-position: center;
+//    position: relative;
+//}
+//
+//.header_info_box {
+//    position: absolute;
+//    bottom: 3em;
+//    left: 0;
+//    right: 0;
+//    padding: 0 10px;
+//    text-align: center;
+//    color: white;
+//}
+//
+//#aircraft_page_header h1 {
+//    top: 2em;
+//    font-size: 1.7em;
+//    padding: 0 20px;
+//}
+//
+//.aircraft_header_serial {
+//    font-size: 1.5rem;
+//    font-family: $font_heading;
+//}
+//
+//.special_info {
+//    max-width: 400px;
+//    margin: 0 auto;
+//    font-size: $font_text_size_mobile;
+//    font-family: $font_text;
+//}
+//
+//
+//@media screen and (min-width: 600px) {
+//    #aircraft_page_header {
+//        height: 75vh;
+//    }
+//    
+//    #aircaft_page_header h1 {
+//        font-size: 4.3rem;
+//    }
+//}
+//
+//@media screen and (min-width: 960px) {
+//
+//
+//    #aircraft_page_header h1 {
+//        font-size: 5rem;
+//    }
+//
+//    .header_info_box {
+////        position: absolute;
+////        bottom: 5em;
+////        left: 0;
+////        right: 0;
+////        text-align: center;
+////        color: white;
+//    }
+//
+//    .aircraft_header_serial {
+//        font-size: 2rem;
+//        font-family: $font_heading;
+//    }
+//
+//    .special_info {
+//        max-width: 400px;
+//        margin: 0 auto;
+//        font-size: $font_text_size_desktop;
+//        font-family: $font_text;
+//    }
+//}
 
-#featured_slider_overlay {
-    z-index: 1;
-}
 
-#featured_slider .flex-control-nav,
-#featured_slider .flex-direction-nav {
-    display: none;
-}
+/////Old Styles////////////////////
 
-#featured_slider img {
-    object-fit: cover;
-    object-position: center;
-    height: 60vh;
-}
+/////Heading Section/////
 
+//#featured_slider {
+//    margin: 0;
+//    padding-top: 40px;
+//    border-radius: 0px;
+//    background: black;
+//    height: 60vh;
+//}
+//
+//#featured_slider_overlay {
+//    z-index: 1;
+//}
+//
+//#featured_slider .flex-control-nav,
+//#featured_slider .flex-direction-nav {
+//    display: none;
+//}
+//
+//#featured_slider img {
+//    object-fit: cover;
+//    object-position: center;
+//    height: 60vh;
+//}
+//
 .aircraft_page_nav {
     background-color: black;
     height: 150px;
@@ -30,20 +111,23 @@
 
 #aircraft_page_header {
     height: 100vh;
-    max-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 #aircraft_page_header h1 {
     top: 2em;
-    font-size: 1.7em;
-    padding: 0 20px;
+    font-size: 2rem;
+    padding: 0 10px;
 }
 
-@media screen and (min-width: 1600px) {
-    #aircraft_header_wrapper .aircraft_content_wrap {
-        position: relative;
-    }
-}
+//@media screen and (min-width: 1600px) {
+//    #aircraft_header_wrapper .aircraft_content_wrap {
+//        position: relative;
+//    }
+//}
 
 .header_info_box {
     position: absolute;
@@ -52,7 +136,7 @@
     z-index: 2; 
 }
 
-#aircraft_page_header span {
+.header_info_box {
     bottom: 10.5em;
     font-family: $font_text;
     font-weight: 500;
@@ -94,20 +178,20 @@
 
 @media screen and (max-height: 500px) {
     
-    #featured_slider {
-        padding-top: 0;
-        height: 100vh;
-    }
+//    #featured_slider {
+//        padding-top: 0;
+//        height: 100vh;
+//    }
+//    
+//    #featured_slider img {
+//        height: 100vh;
+//    }
+//
+//    #featured_slider_overlay {
+//        display: none;
+//    }
     
-    #featured_slider img {
-        height: 100vh;
-    }
-
-    #featured_slider_overlay {
-        display: none;
-    }
-    
-    #aircraft_page_header span {
+    .header_info_box {
         bottom: 5.5em;
     }
     
@@ -127,19 +211,24 @@
 }
 
 @media screen and (min-width: 750px) {
-   
-    #featured_slider {
-        padding-top: 0;
-        min-height: 80vh;
-        height: 80vw;
-        max-height: 100vh;
+    
+    #aircraft_page_header {
+        height: 75vh;
     }
     
-    #featured_slider img {
-        min-height: 80vh;
-        height: 80vw;
-        max-height: 100vh;
-    }
+   
+//    #featured_slider {
+//        padding-top: 0;
+//        min-height: 80vh;
+//        height: 80vw;
+//        max-height: 100vh;
+//    }
+//    
+//    #featured_slider img {
+//        min-height: 80vh;
+//        height: 80vw;
+//        max-height: 100vh;
+//    }
     
     #aircraft_page_header h1 {
         top: 13vw;
@@ -196,16 +285,16 @@
         }
     }
     
-    .header_info_box {
-        background-color: rgba(0,0,0,0.4);
-        height: 85vh;
-        margin-left: 20px;
-        width: calc(50% - 20px);
-    }
+//    .header_info_box {
+//        background-color: rgba(0,0,0,0.4);
+//        height: 85vh;
+//        margin-left: 20px;
+//        width: calc(50% - 20px);
+//    }
     
-    #aircraft_page_header span {
-        bottom: 31vh;
-    }
+//    #aircraft_page_header span {
+//        bottom: 31vh;
+//    }
     
     #aircraft_page_header p {
         font-size: 1.2em;
@@ -652,9 +741,9 @@
 
 ////Gallery Section Styling////
 
-#gallery {
-    background-color: #151515;
-}
+//#gallery {
+//    background-color: #151515;
+//}
 
 ////Specification and Detail Section Styling////
 

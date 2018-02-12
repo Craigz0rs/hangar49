@@ -304,6 +304,12 @@
     margin: 10px 0;
 }
 
+#aircraft_page_main_wrapper {
+    display: flex;
+    padding: 40px 10px;
+}
+
+
 @media screen and (min-width: 400px) {
     .aircraft_brief {
         top: 25%;
@@ -399,6 +405,32 @@
     .aircraft_list li {
         margin: 20px 0;
     }
+    
+    #aircraft_page_main_wrapper {
+        padding: 40px 20px;
+    }
+    
+    #aircraft_page_main_wrapper .article_listings_wrapper {
+        width: calc(70% - 25px);
+    }
+    
+    #aircraft_page_main_wrapper .sidebar_wrapper {
+        width: calc(30%);
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #aircraft_page_main_wrapper {
+        padding: 40px;
+    }
+    
+    #aircraft_page_main_wrapper .article_listings_wrapper {
+        width: calc(70% - 25px);
+    }
+    
+    #aircraft_page_main_wrapper .sidebar_wrapper {
+        width: calc(30% - 25px);
+    }
 }
 
 @supports (grid-area: auto) {
@@ -432,7 +464,7 @@
         }
         
     }
-    
+        
     @media screen and (min-width: 1400px) {
         .aircraft_list {
             display: grid;

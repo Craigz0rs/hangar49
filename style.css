@@ -1373,6 +1373,10 @@ object {
   position: relative;
   margin: 10px 0; }
 
+#aircraft_page_main_wrapper {
+  display: flex;
+  padding: 40px 10px; }
+
 @media screen and (min-width: 400px) {
   .aircraft_brief {
     top: 25%;
@@ -1433,7 +1437,25 @@ object {
     padding: 10px 20px 1px 20px; }
 
   .aircraft_list li {
-    margin: 20px 0; } }
+    margin: 20px 0; }
+
+  #aircraft_page_main_wrapper {
+    padding: 40px 20px; }
+
+  #aircraft_page_main_wrapper .article_listings_wrapper {
+    width: calc(70% - 25px); }
+
+  #aircraft_page_main_wrapper .sidebar_wrapper {
+    width: calc(30%); } }
+@media screen and (min-width: 1300px) {
+  #aircraft_page_main_wrapper {
+    padding: 40px; }
+
+  #aircraft_page_main_wrapper .article_listings_wrapper {
+    width: calc(70% - 25px); }
+
+  #aircraft_page_main_wrapper .sidebar_wrapper {
+    width: calc(30% - 25px); } }
 @supports (grid-area: auto) {
   @media screen and (min-width: 960px) {
     .aircraft_list {
@@ -1521,48 +1543,29 @@ object {
   overflow: hidden;
   position: relative; }
 
-#featured_slider {
-  margin: 0;
-  padding-top: 40px;
-  border-radius: 0px;
-  background: black;
-  height: 60vh; }
-
-#featured_slider_overlay {
-  z-index: 1; }
-
-#featured_slider .flex-control-nav,
-#featured_slider .flex-direction-nav {
-  display: none; }
-
-#featured_slider img {
-  object-fit: cover;
-  object-position: center;
-  height: 60vh; }
-
 .aircraft_page_nav {
   background-color: black;
   height: 150px; }
 
 #aircraft_page_header {
   height: 100vh;
-  max-height: 100vh; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; }
 
 #aircraft_page_header h1 {
   top: 2em;
-  font-size: 1.7em;
-  padding: 0 20px; }
+  font-size: 2rem;
+  padding: 0 10px; }
 
-@media screen and (min-width: 1600px) {
-  #aircraft_header_wrapper .aircraft_content_wrap {
-    position: relative; } }
 .header_info_box {
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 2; }
 
-#aircraft_page_header span {
+.header_info_box {
   bottom: 10.5em;
   font-family: "Metrophobic", sans-serif;
   font-weight: 500;
@@ -1596,17 +1599,7 @@ object {
   max-width: 260px; }
 
 @media screen and (max-height: 500px) {
-  #featured_slider {
-    padding-top: 0;
-    height: 100vh; }
-
-  #featured_slider img {
-    height: 100vh; }
-
-  #featured_slider_overlay {
-    display: none; }
-
-  #aircraft_page_header span {
+  .header_info_box {
     bottom: 5.5em; }
 
   #aircraft_sorting {
@@ -1620,16 +1613,8 @@ object {
   #aircraft_sorting a {
     max-width: 230px; } }
 @media screen and (min-width: 750px) {
-  #featured_slider {
-    padding-top: 0;
-    min-height: 80vh;
-    height: 80vw;
-    max-height: 100vh; }
-
-  #featured_slider img {
-    min-height: 80vh;
-    height: 80vw;
-    max-height: 100vh; }
+  #aircraft_page_header {
+    height: 75vh; }
 
   #aircraft_page_header h1 {
     top: 13vw;
@@ -1671,15 +1656,6 @@ object {
   #aircraft_page_header h1 {
     top: 2em; } }
 @media screen and (min-width: 900px) {
-  .header_info_box {
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 85vh;
-    margin-left: 20px;
-    width: calc(50% - 20px); }
-
-  #aircraft_page_header span {
-    bottom: 31vh; }
-
   #aircraft_page_header p {
     font-size: 1.2em; }
 
@@ -2040,9 +2016,6 @@ object {
   color: #666;
   padding: 20px 10px 1px; }
 
-#gallery {
-  background-color: #151515; }
-
 #aircraft_info .content_wrapper {
   padding-bottom: 30px; }
 
@@ -2159,15 +2132,8 @@ object {
 #project_header_info_box #project_info_box_span {
   bottom: 12.5em; }
 
-.project_section {
-  background-color: #EBEBEB;
-  padding-bottom: 10px; }
-
 #project_section .detail_value {
   padding: 15px 10px; }
-
-#project_wrapper {
-  padding: 20px 10px 1px; }
 
 #overview .detail_title {
   margin-top: 0;
@@ -2229,9 +2195,6 @@ object {
   #project_header_info_box #project_info_box_span {
     bottom: 31vh; }
 
-  .project_section {
-    background-color: #151515; }
-
   #project_gallery_title {
     font-size: 3.4rem; }
 
@@ -2240,9 +2203,6 @@ object {
 
   #overview .detail_value {
     padding: 50px 20px; }
-
-  #project_wrapper {
-    padding: 0 20px; }
 
   .project_post {
     min-height: 550px;
