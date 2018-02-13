@@ -306,6 +306,7 @@
 
 #aircraft_page_main_wrapper {
     display: flex;
+    flex-wrap: wrap;
     padding: 40px 10px;
 }
 
@@ -407,6 +408,7 @@
     }
     
     #aircraft_page_main_wrapper {
+        flex-wrap: nowrap;
         padding: 40px 20px;
     }
     
@@ -416,6 +418,7 @@
     
     #aircraft_page_main_wrapper .sidebar_wrapper {
         width: calc(30%);
+        min-width: 325px;
     }
 }
 
@@ -430,6 +433,7 @@
     
     #aircraft_page_main_wrapper .sidebar_wrapper {
         width: calc(30% - 25px);
+        min-width: 400px;
     }
 }
 
