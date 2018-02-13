@@ -177,9 +177,15 @@ get_header('archive'); ?>
                 <div class="page_main_wrapper" id="aircraft_page_main_wrapper">
                     <div class="article_listings_wrapper" id="project_wrapper">
                         <div class="detail_item" id="overview">
-                            <strong class="detail_title">Overview:</strong>
+                            <strong class="detail_title">About the Project</strong>
                             <p class="detail_value"><?php echo $project_overview; ?></p>
-                        </div>      
+                        </div>
+                        <?php if( $history ) { ?>
+                        <div class="detail_item">
+                            <strong class="detail_title">Aircraft History</strong>
+                            <p class="detail_value"><?php echo $history; ?></p>
+                        </div>
+                        <?php } ?>
                         <?php
                             if( $work_update_entries ) {
                                 foreach( $work_update_entries as $row ){
@@ -284,12 +290,6 @@ get_header('archive'); ?>
                             </section>
                             <section id="project_aircraft_details" class="widget">
                                 <h2 class="widget-title sidebar_title">Aircraft Details</h2>
-                                <?php if( $history ) { ?>
-                                <div class="detail_item">
-                                    <strong class="detail_title">History:</strong>
-                                    <p class="detail_value"><?php echo $history; ?></p>
-                                </div>
-                                <?php } ?>
                                 <?php if( $airframe ) { ?>
                                 <div class="detail_item">
                                     <strong class="detail_title">Airframe:</strong>
