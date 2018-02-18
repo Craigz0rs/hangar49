@@ -29,13 +29,14 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 
      function scrollThumb(direction, slider) {
         if( slider == 'gallery') {
+            
             if (direction=='Go_L') {
                 $('#gallery_slider .flex-control-thumbs').animate({
-                        scrollLeft: "-=" + ($(document).width() - 2) + "px"
+                        scrollLeft: "-=" + ($("#gallery_slider").width() - 2) + "px"
                 });                                 
             } else if (direction=='Go_R') {
                 $('#gallery_slider .flex-control-thumbs').animate({
-                        scrollLeft: "+=" + ($(document).width() - 2) + "px"
+                        scrollLeft: "+=" + ($("#gallery_slider").width() - 2) + "px"
                 });
             } else if (direction=='Go_U') {
                 $('#gallery_slider .flex-control-thumbs').animate({
@@ -88,11 +89,11 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
             
             if (direction=='Go_L') {
                 $('#project_slider .flex-control-thumbs').animate({
-                        scrollLeft: "-=" + ($(document).width() - 18) + "px"
+                        scrollLeft: "-=" + ($("#project_slider").width() - 2) + "px"
                 });                                 
             } else if (direction=='Go_R') {
                 $('#project_slider .flex-control-thumbs').animate({
-                        scrollLeft: "+=" + ($(document).width() - 18) + "px"
+                        scrollLeft: "+=" + ($("#project_slider").width() - 2) + "px"
                 });
             } else if (direction=='Go_U') {
                 $('#project_slider .flex-control-thumbs').animate({

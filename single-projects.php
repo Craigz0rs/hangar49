@@ -94,83 +94,14 @@ get_header('archive'); ?>
                         </span>
                     </div>
                         <div class="archive_sorting project_sorting" id="aircraft_sorting">
-                            <a href="#project_section" class="smoothScroll">see project</a>
-                            <a href="#gallery" class="smoothScroll">view gallery</a>
-                            <a href="#aircraft_info" class="smoothScroll">see details</a>
-                        </div>
-                    
-<!--                    <p class="now_viewing">project</p>-->
-
-<!--                    
-                    <div class="flexslider gallery_slider" id="featured_slider">
-                    <?php if( have_rows('featured_image_gallery') ) { ?>
-                    <div class="page_header_overlay" id="featured_slider_overlay">
-                        <ul class="slides gallery_slides">
-                            <?php while( have_rows('featured_image_gallery') ): the_row();
-                                $image = get_sub_field('featured_image');
-                                $title = $image['title'];
-                                $description = $image['description'];
-                                $caption = $image['caption'];
-
-                                $url = $image['url'];
-                                $alt = $image['alt'];
-
-
-                                $size = 'full';
-                                $myimage = $image['sizes'][ $size ];
-                                $width = $image['sizes'][ $size . '-width' ];
-                                $height = $image['sizes'][ $size . '-height' ];
-
-                            ?>
-                            <li data-thumb="<?php echo $url; ?>">
-                                <div class="slider_image">
-                                     <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                </div>
-                            </li>
-                            <?php endwhile; ?>
-                        </ul>
-                    </div>    
-                    <?php } else { ?>    
-                    <div class="page_header_overlay" id="featured_slider_overlay">
-                        <ul class="slides gallery_slides">
-                            <li>
-                                <div class="slider_image">
-                                    <img src="<?php echo $featured_image; ?>"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-				    <?php } ?>
-                </div>
-                    <h1><?php echo $year . ' ' . $manufacturer . ' ' . $model; ?></h1>
-                    <div class="aircraft_content_wrap">
-                        <div id="project_header_info_box" class="header_info_box">
-                        <span id="project_info_box_span">
-                            <p><?php 
-                                if($serial_number){
-                                    echo 'S/N: ' . $serial_number . ' • ';
-                                }
-                                if($registration_number){
-                                    echo 'R/N: ' . $registration_number;
-                                }
-                                if($price){
-//                                    echo '<br>' . $price;
-                                } ?>   
-                            </p>
-                            <p class="special_info"><?php
-                                if($special_info){
-                                    echo $special_info;
-                                } ?>
-                            </p>
-                        </span>
-                        <div class="archive_sorting project_sorting" id="aircraft_sorting">
-                            <a href="#project_section" class="smoothScroll">see project</a>
-                            <a href="#gallery" class="smoothScroll">view gallery</a>
-                            <a href="#aircraft_info" class="smoothScroll">see details</a>
-                        </div>
-                        </div>
-                    </div>
- -->                   
+                        <?php if( $work_update_entries ) { ?>
+                            <a href="#all_project_posts" class="smoothScroll">latest updates</a>
+                        <?php } else { ?>
+                            <a href="#project_wrapper" class="smoothScroll">see project</a>
+                        <?php } ?>
+                            <a href="#gallery" class="smoothScroll">project gallery</a>
+                            <a href="#search-2" class="smoothScroll">aircraft details</a>
+                        </div>              
                 </div>
             </div>
             <div class="project_section" id="project_section">        
@@ -180,12 +111,37 @@ get_header('archive'); ?>
                             <strong class="detail_title">About the Project</strong>
                             <p class="detail_value"><?php echo $project_overview; ?></p>
                         </div>
-                        <?php if( $history ) { ?>
-                        <div class="detail_item">
-                            <strong class="detail_title">Aircraft History</strong>
-                            <p class="detail_value"><?php echo $history; ?></p>
-                        </div>
-                        <?php } ?>
+                <div class="aircraft_gallery" id="gallery">
+                    <div class="page_main_wrapper" id="project_gallery_main_wrapper">
+                <?php if($project_gallery) { ?>
+                        <div class="flexslider gallery_slider" id="gallery_slider">
+                                <ul class="slides gallery_slides">
+                                    <?php foreach( $project_gallery as $row ) {
+                                                    $image = $row['project_gallery_image'];
+                                                    $title = $image['title'];
+                                                    $description = $image['description'];
+                                                    $caption = $image['caption'];
+                                                    $url = $image['url'];
+                                                    $alt = $image['alt'];                           
+                                    ?>
+                                    <li data-thumb="<?php echo $url; ?>">
+                                        <div class="aircraft_slider_image">
+                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                                        </div>
+                                    </li>
+                                    
+                                    <?php  } ?>
+                                </ul>
+                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'gallery')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'gallery')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'gallery')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'gallery')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                           </div> <?php
+                        } 
+                ?>
+                    </div><!-- #project_gallery_main_wrapper -->
+                </div><!-- #gallery -->
+                <div id="all_project_posts">
                         <?php
                             if( $work_update_entries ) {
                                 foreach( $work_update_entries as $row ){
@@ -193,7 +149,7 @@ get_header('archive'); ?>
                                     $entry_date = $row['entry_date'];
                                     $work_entry = $row['work_entry']; 
                                     $work_gallery = $row['project_update_gallery']; ?>
-                                      
+                                     
                         <article class="project_post">
                             <div class="article_side">
                                 <p><?php echo $entry_date; ?></p>
@@ -252,7 +208,8 @@ get_header('archive'); ?>
                                 }
                             }
                         ?>
-
+                        
+                        </div>
                     </div>
 
                     <div class="aircraft_sidebar_wrapper sidebar_wrapper" id="project_sidebar_wrapper">
@@ -279,10 +236,12 @@ get_header('archive'); ?>
                                     <strong class="spec_title">Registration Number:</strong>
                                     <p class="spec_value"><?php echo $registration_number; ?></p>
                                 </div>
+                                <?php if ( $price ) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Price:</strong>
                                     <p class="spec_value"><?php echo $price; ?></p>
                                 </div>
+                                <?php } ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Location:</strong>
                                     <p class="spec_value"><?php echo $location; ?></p>
@@ -290,6 +249,12 @@ get_header('archive'); ?>
                             </section>
                             <section id="project_aircraft_details" class="widget">
                                 <h2 class="widget-title sidebar_title">Aircraft Details</h2>
+                                <?php if( $history ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Aircraft History</strong>
+                                    <p class="detail_value"><?php echo $history; ?></p>
+                                </div>
+                                <?php } ?>
                                 <?php if( $airframe ) { ?>
                                 <div class="detail_item">
                                     <strong class="detail_title">Airframe:</strong>
@@ -342,36 +307,7 @@ get_header('archive'); ?>
                         </aside><!-- #secondary -->
                     </div> <!-- #project_sidebar_wrapper -->
                 </div>
-                <div class="aircraft_gallery" id="gallery">
-                    <div class="page_main_wrapper" id="project_gallery_main_wrapper">
-                <?php if($project_gallery) { ?>
-                        <div class="flexslider gallery_slider" id="gallery_slider">
-                                <ul class="slides gallery_slides">
-                                    <?php foreach( $project_gallery as $row ) {
-                                                    $image = $row['project_gallery_image'];
-                                                    $title = $image['title'];
-                                                    $description = $image['description'];
-                                                    $caption = $image['caption'];
-                                                    $url = $image['url'];
-                                                    $alt = $image['alt'];                           
-                                    ?>
-                                    <li data-thumb="<?php echo $url; ?>">
-                                        <div class="aircraft_slider_image">
-                                             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                        </div>
-                                    </li>
-                                    
-                                    <?php  } ?>
-                                </ul>
-                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'gallery')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
-                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'gallery')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
-                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'gallery')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
-                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'gallery')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
-                           </div> <?php
-                        } 
-                ?>
-                    </div><!-- #project_gallery_main_wrapper -->
-                </div><!-- #gallery -->
+
             </div><!-- #project_section-->
 <!--
 

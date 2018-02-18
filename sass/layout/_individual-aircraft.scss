@@ -137,7 +137,7 @@
 }
 
 .header_info_box {
-    bottom: 10.5em;
+    top: 9em;
     font-family: $font_text;
     font-weight: 500;
     color: white;
@@ -192,7 +192,7 @@
 //    }
     
     .header_info_box {
-        bottom: 5.5em;
+        top: 6.5em;
     }
     
     #aircraft_sorting {
@@ -201,11 +201,11 @@
         bottom: 1em;
         margin: 0 auto;
         padding: 0 15px;
-        max-width: 600px;
+//        max-width: 600px;
     }
     
     #aircraft_sorting a {
-        max-width: 230px;
+        max-width: 28vw;
     }
     
 }
@@ -241,7 +241,7 @@
         bottom: 3em;
         margin: 0 auto;
         padding: 0 15px;
-        max-width: 600px;
+        max-width: 900px;
     }
     
     #aircraft_page_header p {
@@ -275,7 +275,7 @@
     }
     
     #aircraft_page_header h1 {
-        top: 3.7em;
+        top: 2em;
         font-size: 3em;
     }
     
@@ -283,6 +283,10 @@
         #aircraft_page_header h1 {
             top: 2em;
         }
+    }
+    
+    .header_info_box {
+        top: 10em;
     }
     
 //    .header_info_box {
@@ -301,7 +305,7 @@
     }
     
     #aircraft_sorting {
-        display: list-item;
+//        display: list-item;
         bottom: 2vh;
     }
     
@@ -316,7 +320,7 @@
 
 #gallery_slider {
     margin-bottom: 0;
-    background-color: black;
+    background-color: white;
 }
 
 #project_slider,
@@ -334,6 +338,7 @@
     object-position: center;
     width: 100%;
     height: 60vw;
+    padding: 2px 2px 0;
 }
 
 #gallery_slider .flex-control-thumbs {
@@ -341,7 +346,7 @@
     max-height: 33vw;
 }
 
-
+#project_slider .flex-control-thumbs,
 #gallery_slider .flex-control-thumbs {
     display: flex;
     flex-direction: row;
@@ -356,7 +361,7 @@
     }
 }
 
-#project_slider .flex-control-thumbs,
+
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs {
     display: flex;
@@ -507,171 +512,245 @@
     }
 }
 
-@media screen and (min-width: 900px) {
-    #gallery_slider {
-        display: flex;
-        padding: 2px 1px 2px 2px;
-        border-radius: 0px;
-    }
-    
-    #interior_slider, #exterior_slider, #project_slider {
-        display: flex;
-        padding: 2px;
-        border-radius: 0px;
-        background-color: transparent;
-    }
-    
-    #gallery_slider .gallery_slides {
-        width: 70vw;
-    }
-    
-    #project_slider .gallery_slides,
-    #interior_slider .gallery_slides,
-    #exterior_slider .gallery_slides {
-        width: 80%;  
-    }
-    
+@media screen and (min-width: 960px) {
     #gallery_slider .gallery_slides img {
-        height: 44vw;
-    }
-    
-    #project_slider .gallery_slides img,
-    #interior_slider .gallery_slides img,
-    #exterior_slider .gallery_slides img {
-        height: 40vw;
-    }
-    
-    #scroll_L_Arrow,
-    #scroll_R_Arrow {
-        display: none;
-    }
-    
-    #scroll_U_Arrow,
-    #scroll_D_Arrow {
-        display: block;
-        width: calc((100vw - 240px - 40px) * 0.2);
-    }
-    
-    #gallery_slider #scroll_U_Arrow,
-    #gallery_slider #scroll_D_Arrow {
-        width: 30vw;
-    }
-    
-    #gallery_slider .flex-control-thumbs {
-        display: block;
-        width: 30vw;
-        max-height: 44vw;
-        padding: 0 1px;
-    }
-    
-    #project_slider .flex-control-thumbs,
-    #interior_slider .flex-control-thumbs,
-    #exterior_slider .flex-control-thumbs {
-        display: block;
-        width: 20%;
-        height: 40vw;
-        margin: 0;
-        padding: 0 1px;
-    }
-    
-    #gallery_slider .flex-control-thumbs li {
-        width: calc(50% - 2px);
-        height: calc(11vw);
-        margin: 1px;
-        padding: 0;
-    }
-    
-    #project_slider .flex-control-thumbs li,
-    #interior_slider .flex-control-thumbs li,
-    #exterior_slider .flex-control-thumbs li {
-        width: 100%;
-        height: 10vw;
-        padding: 0;
-        margin: 1px;
-    } 
-    
-    #project_slider .flex-control-thumbs li:first-of-type,
-    #exterior_slider .flex-control-thumbs li:first-of-type,
-    #interior_slider .flex-control-thumbs li:first-of-type {
-        margin-left: 1px;
-        width: 100%;
-    }
-
-    #project_slider .flex-control-thumbs li:last-of-type,
-    #exterior_slider .flex-control-thumbs li:last-of-type,
-    #interior_slider .flex-control-thumbs li:last-of-type {
-        margin-right: 1px;
-        width: 100%;
-    }
-    
-    #project_slider .flex-control-thumbs li:first-of-type,
-    #interior_slider .flex-control-thumbs li:first-of-type,
-    #exterior_slider .flex-control-thumbs li:first-of-type, 
-    #gallery_slider .flex-control-thumbs li:first-of-type,
-    #gallery_slider .flex-control-thumbs li:nth-of-type(2) {
-        margin-top: 0;
+        height: 37vw;
+        max-height: 710px;
     }
     
     #gallery_slider .flex-control-thumbs img {
-        height: calc(11vw);
-    }
-
-    #project_slider .flex-control-thumbs img,
-    #interior_slider .flex-control-thumbs img,
-    #exterior_slider .flex-control-thumbs img {
         height: 10vw;
-    } 
+    }
     
     #gallery_slider .flex-direction-nav a {
-        top: 22vw;
+        top: 18.5vw;
     }
     
-    #project_slider .flex-direction-nav a,
-    #interior_slider .flex-direction-nav a,
-    #exterior_slider .flex-direction-nav a {
-        top: 20vw;
-    }    
-    
-    #gallery_slider .flex-prev {
-        left: -8px;
+    #gallery_slider .scroll_arrow {
+        height: 10vw;
+        line-height: 10vw;
     }
     
-    #project_slider .flex-prev,
-    #interior_slider .flex-prev,
-    #exterior_slider .flex-prev {
-        left: 0px;
+    #project_slider .gallery_slides img {
+        height: 32vw;
     }
     
-    #gallery_slider:hover .flex-prev {
-        left: 10px;
+    #project_slider .flex-control-thumbs img {
+        height: 8vw;
     }
     
-    #project_slider:hover .flex-prev,
-    #interior_slider:hover .flex-prev,
-    #exterior_slider:hover .flex-prev {
-        left: 10px;
+    #project_slider .flex-direction-nav a {
+        top: 16vw;
     }
     
-    #gallery_slider .flex-next {
-        right: calc(30vw - 8px);
-    }
-    
-    #project_slider .flex-next,
-    #interior_slider .flex-next,
-    #exterior_slider .flex-next {
-        right: calc(20%);
-    }
-    
-    #gallery_slider:hover .flex-next {
-        right: calc(30vw + 10px);
-    }
-    
-    #project_slider:hover .flex-next,
-    #interior_slider:hover .flex-next,
-    #exterior_slider:hover .flex-next {
-        right: calc(20% + 10px);
+    #project_slider .scroll_arrow {
+        height: 8vw;
+        line-height: 8vw;
     }
 }
+
+@media screen and (min-width: 1920px) {
+    #gallery_slider .gallery_slides img {
+        height: 710px;
+    }
+    
+    #gallery_slider .flex-control-thumbs img {
+        height: 192px;
+    }
+    
+    #gallery_slider .flex-direction-nav a {
+        top: 355px;
+    }
+    
+    #gallery_slider .scroll_arrow {
+        height: 192px;
+        line-height: 192px;
+    }
+    
+    #project_slider .gallery_slides img {
+        height: 615px;
+    }
+    
+    #project_slider .flex-control-thumbs img {
+        height: 154px;
+    }
+    
+    #project_slider .flex-direction-nav a {
+        top: 307px;
+    }
+    
+    #project_slider .scroll_arrow {
+        height: 154px;
+        line-height: 154px;
+    }    
+}
+
+//
+//@media screen and (min-width: 900px) {
+//    #gallery_slider {
+//        display: flex;
+//        padding: 2px 1px 2px 2px;
+//        border-radius: 0px;
+//    }
+//    
+//    #interior_slider, #exterior_slider, #project_slider {
+//        display: flex;
+//        padding: 2px;
+//        border-radius: 0px;
+//        background-color: transparent;
+//    }
+//    
+//    #gallery_slider .gallery_slides {
+//        width: 70vw;
+//    }
+//    
+//    #project_slider .gallery_slides,
+//    #interior_slider .gallery_slides,
+//    #exterior_slider .gallery_slides {
+//        width: 80%;  
+//    }
+//    
+//    #gallery_slider .gallery_slides img {
+//        height: 44vw;
+//    }
+//    
+//    #project_slider .gallery_slides img,
+//    #interior_slider .gallery_slides img,
+//    #exterior_slider .gallery_slides img {
+//        height: 40vw;
+//    }
+//    
+//    #scroll_L_Arrow,
+//    #scroll_R_Arrow {
+//        display: none;
+//    }
+//    
+//    #scroll_U_Arrow,
+//    #scroll_D_Arrow {
+//        display: block;
+//        width: calc((100vw - 240px - 40px) * 0.2);
+//    }
+//    
+//    #gallery_slider #scroll_U_Arrow,
+//    #gallery_slider #scroll_D_Arrow {
+//        width: 30vw;
+//    }
+//    
+//    #gallery_slider .flex-control-thumbs {
+//        display: block;
+//        width: 30vw;
+//        max-height: 44vw;
+//        padding: 0 1px;
+//    }
+//    
+//    #project_slider .flex-control-thumbs,
+//    #interior_slider .flex-control-thumbs,
+//    #exterior_slider .flex-control-thumbs {
+//        display: block;
+//        width: 20%;
+//        height: 40vw;
+//        margin: 0;
+//        padding: 0 1px;
+//    }
+//    
+//    #gallery_slider .flex-control-thumbs li {
+//        width: calc(50% - 2px);
+//        height: calc(11vw);
+//        margin: 1px;
+//        padding: 0;
+//    }
+//    
+//    #project_slider .flex-control-thumbs li,
+//    #interior_slider .flex-control-thumbs li,
+//    #exterior_slider .flex-control-thumbs li {
+//        width: 100%;
+//        height: 10vw;
+//        padding: 0;
+//        margin: 1px;
+//    } 
+//    
+//    #project_slider .flex-control-thumbs li:first-of-type,
+//    #exterior_slider .flex-control-thumbs li:first-of-type,
+//    #interior_slider .flex-control-thumbs li:first-of-type {
+//        margin-left: 1px;
+//        width: 100%;
+//    }
+//
+//    #project_slider .flex-control-thumbs li:last-of-type,
+//    #exterior_slider .flex-control-thumbs li:last-of-type,
+//    #interior_slider .flex-control-thumbs li:last-of-type {
+//        margin-right: 1px;
+//        width: 100%;
+//    }
+//    
+//    #project_slider .flex-control-thumbs li:first-of-type,
+//    #interior_slider .flex-control-thumbs li:first-of-type,
+//    #exterior_slider .flex-control-thumbs li:first-of-type, 
+//    #gallery_slider .flex-control-thumbs li:first-of-type,
+//    #gallery_slider .flex-control-thumbs li:nth-of-type(2) {
+//        margin-top: 0;
+//    }
+//    
+//    #gallery_slider .flex-control-thumbs img {
+//        height: calc(11vw);
+//    }
+//
+//    #project_slider .flex-control-thumbs img,
+//    #interior_slider .flex-control-thumbs img,
+//    #exterior_slider .flex-control-thumbs img {
+//        height: 10vw;
+//    } 
+//    
+//    #gallery_slider .flex-direction-nav a {
+//        top: 22vw;
+//    }
+//    
+//    #project_slider .flex-direction-nav a,
+//    #interior_slider .flex-direction-nav a,
+//    #exterior_slider .flex-direction-nav a {
+//        top: 20vw;
+//    }    
+//    
+//    #gallery_slider .flex-prev {
+//        left: -8px;
+//    }
+//    
+//    #project_slider .flex-prev,
+//    #interior_slider .flex-prev,
+//    #exterior_slider .flex-prev {
+//        left: 0px;
+//    }
+//    
+//    #gallery_slider:hover .flex-prev {
+//        left: 10px;
+//    }
+//    
+//    #project_slider:hover .flex-prev,
+//    #interior_slider:hover .flex-prev,
+//    #exterior_slider:hover .flex-prev {
+//        left: 10px;
+//    }
+//    
+//    #gallery_slider .flex-next {
+//        right: calc(30vw - 8px);
+//    }
+//    
+//    #project_slider .flex-next,
+//    #interior_slider .flex-next,
+//    #exterior_slider .flex-next {
+//        right: calc(20%);
+//    }
+//    
+//    #gallery_slider:hover .flex-next {
+//        right: calc(30vw + 10px);
+//    }
+//    
+//    #project_slider:hover .flex-next,
+//    #interior_slider:hover .flex-next,
+//    #exterior_slider:hover .flex-next {
+//        right: calc(20% + 10px);
+//    }
+//}
 
 ////Section Headings////
 

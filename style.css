@@ -1570,7 +1570,7 @@ object {
   z-index: 2; }
 
 .header_info_box {
-  bottom: 10.5em;
+  top: 9em;
   font-family: "Metrophobic", sans-serif;
   font-weight: 500;
   color: white;
@@ -1604,18 +1604,17 @@ object {
 
 @media screen and (max-height: 500px) {
   .header_info_box {
-    bottom: 5.5em; }
+    top: 6.5em; }
 
   #aircraft_sorting {
     display: flex;
     justify-content: space-between;
     bottom: 1em;
     margin: 0 auto;
-    padding: 0 15px;
-    max-width: 600px; }
+    padding: 0 15px; }
 
   #aircraft_sorting a {
-    max-width: 230px; } }
+    max-width: 28vw; } }
 @media screen and (min-width: 750px) {
   #aircraft_page_header {
     height: 75vh; }
@@ -1630,7 +1629,7 @@ object {
     bottom: 3em;
     margin: 0 auto;
     padding: 0 15px;
-    max-width: 600px; }
+    max-width: 900px; }
 
   #aircraft_page_header p {
     font-weight: 600; }
@@ -1654,17 +1653,19 @@ object {
     height: 100vh; }
 
   #aircraft_page_header h1 {
-    top: 3.7em;
+    top: 2em;
     font-size: 3em; } }
 @media screen and (min-width: 900px) and (max-height: 620px) {
   #aircraft_page_header h1 {
     top: 2em; } }
 @media screen and (min-width: 900px) {
+  .header_info_box {
+    top: 10em; }
+
   #aircraft_page_header p {
     font-size: 1.2em; }
 
   #aircraft_sorting {
-    display: list-item;
     bottom: 2vh; }
 
   #aircraft_sorting a {
@@ -1672,7 +1673,7 @@ object {
     margin-bottom: 25px; } }
 #gallery_slider {
   margin-bottom: 0;
-  background-color: black; }
+  background-color: white; }
 
 #project_slider,
 #exterior_slider,
@@ -1687,12 +1688,14 @@ object {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 60vw; }
+  height: 60vw;
+  padding: 2px 2px 0; }
 
 #gallery_slider .flex-control-thumbs {
   overflow: auto;
   max-height: 33vw; }
 
+#project_slider .flex-control-thumbs,
 #gallery_slider .flex-control-thumbs {
   display: flex;
   flex-direction: row;
@@ -1702,10 +1705,10 @@ object {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   -webkit-overflow-scrolling: touch; }
+  #project_slider .flex-control-thumbs::-webkit-scrollbar,
   #gallery_slider .flex-control-thumbs::-webkit-scrollbar {
     display: none; }
 
-#project_slider .flex-control-thumbs,
 #exterior_slider .flex-control-thumbs,
 #interior_slider .flex-control-thumbs {
   display: flex;
@@ -1717,7 +1720,6 @@ object {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   -webkit-overflow-scrolling: touch; }
-  #project_slider .flex-control-thumbs::-webkit-scrollbar,
   #exterior_slider .flex-control-thumbs::-webkit-scrollbar,
   #interior_slider .flex-control-thumbs::-webkit-scrollbar {
     display: none; }
@@ -1829,142 +1831,59 @@ object {
   .scroll_arrow {
     height: calc(24vw - 20px);
     line-height: calc(24vw - 20px); } }
-@media screen and (min-width: 900px) {
-  #gallery_slider {
-    display: flex;
-    padding: 2px 1px 2px 2px;
-    border-radius: 0px; }
-
-  #interior_slider, #exterior_slider, #project_slider {
-    display: flex;
-    padding: 2px;
-    border-radius: 0px;
-    background-color: transparent; }
-
-  #gallery_slider .gallery_slides {
-    width: 70vw; }
-
-  #project_slider .gallery_slides,
-  #interior_slider .gallery_slides,
-  #exterior_slider .gallery_slides {
-    width: 80%; }
-
+@media screen and (min-width: 960px) {
   #gallery_slider .gallery_slides img {
-    height: 44vw; }
-
-  #project_slider .gallery_slides img,
-  #interior_slider .gallery_slides img,
-  #exterior_slider .gallery_slides img {
-    height: 40vw; }
-
-  #scroll_L_Arrow,
-  #scroll_R_Arrow {
-    display: none; }
-
-  #scroll_U_Arrow,
-  #scroll_D_Arrow {
-    display: block;
-    width: calc((100vw - 240px - 40px) * 0.2); }
-
-  #gallery_slider #scroll_U_Arrow,
-  #gallery_slider #scroll_D_Arrow {
-    width: 30vw; }
-
-  #gallery_slider .flex-control-thumbs {
-    display: block;
-    width: 30vw;
-    max-height: 44vw;
-    padding: 0 1px; }
-
-  #project_slider .flex-control-thumbs,
-  #interior_slider .flex-control-thumbs,
-  #exterior_slider .flex-control-thumbs {
-    display: block;
-    width: 20%;
-    height: 40vw;
-    margin: 0;
-    padding: 0 1px; }
-
-  #gallery_slider .flex-control-thumbs li {
-    width: calc(50% - 2px);
-    height: calc(11vw);
-    margin: 1px;
-    padding: 0; }
-
-  #project_slider .flex-control-thumbs li,
-  #interior_slider .flex-control-thumbs li,
-  #exterior_slider .flex-control-thumbs li {
-    width: 100%;
-    height: 10vw;
-    padding: 0;
-    margin: 1px; }
-
-  #project_slider .flex-control-thumbs li:first-of-type,
-  #exterior_slider .flex-control-thumbs li:first-of-type,
-  #interior_slider .flex-control-thumbs li:first-of-type {
-    margin-left: 1px;
-    width: 100%; }
-
-  #project_slider .flex-control-thumbs li:last-of-type,
-  #exterior_slider .flex-control-thumbs li:last-of-type,
-  #interior_slider .flex-control-thumbs li:last-of-type {
-    margin-right: 1px;
-    width: 100%; }
-
-  #project_slider .flex-control-thumbs li:first-of-type,
-  #interior_slider .flex-control-thumbs li:first-of-type,
-  #exterior_slider .flex-control-thumbs li:first-of-type,
-  #gallery_slider .flex-control-thumbs li:first-of-type,
-  #gallery_slider .flex-control-thumbs li:nth-of-type(2) {
-    margin-top: 0; }
+    height: 37vw;
+    max-height: 710px; }
 
   #gallery_slider .flex-control-thumbs img {
-    height: calc(11vw); }
-
-  #project_slider .flex-control-thumbs img,
-  #interior_slider .flex-control-thumbs img,
-  #exterior_slider .flex-control-thumbs img {
     height: 10vw; }
 
   #gallery_slider .flex-direction-nav a {
-    top: 22vw; }
+    top: 18.5vw; }
 
-  #project_slider .flex-direction-nav a,
-  #interior_slider .flex-direction-nav a,
-  #exterior_slider .flex-direction-nav a {
-    top: 20vw; }
+  #gallery_slider .scroll_arrow {
+    height: 10vw;
+    line-height: 10vw; }
 
-  #gallery_slider .flex-prev {
-    left: -8px; }
+  #project_slider .gallery_slides img {
+    height: 32vw; }
 
-  #project_slider .flex-prev,
-  #interior_slider .flex-prev,
-  #exterior_slider .flex-prev {
-    left: 0px; }
+  #project_slider .flex-control-thumbs img {
+    height: 8vw; }
 
-  #gallery_slider:hover .flex-prev {
-    left: 10px; }
+  #project_slider .flex-direction-nav a {
+    top: 16vw; }
 
-  #project_slider:hover .flex-prev,
-  #interior_slider:hover .flex-prev,
-  #exterior_slider:hover .flex-prev {
-    left: 10px; }
+  #project_slider .scroll_arrow {
+    height: 8vw;
+    line-height: 8vw; } }
+@media screen and (min-width: 1920px) {
+  #gallery_slider .gallery_slides img {
+    height: 710px; }
 
-  #gallery_slider .flex-next {
-    right: calc(30vw - 8px); }
+  #gallery_slider .flex-control-thumbs img {
+    height: 192px; }
 
-  #project_slider .flex-next,
-  #interior_slider .flex-next,
-  #exterior_slider .flex-next {
-    right: calc(20%); }
+  #gallery_slider .flex-direction-nav a {
+    top: 355px; }
 
-  #gallery_slider:hover .flex-next {
-    right: calc(30vw + 10px); }
+  #gallery_slider .scroll_arrow {
+    height: 192px;
+    line-height: 192px; }
 
-  #project_slider:hover .flex-next,
-  #interior_slider:hover .flex-next,
-  #exterior_slider:hover .flex-next {
-    right: calc(20% + 10px); } }
+  #project_slider .gallery_slides img {
+    height: 615px; }
+
+  #project_slider .flex-control-thumbs img {
+    height: 154px; }
+
+  #project_slider .flex-direction-nav a {
+    top: 307px; }
+
+  #project_slider .scroll_arrow {
+    height: 154px;
+    line-height: 154px; } }
 .aircraft_section_heading {
   padding: 17px 0;
   font-family: "Jura", sans-serif;
@@ -2133,6 +2052,9 @@ object {
   .detail_with_slider {
     max-width: calc(100% - 240px);
     overflow: hidden; } }
+#project_wrapper #gallery {
+  margin-bottom: 25px; }
+
 #project_wrapper .detail_item {
   display: flex;
   flex-wrap: wrap;
@@ -2151,12 +2073,15 @@ object {
   text-align: center; }
 
 #project_wrapper .detail_value {
-  padding: 30px 50px;
+  padding: 30px 20px;
   background-color: white;
-  font-size: 1.1rem; }
+  font-size: 1rem; }
 
 .project_post .article_title {
   font-size: 1.5rem; }
+
+#project_sidebar_wrapper .spec_item:first-of-type .spec_value {
+  border-top: 2px solid white; }
 
 #project_sidebar_wrapper .spec_item {
   background-color: white; }
@@ -2165,14 +2090,15 @@ object {
   font-family: "Jura", sans-serif;
   margin-left: 0;
   padding: 5px 0 5px 8px;
-  width: 160px;
+  width: 50%;
   background-color: #868686;
   font-size: 1.1rem;
   border-top: 2px solid #EBEBEB; }
 
 #project_sidebar_wrapper .spec_value {
-  width: calc(100% - 160px);
+  width: 50%;
   border-top: 2px solid #868686;
+  padding-top: 4px;
   padding-left: 15px;
   font-size: 1.1rem; }
 
@@ -2192,7 +2118,7 @@ object {
 #project_sidebar_wrapper .detail_value {
   padding: 15px 20px;
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background-color: white; }
 
 #project_header_info_box #project_info_box_span {
@@ -2291,6 +2217,9 @@ object {
     font-weight: 900;
     line-height: 135px; } }
 @media screen and (min-width: 960px) {
+  #project_wrapper .detail_value {
+    font-size: 1.1rem; }
+
   #project_sidebar_wrapper .spec_item {
     background-color: white; }
 
@@ -2563,7 +2492,7 @@ object {
   transition: 0.2s; }
 
 .news_article_content {
-  padding: 0px 10px 25px;
+  padding: 0px 20px 25px;
   font-family: "Metrophobic", sans-serif;
   font-size: 1rem;
   background-color: white; }
