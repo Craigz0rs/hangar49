@@ -123,11 +123,6 @@
     padding: 0 10px;
 }
 
-//@media screen and (min-width: 1600px) {
-//    #aircraft_header_wrapper .aircraft_content_wrap {
-//        position: relative;
-//    }
-//}
 
 .header_info_box {
     position: absolute;
@@ -319,7 +314,7 @@
 
 
 #gallery_slider {
-    margin-bottom: 0;
+    margin-bottom: 25px;
     background-color: white;
 }
 
@@ -347,7 +342,9 @@
 }
 
 #project_slider .flex-control-thumbs,
-#gallery_slider .flex-control-thumbs {
+#gallery_slider .flex-control-thumbs,
+#exterior_slider .flex-control-thumbs,
+#interior_slider .flex-control-thumbs {
     display: flex;
     flex-direction: row;
     padding: 2px 0;
@@ -362,21 +359,21 @@
 }
 
 
-#exterior_slider .flex-control-thumbs,
-#interior_slider .flex-control-thumbs {
-    display: flex;
-    flex-direction: row;
-    padding: 2px 0px;
-    margin: 0 auto;
-    margin-left: -1px;
-    width: calc(100% + 2px);
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
+//#exterior_slider .flex-control-thumbs,
+//#interior_slider .flex-control-thumbs {
+//    display: flex;
+//    flex-direction: row;
+//    padding: 2px 0px;
+//    margin: 0 auto;
+//    margin-left: -1px;
+//    width: calc(100% + 2px);
+//    -ms-overflow-style: none;  // IE 10+
+//    overflow: -moz-scrollbars-none;  // Firefox
+//    -webkit-overflow-scrolling: touch;
+//    &::-webkit-scrollbar {
+//        display: none;
+//    }
+//}
 
 #gallery_slider .flex-control-thumbs li {
     width: calc(33.33333333%);
@@ -531,19 +528,27 @@
         line-height: 10vw;
     }
     
-    #project_slider .gallery_slides img {
+    #project_slider .gallery_slides img,
+    #interior_slider .gallery_slides img,
+    #exterior_slider .gallery_slides img {
         height: 32vw;
     }
     
-    #project_slider .flex-control-thumbs img {
+    #project_slider .flex-control-thumbs img,
+    #interior_slider .flex-control-thumbs img,
+    #exterior_slider .flex-control-thumbs img { 
         height: 8vw;
     }
     
-    #project_slider .flex-direction-nav a {
+    #project_slider .flex-direction-nav a,
+    #interior_slider .flex-direction-nav a,
+    #exterior_slider .flex-direction-nav a {
         top: 16vw;
     }
     
-    #project_slider .scroll_arrow {
+    #project_slider .scroll_arrow,
+    #interior_slider .scroll_arrow,
+    #exterior_slider .scroll_arrow {
         height: 8vw;
         line-height: 8vw;
     }
@@ -567,19 +572,27 @@
         line-height: 192px;
     }
     
-    #project_slider .gallery_slides img {
+    #project_slider .gallery_slides img,
+    #interior_slider .gallery_slides img,
+    #exterior_slider .gallery_slides img {
         height: 615px;
     }
     
-    #project_slider .flex-control-thumbs img {
+    #project_slider .flex-control-thumbs img,
+    #interior_slider .flex-control-thumbs img,
+    #exterior_slider .flex-control-thumbs img { 
         height: 154px;
     }
     
-    #project_slider .flex-direction-nav a {
+    #project_slider .flex-direction-nav a,
+    #interior_slider .flex-direction-nav a,
+    #exterior_slider .flex-direction-nav a {
         top: 307px;
     }
     
-    #project_slider .scroll_arrow {
+    #project_slider .scroll_arrow,
+    #interior_slider .scroll_arrow,
+    #exterior_slider .scroll_arrow {
         height: 154px;
         line-height: 154px;
     }    
@@ -826,20 +839,57 @@
 
 ////Specification and Detail Section Styling////
 
-#aircraft_info .content_wrapper {
-    padding-bottom: 30px;
+.aircraft_specifications_1 {
+    display: none;
 }
 
-.specification_overlay {
-    position: absolute;
-    bottom: 0;
-    left: -10px;
-    right: 0;
-    width: calc(57%);
-    height: 100%;
-    background-color: #5E5E5E;
-    margin: 0 10px;
+.aircraft_specifications_2 {
+    display: block;
 }
+
+#aircraft_specifications_2 .widget-title {
+    text-align: center;
+}
+
+#aircraft_history {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail_section_title {
+    width: 100%;
+    margin: 0;
+    padding: 3px 0px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-align: center;
+    background-color: $color_dark-backgrounds;
+    color: $color_font-light-headings;
+    font-family: $font_heading;
+}
+
+//#inventory_aircraft_details .detail_item {
+//    display: flex;
+////    flex-wrap: wrap;
+////    margin-bottom: 25px;
+//    border: none;
+//    background-color: white;
+//}
+//
+//#aircraft_info .content_wrapper {
+//    padding-bottom: 30px;
+//}
+//
+//.specification_overlay {
+//    position: absolute;
+//    bottom: 0;
+//    left: -10px;
+//    right: 0;
+//    width: calc(57%);
+//    height: 100%;
+//    background-color: #5E5E5E;
+//    margin: 0 10px;
+//}
 
 .spec_item {
     display: flex;
@@ -869,24 +919,39 @@
 
 .detail_item {
     margin-bottom: 15px;
-    background-color: #EBEBEB;
+    background-color: white;
 }
 
 .detail_title {
     display: block;
     width: 100%;
-    padding-left: 5px;
-    background-color: #5E5E5E;
-    color: #EBEBEB;
+    margin: 0;
+    padding-left: 15px;
+    background-color: $color_medium-backgrounds;
+    color: white;
+    border-top: 2px solid $color_background_main;
     font-family: $font_heading;
+    font-size: $font_text_size_desktop;
+    line-height: 2rem;
 }
 
 .detail_value {
     margin: 0;
     padding: 15px 20px;
-    background-color: #EBEBEB;
+    background-color: white;
     color: #2D2D2D;
     font-family: $font_text;
+}
+
+#inventory_contact {
+    background-color: white;
+}
+
+#inventory_contact .widget_content_area {
+    padding: 25px 30px;
+    font-family: $font_text;
+    font-size: $font_text_size_desktop;
+    line-height: $font_text_size_desktop;
 }
 
 @media screen and (min-width: 375px) {
@@ -899,7 +964,15 @@
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 960px) {
+    
+    .aircraft_specifications_1 {
+        display: block;
+    }
+    
+    .aircraft_specifications_2 {
+        display: none;
+    }
     
     #aircraft_info,
     #details {
@@ -914,7 +987,7 @@
     
     .spec_item, 
     .detail_item {
-        font-size: 1.2em;
+        font-size: $font_text_size_mobile;
     }
     
     .specification_overlay {
@@ -944,18 +1017,18 @@
         border-top: 2px solid #5E5E5E;
     }
     
-    .detail_item:first-of-type {
-        border-top: none;
+    #main_detail_section .detail_item:first-of-type {
+        border-top: 2px solid $color_background_main;
     }
     
     .detail_title {
         flex: none;
-        width: 240px;
+        width: 150px;
         margin-top: -2px;
-        padding-left: 18px;
+        padding-left: 10px;
         border-top: 2px solid #EBEBEB;
         line-height: 120px;
-        font-size: 1.4em;
+        font-size: 1rem;
     }
     
     .detail_value {
@@ -964,9 +1037,19 @@
     }
     
     .detail_with_slider {
-        max-width: calc(100% - 240px);
         overflow: hidden;
     }
     
+}
+
+@media screen and (min-width: 1300px) {
+    .detail_item {
+        font-size: $font_text_size_desktop;
+    }
+    
+    .detail_title {
+        width: 200px;
+        font-size: 1.2rem;
+    }
 }
 
