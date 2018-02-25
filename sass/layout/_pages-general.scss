@@ -68,3 +68,11 @@
 .content_wrapper {
     padding: 0 10px;
 }
+
+@media screen and (max-height: 500px) {
+    @media screen and (min-width: 500px) {
+        .page_header {
+            height: 75vh;
+        }
+    }
+}

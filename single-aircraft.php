@@ -127,53 +127,53 @@ get_header('archive'); ?>
                             </div>
                         </div>
                         <div class="aircraft_sidebar_wrapper sidebar_wrapper" id="project_sidebar_wrapper">
-                        <section id="aircraft_specifications_2" class="widget widget_search aircraft_specifications_2">
-                            <h2 class="widget-title sidebar_title">Aircraft Specifications</h2>
-                            <div class="spec_item">
-                                <strong class="spec_title">Year:</strong>
-                                <p class="spec_value">
-                                    <?php echo $year; ?>
-                                </p>
-                            </div>
-                            <div class="spec_item">
-                                <strong class="spec_title">Manufacturer:</strong>
-                                <p class="spec_value">
-                                    <?php echo $manufacturer; ?>
-                                </p>
-                            </div>
-                            <div class="spec_item">
-                                <strong class="spec_title">Model:</strong>
-                                <p class="spec_value">
-                                    <?php echo $model; ?>
-                                </p>
-                            </div>
-                            <div class="spec_item">
-                                <strong class="spec_title">Serial Number:</strong>
-                                <p class="spec_value">
-                                    <?php echo $serial_number; ?>
-                                </p>
-                            </div>
-                            <div class="spec_item">
-                                <strong class="spec_title">Registration Number:</strong>
-                                <p class="spec_value">
-                                    <?php echo $registration_number; ?>
-                                </p>
-                            </div>
-                            <?php if ( $price ) { ?>
-                            <div class="spec_item">
-                                <strong class="spec_title">Price:</strong>
-                                <p class="spec_value">
-                                    <?php echo $price; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <div class="spec_item">
-                                <strong class="spec_title">Location:</strong>
-                                <p class="spec_value">
-                                    <?php echo $location; ?>
-                                </p>
-                            </div>
-                        </section>
+                            <section id="aircraft_specifications_2" class="widget widget_search aircraft_specifications_2">
+                                <h2 class="widget-title sidebar_title">Aircraft Specifications</h2>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Year:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $year; ?>
+                                    </p>
+                                </div>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Manufacturer:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $manufacturer; ?>
+                                    </p>
+                                </div>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Model:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $model; ?>
+                                    </p>
+                                </div>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Serial Number:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $serial_number; ?>
+                                    </p>
+                                </div>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Registration Number:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $registration_number; ?>
+                                    </p>
+                                </div>
+                                <?php if ( $price ) { ?>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Price:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $price; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <div class="spec_item">
+                                    <strong class="spec_title">Location:</strong>
+                                    <p class="spec_value">
+                                        <?php echo $location; ?>
+                                    </p>
+                                </div>
+                            </section>
                         </div>
                         <section id="inventory_aircraft_details" class="widget aircraft_details">
                             <?php if( $history ) { ?>
@@ -185,40 +185,42 @@ get_header('archive'); ?>
                             </div>
                             <?php } ?>
                             <div id="main_detail_section">
-                            <h2 class="detail_section_title">Aircraft Details</h2>
-                            <?php if( $airframe ) { ?>
-                            <div class="detail_item">
-                                <h3 class="detail_title">Airframe:</h3>
-                                <p class="detail_value">
-                                    <?php echo $airframe; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <?php if( $engine ) { ?>
-                            <div class="detail_item">
-                                <strong class="detail_title">Engine(s):</strong>
-                                <p class="detail_value">
-                                    <?php echo $engine; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <?php if( $propeller ) { ?>
-                            <div class="detail_item">
-                                <strong class="detail_title">Propeller(s):</strong>
-                                <p class="detail_value">
-                                    <?php echo $propeller; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <?php if( $exterior ) { ?>
-                        <div class="detail_item">
-                            <strong class="detail_title">Exterior:</strong>
-                            <div class="detail_with_slider">
-                                <p class="detail_value"><?php echo $exterior; ?></p>
-                                <?php if( have_rows('exterior_image_gallery') ): ?>
-                                <div class="flexslider gallery_slider" id="exterior_slider">
-                                        <ul class="slides gallery_slides">
-                                            <?php while( have_rows('exterior_image_gallery') ): the_row();
+                                <h2 class="detail_section_title">Aircraft Details</h2>
+                                <?php if( $airframe ) { ?>
+                                <div class="detail_item">
+                                    <h3 class="detail_title">Airframe:</h3>
+                                    <p class="detail_value">
+                                        <?php echo $airframe; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <?php if( $engine ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Engine(s):</strong>
+                                    <p class="detail_value">
+                                        <?php echo $engine; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <?php if( $propeller ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Propeller(s):</strong>
+                                    <p class="detail_value">
+                                        <?php echo $propeller; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <?php if( $exterior ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Exterior:</strong>
+                                    <div class="detail_with_slider">
+                                        <p class="detail_value">
+                                            <?php echo $exterior; ?>
+                                        </p>
+                                        <?php if( have_rows('exterior_image_gallery') ): ?>
+                                        <div class="flexslider gallery_slider" id="exterior_slider">
+                                            <ul class="slides gallery_slides">
+                                                <?php while( have_rows('exterior_image_gallery') ): the_row();
                                                 $image = get_sub_field('exterior_gallery_image');
                                                 $title = $image['title'];
                                                 $description = $image['description'];
@@ -234,31 +236,33 @@ get_header('archive'); ?>
                                                 $height = $image['sizes'][ $size . '-height' ];
 
                                             ?>
-                                            <li data-thumb="<?php echo $url; ?>">
-                                                <div class="exterior_slider_image">
-                                                     <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                                </div>
-                                            </li>
-                                            <?php endwhile; ?>
-                                        </ul>
-                                    <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'exterior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
-                                    <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'exterior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
-                                    <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'exterior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
-                                    <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'exterior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                                                <li data-thumb="<?php echo $url; ?>">
+                                                    <div class="exterior_slider_image">
+                                                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+                                                    </div>
+                                                </li>
+                                                <?php endwhile; ?>
+                                            </ul>
+                                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'exterior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'exterior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'exterior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'exterior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                            <?php } ?>
-                            <?php if( $interior ) { ?>
-                        <div class="detail_item">
-                            <strong class="detail_title">Interior:</strong>
-                            <div class="detail_with_slider">
-                                <p class="detail_value"><?php echo $interior; ?></p>
-                                <?php if( have_rows('interior_image_gallery') ): ?>
-                                <div class="flexslider gallery_slider" id="interior_slider">
-                                        <ul class="slides gallery_slides">
-                                            <?php while( have_rows('interior_image_gallery') ): the_row();
+                                <?php } ?>
+                                <?php if( $interior ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Interior:</strong>
+                                    <div class="detail_with_slider">
+                                        <p class="detail_value">
+                                            <?php echo $interior; ?>
+                                        </p>
+                                        <?php if( have_rows('interior_image_gallery') ): ?>
+                                        <div class="flexslider gallery_slider" id="interior_slider">
+                                            <ul class="slides gallery_slides">
+                                                <?php while( have_rows('interior_image_gallery') ): the_row();
                                                 $image = get_sub_field('interior_gallery_image');
                                                 $title = $image['title'];
                                                 $description = $image['description'];
@@ -274,46 +278,46 @@ get_header('archive'); ?>
                                                 $height = $image['sizes'][ $size . '-height' ];
 
                                             ?>
-                                            <li data-thumb="<?php echo $url; ?>">
-                                                <div class="interior_slider_image">
-                                                     <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                                                </div>
-                                            </li>
-                                            <?php endwhile; ?>
-                                        </ul>
-                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'interior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
-                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'interior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
-                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'interior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
-                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'interior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                                                <li data-thumb="<?php echo $url; ?>">
+                                                    <div class="interior_slider_image">
+                                                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+                                                    </div>
+                                                </li>
+                                                <?php endwhile; ?>
+                                            </ul>
+                                            <span id='scroll_L_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_L', 'interior')"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                                            <span id='scroll_R_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_R', 'interior')"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+                                            <span id='scroll_U_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_U', 'interior')"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></span>
+                                            <span id='scroll_D_Arrow' class="scroll_arrow" onclick="scrollThumb('Go_D', 'interior')"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                            <?php } ?>
-                            <?php if( $avionics ) { ?>
-                            <div class="detail_item">
-                                <strong class="detail_title">Avionics:</strong>
-                                <p class="detail_value">
-                                    <?php echo $avionics; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <?php if( $equipment ) { ?>
-                            <div class="detail_item">
-                                <strong class="detail_title">Equipment:</strong>
-                                <p class="detail_value">
-                                    <?php echo $equipment; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
-                            <?php if( $misc ) { ?>
-                            <div class="detail_item">
-                                <strong class="detail_title">Miscellaneous:</strong>
-                                <p class="detail_value">
-                                    <?php echo $misc; ?>
-                                </p>
-                            </div>
-                            <?php } ?>
+                                <?php } ?>
+                                <?php if( $avionics ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Avionics:</strong>
+                                    <p class="detail_value">
+                                        <?php echo $avionics; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <?php if( $equipment ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Equipment:</strong>
+                                    <p class="detail_value">
+                                        <?php echo $equipment; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
+                                <?php if( $misc ) { ?>
+                                <div class="detail_item">
+                                    <strong class="detail_title">Miscellaneous:</strong>
+                                    <p class="detail_value">
+                                        <?php echo $misc; ?>
+                                    </p>
+                                </div>
+                                <?php } ?>
                             </div>
                         </section>
 
@@ -372,8 +376,8 @@ get_header('archive'); ?>
                             <h2 class="widget-title sidebar-title">Enquire Now</h2>
                             <div class="widget_content_area">
                                 <p>Interested in this plane? Contact us now</p>
-                                
-            <?php
+
+                                <?php
                 if(function_exists('get_field')){
                     if(get_field('phone_number', 24)){ 
                         $phone = get_field('phone_number', 24);}
@@ -381,17 +385,19 @@ get_header('archive'); ?>
                         $email = get_field('email', 24);}
                 } 
             ?>
-                                            <ul>
-                <li><a href="tel:<?php echo $phone; ?>"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> <?php echo $phone; ?></a></li>
-                <li><a href="email:<?php echo $email; ?>"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> <?php echo $email; ?></a></li>
-            </ul>
+                                    <ul>
+                                        <li><a href="tel:<?php echo $phone; ?>"><i class="fa  fa-phone" id="phone" aria-hidden="true"></i> <?php echo $phone; ?></a></li>
+                                        <li><a href="email:<?php echo $email; ?>"><i class="fa  fa-envelope" id="envelope" aria-hidden="true"></i> <?php echo $email; ?></a></li>
+                                    </ul>
+                                    <p>Send us a message</p>
+                                    <?php echo do_shortcode('[contact-form-7 id="87" title="Contact form 1"]'); ?>
                             </div>
                         </section>
                     </div>
                     <!-- .aircraft_sidebar_wrapper -->
                 </div>
                 <!-- .page_main_wrapper -->
-<!--
+                <!--
    
             <div class="aircraft_specifications" id="aircraft_info">
                 <div class="aircraft_content_wrap">
@@ -543,12 +549,14 @@ get_header('archive'); ?>
             </div>
 -->
 
- 
+
 
                 <?php
                 endwhile; // End of the loop.
                 ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-<?php
+        </main>
+        <!-- #main -->
+    </div>
+    <!-- #primary -->
+    <?php
 get_footer();

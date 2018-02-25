@@ -36,16 +36,16 @@
     
     $(document).on('click', function(event) {  
         if($(event.target).is(button) || $(event.target).is(button.childNodes)) {
-            console.log("pushed button");                 
+               
                 if ( button.classList.contains( 'button-toggled' ) ) {
-                    console.log("pushed button to close");
+
                     container.className = container.className.replace( ' toggled', '' );
                     button.setAttribute( 'aria-expanded', 'false' );
                     button.className = button.className.replace( 'button-toggled', '' );
                     menu.setAttribute( 'aria-expanded', 'false' );
                     navWrap.className = navWrap.className.replace( 'mobile-menu-open', '' );
                 } else {
-                    console.log("pushed button to open");
+
                     container.className += ' toggled';
                     button.setAttribute( 'aria-expanded', 'true' );
                     button.className += ' button-toggled';
@@ -55,19 +55,19 @@
                 }
             
         } else if (($(event.target).is('.menu-item a')) || ($(event.target).is('.menu-item svg')) || ($(event.target).is('.menu-item path')) || ($(event.target).is('.menu-item i'))) {
-            console.log("Following hyperlink, don't close menu");
+
         } else {  
             if ( button.classList.contains( 'button-toggled' ) ) {
-                    console.log("clicked anywhere but button while menu is open");
+
                     navWrap.className = navWrap.className.replace( 'mobile-menu-open', '' );
                     container.className = container.className.replace( ' toggled', '' );
                     button.setAttribute( 'aria-expanded', 'false' );
                     button.className = button.className.replace( 'button-toggled', '' );
                     menu.setAttribute( 'aria-expanded', 'false' );
-                    console.log("menu should now be closed");  
+ 
                 
             } else {
-                console.log("clicked anywhere but button while menu is closed");
+
             }
         }
 

@@ -12,7 +12,7 @@ get_header(); ?>
                 <div class="content_wrapper">
                     <div class="intro">
                         <h1>Hangar 49</h1>
-                        <h1>warbirds</h1>
+                        <h1>Warbirds</h1>
                         <h2>maintenance • restorations • sales</h2>
                         <p>Our full site is under construction but we're adding more content each week! Check back often for updates.</p>
                        <?php if (function_exists('newsletter_form')) newsletter_form(); ?>
@@ -20,9 +20,11 @@ get_header(); ?>
                     </div><!-- .intro -->
                 </div><!-- .content_wrapper -->
                 <div class="home_navigation">
+<!--
                     <div class="home_nav_block"><a href="<?php echo get_post_type_archive_link( 'inventory' ); ?>" class="smoothScroll"><i class="fa fa-fighter-jet" id="fighterjet" aria-hidden="true"></i><br>Inventory</a></div>
                     <div class="home_nav_block"><a href="<?php echo get_post_type_archive_link( 'projects' ); ?>" class="smoothScroll"><i class="fa fa-wrench" id="wrench" aria-hidden="true"></i><br>Projects</a></div>
                     <div class="home_nav_block"><a href="<?php echo get_page_link(24); ?>" class="smoothScroll"><i class="fa fa-envelope" id="envelope" aria-hidden="true"></i><br>Contact</a></div>
+-->
                 </div><!-- .home_navigation -->
             </div><!-- .home_screen -->
 <!--

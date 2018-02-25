@@ -22,7 +22,7 @@ get_header(); ?>
                         <p class="now_viewing">all projects</p>
                     </div>
                 </div>
-                <div class="page_main_wrapper aircraft_tile_main_wrapper" id="project_page_main_wrapper">
+                <div class="aircraft_tile_main_wrapper" id="project_page_main_wrapper">
                 <div class="project_tiles aircraft_tiles" id="projects">
                     <?php 
 

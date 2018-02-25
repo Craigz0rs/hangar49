@@ -81,6 +81,36 @@
     background-color: white;
 }
 
+#inventory_contact ul {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    padding-left: 15px;
+}
+
+#inventory_contact a {
+    color: $color_font-nav-hover;
+    font-size: $font_text_size_mobile;
+    transition: 0.4s;
+}
+
+#inventory_contact a:hover,
+#inventory_contact a:focus {
+    color: #5E5E5E;
+    transition: 0.4s;
+}
+
+#inventory_contact a {
+    text-decoration: none;
+    font-size: $font_text_size_mobile;
+}
+
+#project_sidebar_wrapper .wpcf7-submit:hover,
+#project_sidebar_wrapper .wpcf7-submit:focus {
+    border: 2px solid $color_font-nav-hover !important;
+}
+
 /////Old Styles //////
 
 #project_header_info_box #project_info_box_span {

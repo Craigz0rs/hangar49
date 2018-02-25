@@ -1,8 +1,9 @@
 #projects_page_header {
-    background-image:url(images/projects2-1.jpeg);
+    background-image:url($image_project_default);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .projects {

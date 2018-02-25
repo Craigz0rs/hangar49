@@ -23,7 +23,7 @@ get_header(); ?>
                 </div>
                
             </div>
-            <div class="page_main_wrapper aircraft_tile_main_wrapper" id="inventory_page_main_wrapper">
+            <div class="aircraft_tile_main_wrapper" id="inventory_page_main_wrapper">
               <div class="inventory_tiles aircraft_tiles" id="inventory">
                     <?php
                     $airplanes = get_posts(array(

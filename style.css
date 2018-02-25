@@ -757,6 +757,9 @@ object {
 .content_wrapper {
   padding: 0 10px; }
 
+@media screen and (max-height: 500px) and (min-width: 500px) {
+  .page_header {
+    height: 75vh; } }
 .home_screen {
   height: 100vh;
   width: 100%;
@@ -1204,7 +1207,7 @@ object {
 
 .archive_sorting {
   z-index: 2;
-  bottom: 5em;
+  bottom: 40px;
   position: absolute;
   left: 0;
   right: 0; }
@@ -1213,14 +1216,14 @@ object {
   display: block;
   margin: 0 auto;
   text-align: center;
-  width: 250px;
+  width: 200px;
   border: 2px solid white;
-  line-height: 71px;
+  line-height: 55px;
   transition: 0.3s;
   color: white;
   text-decoration: none;
   font-family: "Jura", sans-serif;
-  font-size: 2em; }
+  font-size: 1.5rem; }
 
 .archive_sorting a {
   display: block;
@@ -1238,6 +1241,14 @@ object {
   background-color: white;
   color: #3F8C3F;
   transition: 0.3s; }
+
+#inventory_page_main_wrapper,
+#project_page_main_wrapper {
+  background-color: black; }
+
+.aircraft_tiles {
+  max-width: 1920px;
+  margin: 0 auto; }
 
 .aircraft_tile {
   width: 100%;
@@ -1434,6 +1445,14 @@ object {
   #inventory_page_header h1 {
     font-size: 5.3em; }
 
+  .archive_sorting {
+    bottom: 80px; }
+
+  .now_viewing {
+    width: 250px;
+    line-height: 71px;
+    font-size: 2rem; }
+
   .aircraft_list {
     padding: 10px 20px 1px 20px; }
 
@@ -1466,7 +1485,7 @@ object {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
-      padding: 40px 10px; }
+      padding: 10px 10px; }
 
     @supports (-ms-ime-align: auto) {
       .aircraft_tile img {
@@ -1530,10 +1549,11 @@ object {
   line-height: 100px; }
 
 #projects_page_header {
-  background-image: url(images/projects2-1.jpeg);
+  background-image: url("images/projects_compress1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  position: relative; }
 
 .projects {
   background-color: black;
@@ -2162,6 +2182,31 @@ object {
   width: 100%;
   font-size: 1rem;
   background-color: white; }
+
+#inventory_contact ul {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  padding-left: 15px; }
+
+#inventory_contact a {
+  color: #3F8C3F;
+  font-size: 1rem;
+  transition: 0.4s; }
+
+#inventory_contact a:hover,
+#inventory_contact a:focus {
+  color: #5E5E5E;
+  transition: 0.4s; }
+
+#inventory_contact a {
+  text-decoration: none;
+  font-size: 1rem; }
+
+#project_sidebar_wrapper .wpcf7-submit:hover,
+#project_sidebar_wrapper .wpcf7-submit:focus {
+  border: 2px solid #3F8C3F !important; }
 
 #project_header_info_box #project_info_box_span {
   bottom: 12.5em; }
@@ -2812,7 +2857,7 @@ object {
   .main-navigation li {
     width: 33.3333%;
     height: 33vw;
-    border: 2px solid transparent;
+    border: 2px solid rgba(153, 153, 153, 0.6);
     animation-name: menu-entry;
     animation-duration: 0.2s; }
 
