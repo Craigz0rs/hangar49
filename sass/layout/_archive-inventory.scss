@@ -1,8 +1,9 @@
 #inventory_page_header {
-    background-image:url($image_inventory_default);
+    background-image:url($image_inventory_small);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-color: black;
     position: relative;
 }
 
@@ -38,3 +39,17 @@
     margin: 0;
     line-height: 100px;
 }
+
+@media screen and (min-width: 500px) {
+    #inventory_page_header {
+        background-image: url($image_inventory_medium);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #inventory_page_header {
+        background-image: url($image_inventory_default);
+        background-position: top;
+    }  
+}
+

@@ -1,8 +1,9 @@
 #projects_page_header {
-    background-image:url($image_project_default);
+    background-image:url($image_project_small);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-color: black;
     position: relative;
 }
 
@@ -19,4 +20,17 @@
 .project_list li {
     overflow: hidden;
     position: relative;
+}
+
+@media screen and (min-width: 500px) {
+    #projects_page_header {
+        background-image: url($image_project_medium);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #projects_page_header {
+        background-image: url($image_project_default);
+        background-position: center;
+    }  
 }

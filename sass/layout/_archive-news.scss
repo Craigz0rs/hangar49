@@ -1,12 +1,12 @@
 #news_page_header {
-    background-image: url($image_news_default);
+    background-image: url($image_news_small);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #single_news_page_header_nothumb {
-    background-image: url($image_news_default);
+    background-image: url($image_news_medium);
 }
 
 .news_post_header {
@@ -226,6 +226,10 @@
 }
 
 @media screen and (min-width: 500px) {
+    #news_page_header {
+        background-image: url($image_news_medium);
+    }
+    
     .article_side {
         display: block;
     }
@@ -251,6 +255,10 @@
 
 
 @media screen and (min-width: 960px) {
+    #news_page_header {
+        background-image: url($image_news_default);
+    }
+    
     #news_page_main_wrapper {
         flex-wrap: nowrap;
         padding: 40px 20px;

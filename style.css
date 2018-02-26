@@ -763,7 +763,7 @@ object {
 .home_screen {
   height: 100vh;
   width: 100%;
-  background-image: url(images/sky4-2.jpeg);
+  background-image: url(images/homepage.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1508,10 +1508,11 @@ object {
     .aircraft_tile {
       height: 24vw; } } }
 #inventory_page_header {
-  background-image: url("images/inventory_background.jpg");
+  background-image: url("images/inventory_small.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: black;
   position: relative; }
 
 #inventory_page_header h2 {
@@ -1549,11 +1550,19 @@ object {
   margin: 0;
   line-height: 100px; }
 
+@media screen and (min-width: 500px) {
+  #inventory_page_header {
+    background-image: url("images/inventory_medium.jpg"); } }
+@media screen and (min-width: 960px) {
+  #inventory_page_header {
+    background-image: url("images/inventory_large.jpg");
+    background-position: top; } }
 #projects_page_header {
-  background-image: url("images/projects_compress1.jpg");
+  background-image: url("images/projects_small.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: black;
   position: relative; }
 
 .projects {
@@ -1568,6 +1577,13 @@ object {
   overflow: hidden;
   position: relative; }
 
+@media screen and (min-width: 500px) {
+  #projects_page_header {
+    background-image: url("images/projects_medium.jpg"); } }
+@media screen and (min-width: 960px) {
+  #projects_page_header {
+    background-image: url("images/projects_large.jpg");
+    background-position: center; } }
 .aircraft_page_nav {
   background-color: black;
   height: 150px; }
@@ -2502,13 +2518,13 @@ object {
     bottom: 20px;
     font-size: 1rem; } }
 #news_page_header {
-  background-image: url("images/sky5.jpeg");
+  background-image: url("images/news_medium.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
 
 #single_news_page_header_nothumb {
-  background-image: url("images/sky5.jpeg"); }
+  background-image: url("images/news_medium.jpg"); }
 
 .news_post_header {
   height: 30vh;
@@ -2675,6 +2691,9 @@ object {
     margin-right: 0;
     margin-top: 0; } }
 @media screen and (min-width: 500px) {
+  #news_page_header {
+    background-image: url("images/news_medium.jpg"); }
+
   .article_side {
     display: block; }
 
@@ -2692,6 +2711,9 @@ object {
     padding-left: 50px;
     padding-right: 50px; } }
 @media screen and (min-width: 960px) {
+  #news_page_header {
+    background-image: url("images/news_large.jpg"); }
+
   #news_page_main_wrapper {
     flex-wrap: nowrap;
     padding: 40px 20px; }
