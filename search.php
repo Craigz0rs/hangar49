@@ -42,7 +42,14 @@ get_header(); ?>
 			the_posts_navigation();
 
 		else :
-
+?>                <header class="page_header" id="news_page_header">
+                    <div class="page_header_overlay" id="news_page_header_overlay">
+                    </div>
+				<h1 class="page-title">News</h1>
+			     </header><!-- .page-header -->
+                <div class="page_main_wrapper" id="news_page_main_wrapper">
+                <div class="article_listings_wrapper" id="news_article_listings_wrapper">
+<?php
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>

@@ -10,14 +10,7 @@
 ?>
 
 
-	<header class="page_header" id="news_page_header">
-        <div class="page_header_overlay" id="news_page_header_overlay">
-        </div>
-		<h1 class="page-title">News</h1>
-	</header><!-- .page-header -->
-    </div><!-- .page-header_wrapper -->
-    <div class="page_main_wrapper" id="news_page_main_wrapper">
-        <div class="article_listings_wrapper" id="news_article_listings_wrapper">
+
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 

@@ -19,6 +19,15 @@
     <link href="https://fonts.googleapis.com/css?family=Jura:700|Metrophobic|Orbitron" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' ); ?>/fonts/font-awesome/css/font-awesome.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114765558-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-114765558-1');
+    </script>
 
 	<?php wp_head(); ?>
     <!--[if lt IE 9]>
