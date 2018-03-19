@@ -16,23 +16,17 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-			<?php
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
+            <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+            <div class="page_header_wrapper" id="about_header_wrapper">
+                <div class="page_header" id="about_page_header" style="background-image: url(<?php echo $url; ?>);">
+                    <div class="page_header_overlay" id="about_page_header_overlay">
+                    </div>
+                    <h1>About Us</h1>
+                </div>
+            </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
