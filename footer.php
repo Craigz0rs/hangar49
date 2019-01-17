@@ -100,8 +100,21 @@
 
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/jquery.flexslider.js"></script>
 
+<?php if(is_front_page()) { ?>
+
 <script type="text/javascript" charset="utf-8">
   $(window).on("load", function() {
+    $('#testimonial_slider').flexslider({
+        animation: "fade",
+    });
+  });
+</script>
+
+<?php } ?>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).on("load", function() {
+    
     $('#featured_slider').flexslider({
         animation: "slide",
 //        controlNav: "thumbnails"
@@ -116,6 +129,7 @@
     });
   });
 </script>
+
 
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/scripts.js"></script>
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/scripts/hoverscript.js"></script>

@@ -17,8 +17,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
     <link href="https://fonts.googleapis.com/css?family=Jura:700|Metrophobic|Orbitron" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' ); ?>/fonts/font-awesome/css/font-awesome.min.css" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!--    <link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' ); ?>/fonts/font-awesome/css/font-awesome.min.css" />-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">-->
+<!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114765558-1"></script>
     <script>
@@ -30,10 +31,12 @@
     </script>
 
 	<?php wp_head(); ?>
-    <!--[if lt IE 9]>
+<!--
+    [if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]
+-->
 </head>
 
 <body <?php body_class(); ?>>
@@ -60,7 +63,7 @@
             </ul>
         <?php } ?>
 -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( '<span></span><br>Menu', 'hangar49' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( '<span><i class="fas fa-th"></i></span><br>Menu', 'hangar49' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

@@ -81,13 +81,13 @@
     background-color: white;
 }
 
-.article_excerpt_title h2 {
+.article_excerpt_title .entry-title {
     margin: 0;
     line-height: 1.5rem;
 }
 
-.article_excerpt_title h2 a {
-    font-size: 1.5em;
+.article_excerpt_title .entry-title a {
+    font-size: 32px;
     line-height: 1.5rem;
     font-weight: 900;
     color: $color_font-nav-hover;
@@ -96,8 +96,8 @@
     transition: 0.2s;
 }
 
-.article_excerpt_title h2 a:hover,
-.article_excerpt_title h2 a:focus {
+.article_excerpt_title .entry-title a:hover,
+.article_excerpt_title .entry-title a:focus {
     color: $color_font-dark-text;
     transition: 0.2s;
 }

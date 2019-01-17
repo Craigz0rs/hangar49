@@ -1,17 +1,42 @@
 .home_screen {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: url(images/homepage.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
     background-position: bottom;
 }
 
+#home_inventory_section {
+    position: relative;
+    background-color: $color_background_main;
+    width: 100%;
+    overflow: hidden;
+}
+
+#front_intro_wrapper {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+}
+
+#page_header_overlay_front {
+    bottom: 0;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.81) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cf000000',GradientType=0 ); /* IE6-9 */
+        background-color: rgba(0,0,0,0.2);
+    }
+
 .intro {
+    position: relative;
     text-align: center;
     color: white;
-    padding-top: 12vh;
+    padding-top: 19vh;
+    z-index: 1;
 }
 
 .intro h1 {
@@ -39,8 +64,9 @@
 .intro p {
     font-family: $font_text;
     font-size: 0.7em; 
-    max-width: 350px;
+    max-width: 450px;
     margin: 0 auto;
+    padding: 0 25px;
 }
 
 .home_navigation {
@@ -110,6 +136,220 @@
     transform: rotate(270deg) scaleX(-1);
     
 }
+
+.full_width_info_bar {
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 115px;
+    z-index: 1;
+}
+
+#home_services_info_bar {
+    background-image: url("images/clouds.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.info_bar_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(45,45,45,0.9);
+}
+
+.service_feature {
+    margin: 0 25px;
+    text-align: center;
+    width: 400px;
+    z-index: 99;
+
+    .feature_icon {
+        color: $color_footer-headings;
+        font-size: 60px;
+        padding-bottom: 17px;
+    }
+
+    h2 {
+        padding-bottom: 5px;
+        font-size: 1.9rem;
+        background-color: transparent;
+        color: $color_font-nav-hover;
+    }
+    
+    p {
+        color: $color_footer-headings;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .full_width_info_bar {
+        padding: 50px 25px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .full_width_info_bar {
+        flex-wrap: wrap;
+        padding: 50px 0px;
+    }
+
+    .service_feature {
+        width: 100%;
+        padding-bottom: 20px;
+
+        .feature_icon {
+            border-top: 1px solid #75736f;
+            margin: 0 auto;
+            width: 200px;
+            padding-top: 25px;
+        }
+
+        h2 {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 445px;
+            margin: 0 auto;
+            margin-bottom: 22px;
+        }
+    }
+
+    .full_width_info_bar div:nth-of-type(2) {
+        .feature_icon {
+            border-top: none;
+            padding-top: 0;
+        }
+    }
+}
+
+
+
+
+#home_main_wrapper {
+
+    min-height: 250px;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.latest_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.home_latest_list {
+    position: relative;
+    width: 60%;
+    z-index: 3;
+    
+    .detail_section_title {
+        margin-bottom: 5px;
+    }
+}
+
+.detail_section_title {
+    margin-bottom: 25px;
+}
+
+.home_latest_aircraft_item .entry-title a {
+    font-size: 23px;
+}
+
+#home_inventory_splash {
+    height: 100%;
+    width: 39%;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-position: center;
+    z-index: 2;
+}
+
+#home_inventory_splash_overlay {
+    background-color: $color_dark-backgrounds;
+    height: 110%;
+    width: 61px;
+    transform: rotate(-17deg) translateX(-43px) translateY(-5%);
+    transform-origin: top right;
+}
+#home_inventory_splash_overlay2 {
+    background-color: $color_background_main;
+    height: 125%;
+    width: 280px;
+    transform: rotate(-17deg) translateX(-257px) translateY(-12%);
+    transform-origin: top right;
+    position: absolute;
+    top: 0;
+}
+
+#front_page_testimonial_slider {
+    position: relative;
+    color: white;
+}
+
+@media screen and (max-width: 1299px) {
+    .home_latest_list {
+        width: 75%;
+    }
+    
+    #home_inventory_splash {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .home_latest_list {
+        width: 100%;
+    }
+    
+    #home_inventory_splash {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    #home_main_wrapper {
+        padding: 40px 10px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    #home_main_wrapper {
+        padding: 0;
+    }
+    
+    .home_latest_list .detail_section_title {
+        padding: 25px 0px;
+        margin-bottom: 25px;
+    }
+    
+    .home_list_item {
+        margin: 10px 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home_list_item {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+}
+
 
 //////////////////////////////////////////
 ////// Grid and Responsive Styling ///////
