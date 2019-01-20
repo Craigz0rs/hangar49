@@ -17,6 +17,10 @@
     background-color: white;
 }
 
+.widget {
+    background-color: white;
+}
+
 .widget-title {
     margin: 0;
     padding: 3px 0 3px 15px;
@@ -43,12 +47,14 @@
     width: 100%;
 }
 
-#search-2 .search-form {
+#search-2 .search-form,
+#search-3 .search-form, {
     position: relative;
     padding: 25px 30px;
 }
 
-#search-2 .search-field {
+#search-2 .search-field,
+#search-3 .search-field {
     width: 100%;
     border-radius: 0px;
     border: 2px solid #CECECE;
@@ -58,12 +64,15 @@
 }
 
 #search-2 .search-field:active,
-#search-2 .search-field:focus {
+#search-2 .search-field:focus,
+#search-3 .search-field:active,
+#search-3 .search-field:focus {
     border: 2px solid $color_font-nav-hover;
     transition: 0.2s;
 }
 
-#search-2 .search-submit {
+#search-2 .search-submit,
+#search-3 .search-submit {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -80,7 +89,10 @@
 
 #search-2 .search-submit:hover,
 #search-2 .search-submit:active, 
-#search-2 .search-submit:focus {
+#search-2 .search-submit:focus,
+#search-3 .search-submit:hover,
+#search-3 .search-submit:active, 
+#search-3 .search-submit:focus {
     color: $color_font-dark-text;  
 }
 

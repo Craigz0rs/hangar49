@@ -127,53 +127,67 @@ get_header('archive'); ?>
                             </div>
                         </div>
                         <div class="aircraft_sidebar_wrapper sidebar_wrapper" id="project_sidebar_wrapper">
+                            <?php if($year || $manufacturer || $model || $serial_number || $registration_number || $price || $location) { ?>
                             <section id="aircraft_specifications_2" class="widget widget_search aircraft_specifications_2">
                                 <h2 class="widget-title sidebar_title">Aircraft Specifications</h2>
+                                <?php if($year) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Year:</strong>
                                     <p class="spec_value">
                                         <?php echo $year; ?>
                                     </p>
                                 </div>
+                                <?php }
+                                if($manufacturer) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Manufacturer:</strong>
                                     <p class="spec_value">
                                         <?php echo $manufacturer; ?>
                                     </p>
                                 </div>
+                                <?php }
+                                if($model) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Model:</strong>
                                     <p class="spec_value">
                                         <?php echo $model; ?>
                                     </p>
                                 </div>
+                                <?php }
+                                if($serial_number) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Serial Number:</strong>
                                     <p class="spec_value">
                                         <?php echo $serial_number; ?>
                                     </p>
                                 </div>
+                                <?php }
+                                if($registration_number) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Registration Number:</strong>
                                     <p class="spec_value">
                                         <?php echo $registration_number; ?>
                                     </p>
                                 </div>
-                                <?php if ( $price ) { ?>
+                                <?php } 
+                                if ( $price ) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Price:</strong>
                                     <p class="spec_value">
                                         <?php echo $price; ?>
                                     </p>
                                 </div>
-                                <?php } ?>
+                                <?php } 
+                                if($location) { ?>
                                 <div class="spec_item">
                                     <strong class="spec_title">Location:</strong>
                                     <p class="spec_value">
                                         <?php echo $location; ?>
                                     </p>
                                 </div>
+                                <?php } ?>
                             </section>
+                            <?php } ?>
                         </div>
                         <section id="inventory_aircraft_details" class="widget aircraft_details">
                             <?php if( $history ) { ?>
@@ -327,50 +341,62 @@ get_header('archive'); ?>
                     <div class="aircraft_sidebar_wrapper sidebar_wrapper" id="project_sidebar_wrapper">
                         <section id="search-2" class="widget widget_search aircraft_specifications_1">
                             <h2 class="widget-title sidebar_title">Aircraft Specifications</h2>
+                            <?php if ( $year ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Year:</strong>
                                 <p class="spec_value">
                                     <?php echo $year; ?>
                                 </p>
                             </div>
+                            <?php }
+                            if( $manufacturer ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Manufacturer:</strong>
                                 <p class="spec_value">
                                     <?php echo $manufacturer; ?>
                                 </p>
                             </div>
+                            <?php }
+                            if( $model ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Model:</strong>
                                 <p class="spec_value">
                                     <?php echo $model; ?>
                                 </p>
                             </div>
+                            <?php }
+                            if( $serial_number ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Serial Number:</strong>
                                 <p class="spec_value">
                                     <?php echo $serial_number; ?>
                                 </p>
                             </div>
+                            <?php }
+                            if( $registration_number ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Registration Number:</strong>
                                 <p class="spec_value">
                                     <?php echo $registration_number; ?>
                                 </p>
                             </div>
-                            <?php if ( $price ) { ?>
+                            <?php }
+                            if ( $price ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Price:</strong>
                                 <p class="spec_value">
                                     <?php echo $price; ?>
                                 </p>
                             </div>
-                            <?php } ?>
+                            <?php }
+                            if ( $location ) { ?>
                             <div class="spec_item">
                                 <strong class="spec_title">Location:</strong>
                                 <p class="spec_value">
                                     <?php echo $location; ?>
                                 </p>
                             </div>
+                            <?php } ?>
                         </section>
                         <section id="inventory_contact" class="widget">
                             <h2 class="widget-title sidebar-title">Enquire Now</h2>

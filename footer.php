@@ -89,7 +89,7 @@
         </div>
         </div>
         <div class="footer_copyright">
-            <p>Copyright 2017-2018 Hangar 49</p>
+            <p>Copyright 2017-<?php echo date('Y'); ?> Hangar 49</p>
 <!--            <p>Website by <a href="www.craigdarcy.ca">Company</a></p>-->
         </div>
 	</footer><!-- #colophon -->

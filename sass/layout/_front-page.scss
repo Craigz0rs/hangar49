@@ -294,9 +294,69 @@
     top: 0;
 }
 
-#front_page_testimonial_slider {
+#home_testimonials_bar {
     position: relative;
     color: white;
+    background-image: url('images/runway-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    
+    .info_bar_overlay {
+        background-color: rgba(134,134,134,0.95)
+    }
+}
+
+#testimonial_slider {
+    position: relative;
+    width: 500px;
+    
+    
+    .flex-control-nav,
+    .flex-direction-nav {
+        display: none;
+    }
+    
+    .slides {
+        margin: 0;
+        padding: 0;
+        
+        li {
+            padding: 0 10px;
+        }
+    }
+    
+    .testimonial_text {
+        text-align: center;
+        font-family: $font_text;
+        font-size: 24px;
+    }
+    
+    .testimonial_name {
+        margin-bottom: 0;
+        text-align: right;
+        font-family: $font_heading;
+        font-size: 18px;
+        color: $color_font-dark-text;
+    }
+    
+    .testimonial_quotes {
+        color: #A1A1A1;
+        position: absolute;
+        font-size: 60px;
+        line-height: 110px;
+        font-family: 'metrophobic';
+    }
+    
+    #testimonial_open_quote {
+        top: -30px;
+        left: 0;
+    }
+    
+    #testimonial_closing_quote {
+        bottom: 50px;
+        right: 0;
+    }
 }
 
 @media screen and (max-width: 1299px) {
