@@ -238,8 +238,7 @@ get_header(); ?>
                         } //end if $projects
                     ?>
                     </div><!-- .latest_wrapper -->
-                </div>
-                <!-- #home_main_wrapper -->
+                </div><!-- #home_main_wrapper -->
             </div><!-- #home_inventory_section -->
             <?php
                 $args3 = array(
@@ -250,12 +249,13 @@ get_header(); ?>
 
                 $testimonials = new WP_Query($args3);
 
-                if($testimonials) { 
+                if( $testimonials->have_posts() ) { 
             ?>
-<!--
                     <div class="full_width_info_bar" id="home_testimonials_bar">
                         <div class="info_bar_overlay"></div>
                         <div class="flexslider testimonial_slider" id="testimonial_slider">
+                            <span class="testimonial_quotes" id="testimonial_open_quote"><i class="fas fa-quote-left"></i></span>
+                            <span class="testimonial_quotes" id="testimonial_closing_quote"><i class="fas fa-quote-right"></i></span>
                             <ul class="slides">
                             <?php
                                 while($testimonials->have_posts()) {
@@ -265,14 +265,13 @@ get_header(); ?>
                             ?>
                                 <li>
                                      <p class="testimonial_text"><?php echo $content; ?></p>
-                                    <p class="testimonial_name"><?php echo $client_name; ?></p>
+                                    <p class="testimonial_name">- <?php echo $client_name; ?></p>
                                 </li>
                             <?php } ?>
                             </ul>
                         </div>
 
-                    </div> #home_testimonials_bar 
--->
+                  </div> <!-- #home_testimonials_bar -->
             <?php
                 }
             ?>
