@@ -233,6 +233,19 @@
 }
 
 
+#home_projects {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: white;
+    height: 90vh;
+    width: 100%;
+}
+
+.home_project {
+    position: relative;
+    overflow: hidden;
+}
 
 
 #home_main_wrapper {

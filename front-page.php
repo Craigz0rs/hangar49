@@ -59,6 +59,52 @@ get_header(); ?>
 
                     
                 </div>
+                    <?php
+                        $args2 = array(
+                            'post_type' => 'projects',
+                            'posts_per_page' => 1,
+                            'orderby' => 'date',
+                            'order' => 'DESC'
+                        );
+                    
+                        $projects = new WP_Query($args2);
+                    
+                        if($projects->have_posts()) { ?>
+                        <div id="home_projects" class="home_latest_list">
+                            <div id="home_project_1" class="home_project">
+                            
+                            </div>
+                            <div id="home_project_2" class="home_project">
+                            
+                            </div>
+                            <div id="home_project_3" class="home_project">
+                            
+                            </div>
+                            <div id="home_project_4" class="home_project">
+                            
+                            </div>
+                            
+                            
+                            
+                            
+<!--                            <h2 class="detail_section_title">Latest Projects</h2>-->
+<!--
+                            <?php
+                                while($projects->have_posts()) {
+                                    $projects->the_post();
+                                    $project_url = get_the_permalink();
+                                    
+                                    
+                                }
+                            ?>
+-->
+                        </div>
+                        <!-- #home_projects -->                          
+    
+                        <?php    
+                            wp_reset_postdata();
+                        } //end if $projects
+                    ?>
                 <div id="home_inventory_section">
                 <div class="page_main_wrapper" id="home_main_wrapper">
                     <div class="latest_wrapper">
@@ -207,36 +253,7 @@ get_header(); ?>
                         <?php 
                             wp_reset_postdata();            
                         } //end if $inventory
-                        
-                        $args2 = array(
-                            'post_type' => 'project',
-                            'posts_per_page' => 3,
-                            'orderby' => 'date',
-                            'order' => 'DESC'
-                        );
-                    
-                        $projects = new WP_Query($args2);
-                    
-                        if($projects) { ?>
-<!--
-                        <div id="home_latest_projetcs" class="home_latest_list">
-                            <h2 class="detail_section_title">Latest Projects</h2>
-                            <?php
-                                while($projects->have_posts()) {
-                                    $projects->the_post();
-                                    $project_url = get_the_permalink();
-                                    
-                                    
-                                }
-                            ?>
-                        </div>
--->
-                        <!-- #home_latest_projects -->                          
-    
-                        <?php    
-                            wp_reset_postdata();
-                        } //end if $projects
-                    ?>
+                        ?>
                     </div><!-- .latest_wrapper -->
                 </div><!-- #home_main_wrapper -->
             </div><!-- #home_inventory_section -->

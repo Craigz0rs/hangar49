@@ -951,6 +951,18 @@ object {
   .full_width_info_bar div:nth-of-type(2) .feature_icon {
     border-top: none;
     padding-top: 0; } }
+#home_projects {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  height: 90vh;
+  width: 100%; }
+
+.home_project {
+  position: relative;
+  overflow: hidden; }
+
 #home_main_wrapper {
   min-height: 250px;
   padding: 40px;
